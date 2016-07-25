@@ -1,4 +1,4 @@
-### title: API Introduction search_summary: 'The 10Kft API provides programmatic access to projects, users and time entries in your account, commonly referred to as resources in the rest of this document. ' super_positive_keywords: testing environment, integration
+# API Introduction
 
 The 10Kft API provides programmatic access to projects, users and time entries in your account, commonly referred to as resources in the rest of this document. The API implements a standard HTTP REST pattern and allows callers with appropriate authentication and authorization to programmatically create, read, update and delete these resources.
 
@@ -66,11 +66,11 @@ When contacting support for assistance with using the API, please provide exampl
 
 Here is an example curl command for invoking the users API via curl.
 
-<pre># get the users collection 
+<pre># get the users collection
 curl -H "Content-Type: application/json" -X GET https://vnext-test.10000ft.com/api/v1/users?auth=TOKEN
 </pre>
 
-# General API Use Examples  
+# General API Use Examples
 
 ## Fetching a Collection
 
@@ -145,7 +145,9 @@ response:
   "first_name" : "Nick",
   ...
 }
+</pre>
 
 ## Deleting an Object
 
-DELETE /api/v1/users/5</pre>
+<pre>DELETE /api/v1/users/5
+</pre>
