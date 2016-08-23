@@ -21,15 +21,15 @@ There are two ways you can do that.
 
 ### Test vs. Production Environments
 
-We provide a staging/test environment which we call `vnext`. It is a staging environment fully isolated from our production environment. We strongly encourage you setup a test account there and test your integrations before moving to production. Test accounts on `vnext` are separate from your production accounts, and give you full isolation as far as your account data is concerned. 
+We provide a staging/test environment which we call **`vnext`**. It is a staging environment fully isolated from our production environment. We strongly encourage you setup a test account there and test your integrations before moving to production. Test accounts on `vnext` are separate from your production accounts, and give you full isolation as far as your account data is concerned. 
 
 There is no additional charge for maintaining a test account.
 
 ### How do I access the staging environment?
 
-* Visit [https://vnext.10000ft.com/signup](https://vnext.10000ft.com/signup) to setup a test account. 
+* Visit [`https://vnext.10000ft.com/signup`](https://vnext.10000ft.com/signup) to setup a test account. 
 * The API end point base URL for `vnext` is `https://vnext-api.10000ft.com/api/v1/`
-* To access your test account, visit https://vnext.10000ft.com and sign in with your test account credentials.
+* To access your test account, visit `https://vnext.10000ft.com` and sign in with your test account credentials.
 * For support on vnext integration, contact us via email at `support@10000ft.com`
 
 ### What changes when moving my integration to production?
