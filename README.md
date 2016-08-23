@@ -2,7 +2,12 @@
 
 The 10Kft API provides programmatic access to projects, users and time entries in your account, commonly referred to as resources in the rest of this document. The API implements a standard HTTP REST pattern and allows callers with appropriate authentication and authorization to programmatically create, read, update and delete these resources.
 
-**Register your integration and sign up for important Developer API Email Announcements [here](http://eepurl.com/ZvuOb).**
+## How can I stay informed about upcoming API updates?
+
+If you are integrating with the 10Kft API or plan to do so, you can sign up for announcements that may impact you. 
+
+* Ask one of your friendly 10Kft account adminstrators add your email as a developer contact.
+* SIgn up to recieve updates via the 10Kft Developer API Announcements mailing list [here](http://eepurl.com/ZvuOb)
 
 ## Test vs. Production Environments
 
