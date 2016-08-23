@@ -1,21 +1,42 @@
-# API Introduction
+# 10Kft API
 
 The 10Kft API provides programmatic access to projects, users and time entries in your account, commonly referred to as resources in the rest of this document. The API implements a standard HTTP REST pattern and allows callers with appropriate authentication and authorization to programmatically create, read, update and delete these resources.
 
-## How can I stay informed about upcoming API updates?
+## Overview
+
+### How can I stay informed about upcoming API updates?
 
 If you are integrating with the 10Kft API or plan to do so, you can sign up for announcements that may impact you. 
 
 * Ask one of your friendly 10Kft account adminstrators add your email as a developer contact.
-* SIgn up to recieve updates via the 10Kft Developer API Announcements mailing list [here](http://eepurl.com/ZvuOb)
+* Sign up to recieve updates via the 10Kft Developer API Announcements mailing list [here](http://eepurl.com/ZvuOb)
+* Watch or follow this github repo.
 
-## Test vs. Production Environments
+### Reporting problems with the API?
 
-There is one test environment for developers to experiment with custom integrations before activating it the live account.
+There are two ways you can do that.
 
-We strongly recommend you test before moving your integration to production. This will reduce the chances of accidentally compromising the data in your live account.
+* For issues that require immediate attention, contact us via the support widget within the 10Kft Plans app, or email support@10000ft.com
+* For suggestions of feature requests and other non urgent issues, open an issue in this github repo.
 
-The <span style="background-color: initial;">steps for setting up your developer account, as well as the</span><span style="background-color: initial;"></span> <span style="background-color: initial;">base URLs for the test environment, are located on the</span> [Custom Integrations](/plans/reference/integration/custom-integrations) <span style="background-color: initial;">page.</span>
+### Test vs. Production Environments
+
+We provide a staging/test environment which we call `vnext`. It is a staging environment fully isolated from our production environment. We strongly encourage you setup a test account there and test your integrations before moving to production. Test accounts on `vnext` are separate from your production accounts, and give you full isolation as far as your account data is concerned. 
+
+There is no additional charge for maintaining a test account.
+
+### How do I access the staging environment?
+
+* Visit [https://vnext.10000ft.com/signup](https://vnext.10000ft.com/signup) to setup a test account. 
+* The API end point base URL for `vnext` is `https://vnext-api.10000ft.com/api/v1/`
+* To access your test account, visit https://vnext.10000ft.com and sign in with your test account credentials.
+* For support on vnext integration, contact us via email at `support@10000ft.com`
+
+### What changes when moving my integration to production?
+
+* Your production account is your live 10,000ft Plans account available at `https://app.10000ft.com`
+* The API end point base URL is `https://api.10000ft.com/api/v1/`
+* You will use a production API token obtained from the settings section in your production account.
 
 ## Data Collections
 
