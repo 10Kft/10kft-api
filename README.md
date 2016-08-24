@@ -54,14 +54,17 @@ There is no additional charge for maintaining a test account.
 
 The API provides access to the following data collections available in your account.
 
-*   Users
-*   Projects
-*   Phases
-*   Time Entries
-*   Assignments
-*   Tags
-*   Project Budget Items
-*   User Statuses
+* [Users](sections/users.md)
+  * [User Tags](sections/user-tags.md)
+  * [Statuses](sections/user-statuses.md)
+* [Projects](sections/projects.md)
+  * [Users by Project](sections/project-users.md)
+  * [Project Tags](setions/project-tags.md)
+  * [Bill Rates](sections/bill-rates-project.md)
+* [Phases](sections/phases.md)
+* [Time Entries](sections/time-entries.md)
+* [Assignments](sections/assignments.md)
+* [Tags](sections/tags.md)
 
 ## Collections and Objects
 
