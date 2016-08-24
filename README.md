@@ -19,6 +19,14 @@ There are two ways you can do that.
 * For issues that require immediate attention, contact us via the support widget within the 10Kft Plans app, or email support@10000ft.com
 * For suggestions of feature requests and other non urgent issues, open an issue in this github repo.
 
+When contacting support for assistance with using the API, please provide example API calls where possible. This greatly speeds up the time to resolve support requests. You can use cURL, available on unix platforms as well as windows, to create an example of your scenario, and including the curl command(s) along with your request for support.
+
+Here is an example curl command for invoking the users API via curl.
+
+```sh
+curl -H "Content-Type: application/json" -X GET https://api.10000ft.com/api/v1/users?auth=TOKEN
+```
+
 ### Test vs. Production Environments
 
 We provide a staging/test environment which we call **`vnext`**. It is a staging environment fully isolated from our production environment. We strongly encourage you setup a test account there and test your integrations before moving to production. Test accounts on `vnext` are separate from your production accounts, and give you full isolation as far as your account data is concerned. 
@@ -88,23 +96,13 @@ HTTP/1.1 400 Bad Request
 { "message" : "The request body had invalid json" }
 ```
 
-# Reporting Problems
-
-When contacting support for assistance with using the API, please provide example API calls where possible. This greatly speeds up the time to resolve support requests. You can use cURL, available on unix platforms as well as windows, to create an example of your scenario, and including the curl command(s) along with your request for support.
-
-Here is an example curl command for invoking the users API via curl.
-
-```
-# get the users collection
-curl -H "Content-Type: application/json" -X GET https://vnext-test.10000ft.com/api/v1/users?auth=TOKEN
-```
-
-# General API Use Examples
+# Examples
 
 ## Fetching a Collection
 
 ```
 GET /api/v1/users
+
 response:
 {
   "data" : [
@@ -125,18 +123,20 @@ response:
 
 ```
 GET /api/v1/users/5
+
 response:
 {
   "id" : 5,
   "first_name" : "claes",
   ...
-},
+}
 ```
 
 ## Fetching an Object With Optional Fields
 
 ```
 GET /api/v1/users/5?fields=tags
+
 response:
 {
   "id" : 5,
@@ -153,6 +153,7 @@ response:
 
 ```
 PUT /api/v1/users/5
+
 {
   "id" : 5,
   "first_name" : "Claes"
@@ -169,10 +170,12 @@ response:
 
 ```
 POST /api/v1/users
+
 {
   "first_name" : "Nick"
   "first_name" : "Pants"
 }
+
 response:
 {
   "id" : 6,
