@@ -61,10 +61,9 @@ The API provides access to the following data collections available in your acco
   * [Users by Project](sections/project-users.md)
   * [Project Tags](sections/project-tags.md)
   * [Bill Rates](sections/bill-rates-project.md)
-* [Phases](sections/phases.md)
+  * [Phases](sections/phases.md)
 * [Time Entries](sections/time-entries.md)
 * [Assignments](sections/assignments.md)
-* [Tags](sections/tags.md)
 
 ## Collections and Objects
 
