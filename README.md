@@ -21,10 +21,14 @@ There are two ways you can do that.
 
 When contacting support for assistance with using the API, please provide example API calls where possible. This greatly speeds up the time to resolve support requests. You can use cURL, available on unix platforms as well as windows, to create an example of your scenario, and including the curl command(s) along with your request for support.
 
-Here is an example curl command for invoking the users API via curl.
+Here are some example curl commands;
 
 ```sh
+# get the collection of users
 curl -H "Content-Type: application/json" -X GET https://api.10000ft.com/api/v1/users?auth=TOKEN
+
+# update user 100 with a new last_name
+curl -H "Content-Type: application/json" -X PUT -d '{"last_name":"Silva"' https://api.10000ft.com/api/v1/users/100?auth=TOKEN
 ```
 
 ### Test vs. Production Environments
@@ -95,6 +99,10 @@ Respond with standard HTTP error messages, with 4XX codes to indicate client (ca
 HTTP/1.1 400 Bad Request
 { "message" : "The request body had invalid json" }
 ```
+
+## Throttling & Limits
+
+Coming Soon.
 
 # Examples
 
