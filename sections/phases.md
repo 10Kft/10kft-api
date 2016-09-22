@@ -2,7 +2,7 @@
 
 ##### Endpoint: `/api/v1/projects/<project_id>/phases`
 
-Phase is a subclass of [Project](projects) which is a subclass of Assignable. You will see the id refering to a project as assignable_id in other models. A Phase always has a `parent_id` set to the id of the parent Project.
+Phase is a subclass of [Project](projects.md) which is a subclass of Assignable. You will see the id refering to a project as assignable_id in other models. A Phase always has a `parent_id` set to the id of the parent Project.
 
 ## List Phases for a Project
 
