@@ -2,7 +2,7 @@
 
 ##### Endpoint: `/api/v1/projects/<project_id>/time_entries`
 
-Time Entries is a collection of hours reported for a user on a project. See [Time Entries for a User](/plans/reference/api-documentation/time-entries) on how to create a Time Entry.
+Time Entries is a collection of hours reported for a user on a project. 
 
 ## List Time Entries for a Project
 
