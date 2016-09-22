@@ -11,7 +11,8 @@ There is an account level definition of budget categories, made available via:
 or
 
 ```
-/api/v1/expense_item_categories ```
+/api/v1/expense_item_categories 
+```
 
 in the format:
 
@@ -48,7 +49,8 @@ There is also a set of budget item categories defined at each project level, ava
 or
 
 ```
-/api/v1/projects/<project_id>/expense_item_categories ```
+/api/v1/projects/<project_id>/expense_item_categories
+```
 
 Here you get the actual budget line items defined for the project. The specific categories applicable to the project can be extracted through these.
 
@@ -74,12 +76,14 @@ Note that at the project level, category may also be null. This implies a projec
 ## Fetching a Collection
 
 ```
-GET /api/v1/time_entry_categories```
+GET /api/v1/time_entry_categories
+```
 
 or
 
 ```
-GET /api/v1/expense_item_categories ```
+GET /api/v1/expense_item_categories
+```
 
 ## Sample Response
 
@@ -102,4 +106,5 @@ GET /api/v1/expense_item_categories ```
         "previous": null,
         "self": “/api/v1/time_entry_categories?per_page=20&page=1"
       }
-}```
+}
+```
