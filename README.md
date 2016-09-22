@@ -1,20 +1,22 @@
 # 10Kft API
 
-The 10Kft API provides programmatic access to projects, users and time entries in your account, commonly referred to as resources in the rest of this document. The API implements a standard HTTP REST pattern and allows callers with appropriate authentication and authorization to programmatically create, read, update and delete these resources.
+The 10Kft API provides programmatic access to projects, users and time entries in your account, commonly referred to as _resources_ in the rest of this API documentation. The API implements a standard HTTP REST pattern and allows callers with appropriate authentication and authorization to programmatically create, read, update and delete these resources.
 
-## Overview
+This documentation assumes that you have either signed up for a 10Kft trial or you have an active subscription, and that you are familiar with the basic features of the application. The information that follows give you an overview of accessing the same functionality, from an API, so that you can implement additional functionality and custom integrations that meet your specific business needs.
 
-### How can I stay informed about upcoming API updates?
+We also assume that you are familiar with basic RESTful API concepts.
 
-If you are integrating with the 10Kft API or plan to do so, you can sign up for announcements that may impact you. 
+### Being notified about important changes
 
-* Ask one of your friendly 10Kft account adminstrators add your email as a developer contact.
-* Sign up to recieve updates via the 10Kft Developer API Announcements mailing list [here](http://eepurl.com/ZvuOb)
-* Watch or follow this github repo.
+There are several ways in which you can stay informed about important changes to the API.
 
-### Reporting problems with the API?
+* Ask your friendly 10Kft Administrator to add your email as the developer contact for your account.
+* Subscribe to be notified when updates are made to this github repo by following it or using the watch feature.
+* Sign up to receive updates via the 10Kft Developer API Announcements mailing list [here](http://eepurl.com/ZvuOb)
 
-There are two ways you can do that.
+### Getting help & reporting problems
+
+There are several ways you can ask for help with using the API.
 
 * For issues that require immediate attention, contact us via the support widget within the 10Kft Plans app, or email support@10000ft.com
 * For suggestions of feature requests and other non urgent issues, open an issue in this github repo.
@@ -23,23 +25,26 @@ When contacting support for assistance with using the API, please provide exampl
 
 Here are some example curl commands;
 
-```sh
+```
 # get the collection of users
-curl -H "Content-Type: application/json" -X GET https://api.10000ft.com/api/v1/users?auth=TOKEN
+curl -X GET https://api.10000ft.com/api/v1/users?auth=TOKEN \
+  -H "Content-Type: application/json"
 
 # update user 100 with a new last_name
-curl -H "Content-Type: application/json" -X PUT -d '{"last_name":"Silva"' https://api.10000ft.com/api/v1/users/100?auth=TOKEN
+curl -X PUT https://api.10000ft.com/api/v1/users/100?auth=TOKEN \
+  -H "Content-Type: application/json" \
+  -d '{"last_name":"Silva"'}'
 ```
 
-### Test vs. Production Environments
+### Staging vs. Production Environments
 
-We provide a staging/test environment which we call **`vnext`**. It is a staging environment fully isolated from our production environment. We strongly encourage you setup a test account there and test your integrations before moving to production. Test accounts on `vnext` are separate from your production accounts, and give you full isolation as far as your account data is concerned. 
+We provide a development environment called **`vnext`** so your can test out the API and develop your applications before going live with them in production. It is a staging environment completely isolated from our active account. We strongly encourage that you setup a test account on `vnext` and build your integrations there before moving to production.
 
-There is no additional charge for maintaining a test account.
+There is no additional charge for maintaining a test account on vnext.
 
 ### How do I access the staging environment?
 
-* Visit [`https://vnext.10000ft.com/signup`](https://vnext.10000ft.com/signup) to setup a test account. 
+* Visit [`https://vnext.10000ft.com/signup`](https://vnext.10000ft.com/signup) to setup a test account.
 * The API end point base URL for `vnext` is `https://vnext-api.10000ft.com/api/v1/`
 * To access your test account, visit `https://vnext.10000ft.com` and sign in with your test account credentials.
 * For support on vnext integration, contact us via email at `support@10000ft.com`
@@ -50,7 +55,7 @@ There is no additional charge for maintaining a test account.
 * The API end point base URL is `https://api.10000ft.com/api/v1/`
 * You will use a production API token obtained from the settings section in your production account.
 
-## Data Collections
+# Endpoints
 
 The API provides access to the following data collections available in your account.
 
@@ -60,142 +65,170 @@ The API provides access to the following data collections available in your acco
 * [Projects](sections/projects.md)
   * [Users by Project](sections/project-users.md)
   * [Project Tags](sections/project-tags.md)
-  * [Bill Rates](sections/bill-rates-project.md)
+  * [Bill Rates](sections/bill-rates.md)
   * [Phases](sections/phases.md)
 * [Time Entries](sections/time-entries.md)
 * [Assignments](sections/assignments.md)
 
-## Collections and Objects
+### Pro & Enterprise Only Endpoints
 
-The API, in typical RESTful fashion, lets you access collections of objects. These Collections are paginated, and are always delivered in a structure that has a 'data' array and 'paging' meta-data, as shown below. This is true top level as well as nested collections.
+* Approvals (_coming soon_)
+* Custom Fields (_coming soon_)
+
+## Collections & Objects
+
+The API follows a typical RESTful pattern where it allows you to access collections of objects via HTTP. These Collections are paginated, and are always delivered in a structure that has a 'data' array and 'paging' meta-data, as shown below. This is true top level as well as nested collections.
 
 Some objects returned by the API may have sub-collections. For example, a tags collection for a given user object. These sub-collections are paginated in the same manner as top level collections.
 
+```
+curl -X GET https://api.10000ft.com/api/v1/users \
+  -H "Content-Type: application/json"
+  -H "auth: TOKEN"
+```
+
+Will get a JSON response like,
+
+```
+{
+  "data" : [
+    { "id" : 1, "first_name" : "Tom", "last_name" : "Perera" },
+    { "id" : 2, "first_name" : "Jane", "last_name" : "Albert" },
+    ...
+  ],
+  "paging": {
+    "page": 1,
+    "per_page": 20,
+    "previous": null,
+    "self": "/api/v1/users/1/statuses?user_id=1&per_page=20&page=1",
+    "next": null
+  }
+}
+```
+
+Unless otherwise noted, the API always responds withe **JSON**.
+
+## pagination
+
+The pagination section in collections provide mechanisms to fetch additional data. The `previous` and `next` links provide access to the corresponding pages in the collection. You can override the default `per_page` value by providing an appropriate value in the URL query parameter. For example,
+
+```
+GET https://app.10000ft.com/api/v1/users?per_page=100&page=3
+```
+
 ## Authentication
 
-The API expects an API authentication token (api-token) to be passed in with every API request. This can be sent as a query parameter named `auth`, or as an HTTP header with the same name.
-
-Account administrators can find the API key under _Settings >_ _Developer API_. Note that you will get separate API tokens for development/test purposes vs final integration with your account on 10000ft.com.
-
-## Pagination
-
-The pagination section in collections provide mechanisms to fetch additional data. The `previous` and `next` links provide access to the corresponding pages in the collection.
-
-You can override the default `per_page` value by providing an appropriate value in the URL query parameter. For example,
+The API currently supports service token based authentication. This can be sent as a query parameter named `auth`, or as an HTTP header with the same name.
 
 ```
-GET /api/v1/users?per_page=100
+# Token in http header (recommended)
+curl -X GET https://api.10000ft.com/api/v1/users \
+  -H "Content-Type: application/json"
+  -H "auth: TOKEN"
+
+# Token on URL
+curl -X GET https://api.10000ft.com/api/v1/users?auth=URL-ENCODED-TOKEN \
+  -H "Content-Type: application/json"
 ```
 
-## Date Formatting
+Account administrators can obtain the API token from _Settings >_ _Developer API_ in the application.
 
-The API handles or expects dates and datetime values in various scenarios, and expects the values to be in specific formats.
+> `NB:` A separate token is issues each time an Administrator visits the Developer API section under settings. This however does not invalidate the current token in use for your application.
 
-Date values provided as query parameters when making API calls must be in the `YYYY-MM-DD` format or `DD/MM/YYYY` format.
+## Optional Fields
+
+To reduce the number of roundtrips that might be required to fetch all related data for a given collection or resource (e.g. fetching a user and all their tags), the API support a concept of optional fields. These `fields` are a comma separated list of field names that are supported as a URL parameter when making a request to fetch a resource or a resource collection.
+
+```
+curl -X GET https://api.10000ft.com/api/v1/users?fields=tags \
+  -H "Content-Type: application/json"
+  -H "auth: TOKEN"
+
+```
+
+Each field requested is included in the response as nested collections. The page size for these nested collections will be the same as the page size used for the parent API request.
+
+```
+{
+  "data" : [
+    {
+      "id" : 1,
+      "first_name" : "Tom",
+      "last_name" : "Perera",
+      tags: {
+        "data" : [
+          { "id" : 1, "value" : "developer" },
+          { "id" : 2, "value" : "javascript" },
+        ],
+        "paging" : {
+          ...
+        }
+      }
+    },
+    ...
+  ],
+  "paging": {
+    ...
+  }
+}
+```
+
+Multiple optional fields can be requested in a single API call like `fields=f1,f2`.
+
+## Date & Time Formatting
+
+The API handles or expects dates and date-time values in various scenarios, and expects the values to be in specific formats.
+
+**Date** values provided as query parameters when making API calls must be in the `2013-01-31` format.
+
+**Time** values are accepted in the `2013-09-31T22:10:24Z` format, which is a date and time value in UTC time.
 
 ## Error Handling
 
 Respond with standard HTTP error messages, with 4XX codes to indicate client (caller) errors. There may be an optional response body with a message that has details for debugging / error logging. This message is not meant to end user display or consumption.
 
 ```
-HTTP/1.1 400 Bad Request
-{ "message" : "The request body had invalid json" }
+HTTP/1.1 400 Bad Request { "message" : "The request body had invalid json" }
 ```
 
 ## Throttling & Limits
 
-Coming Soon.
+The API currently throttles incoming requests to prevent abuse and ensure fair use. When throttling has been triggered, the affected callers will receive a HTTP response with status `429 Too Many Requests`.
 
-# Examples
+### What to do when being throttled?
 
-## Fetching a Collection
+Our current recommendation is to implement a progressive back-off approach until your request start processing normally. The psuedo-code below illustrate a simple scenario which you may adopt to suite your scenario.
 
 ```
-GET /api/v1/users
+// pseudo-code
 
-response:
-{
-  "data" : [
-    { "id" : 1, "first_name" : "claes", ... },
-     ...
-  ],
-  "paging": {
-    "next": null,
-    "page": 1,
-    "per_page": 20,
-    "previous": null,
-    "self": "/api/v1/users/1/statuses?user_id=1&per_page=20&page=1"
+DELAY = 100
+MULTIPLIER = 1
+
+MAX_RETRIES = 25
+
+while(runningÂ == true) {
+  response = get_api_response(url)
+
+  // If hitting rate limit, re-try with progressive back off
+  while(retry_count < MAX_RETRIES && response.status == 429) {
+    retry_count += 1
+    MULTIPLIER = MULTIPLIER * 2
+
+    sleep(DELAY * MULTIPLIER)
+
+    response = get_api_response(url)
   }
+
+  handle_response(response)
+
+  retry_count = 0
+  MULTIPLIER = 1
 }
 ```
 
-## Fetching an Object
+The API does not expose `X-RateLimit` headers for clients to dynamically adjust their request rates.
 
-```
-GET /api/v1/users/5
+## Questions?
 
-response:
-{
-  "id" : 5,
-  "first_name" : "claes",
-  ...
-}
-```
-
-## Fetching an Object With Optional Fields
-
-```
-GET /api/v1/users/5?fields=tags
-
-response:
-{
-  "id" : 5,
-  "first_name" : "claes",
-  ...,
-  "tags" : {
-    "data" : [ "developer", "seattle", ... ],
-    "paging" : { ... }
-  }
-}
-```
-
-## Updating an Object
-
-```
-PUT /api/v1/users/5
-
-{
-  "id" : 5,
-  "first_name" : "Claes"
-}
-response:
-{
-  "id" : 5,
-  "first_name" : "Claes",
-  ...
-}
-```
-
-## Creating an Object
-
-```
-POST /api/v1/users
-
-{
-  "first_name" : "Nick"
-  "first_name" : "Pants"
-}
-
-response:
-{
-  "id" : 6,
-  "first_name" : "Nick",
-  ...
-}
-```
-
-## Deleting an Object
-
-```
-DELETE /api/v1/users/5
-```
+Please don't hesitate to reach out to us via the in app support feature for questions or suggestions about using the 10Kft API. We're here to help.
