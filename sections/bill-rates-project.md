@@ -49,10 +49,8 @@ curl -XPUT -d 'bill_rate=500' \
 | `user_id` | `bill_rate` | `assignable_id` |
 
 ```
-curl -d
-'user_id=12345,bill_rate=250,assignable_id=67890' \
-             'https://vnext.10000ft.com/api/v1/projects/1/'
-             ```
+curl -d 'user_id=12345,bill_rate=250,assignable_id=67890' 'https://vnext.10000ft.com/api/v1/projects/1/'
+```
 
 ## Sample Response
 
