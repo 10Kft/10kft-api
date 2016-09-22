@@ -81,14 +81,12 @@ curl -d 'user_id=12345,bill_rate=250,assignable_id=67890' 'https://vnext.10000ft
         "created_at":"2013-09-27T22:10:24Z",
         "updated_at":"2013-09-27T22:10:24Z"}
       ]
-      "paging":{
-        "per_page":20,
-        "page":1,
-        "previous":null,
-        "self":"/api/v1/projects/109313/bill_rates?project_id=109313&page=1",
-        "next":"/api/v1/projects/109313/bill_rates?project_id=109313&page=2"
-      }
-    }
-
-
+    "paging": {
+    "per_page":20,
+    "page":1,
+    "previous":null,
+    "self":"/api/v1/projects/109313/bill_rates?project_id=109313&page=1",
+    "next":"/api/v1/projects/109313/bill_rates?project_id=109313&page=2"
+  }
+}
 ```
