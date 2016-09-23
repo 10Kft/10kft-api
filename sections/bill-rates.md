@@ -37,18 +37,21 @@ POST /api/v1/projects/<project_id>/bill_rates
 
 ## Fields:
 
-| **Name** | **Type** | **Description** | **optional** |
-| -------- | -------- | --------------- | ------------ |
-| `id` | number | bill rate id |  |
-| `discipline_id` | number | discipline specific bill rate if set | yes |
-| `role_id` | number | role specific bill rate if set | yes |
-| `assignable_id` | number | the project id that the bill rate belongs to |  |
-| `user_id` | number | user id for the bill rate | yes |
-| `rate` | float | bill rate |  |
-| `starts_at` | date | effective start date for the bill rate | yes |
-| `ends_at` | date | effective end date for the bill rate | yes |
-| `startdate` | date | _deprecated_ | yes |
-| `enddate` | date | _deprecated_ | yes |
+| **Name** | **Type** | **Description** | **Optional** | **Readonly** |
+| -------- | -------- | --------------- | ------------ | ------------- |
+| `id` | number | bill rate id |  | yes |
+| `discipline_id` | number | discipline specific bill rate if set | yes | |
+| `role_id` | number | role specific bill rate if set | yes | |
+| `assignable_id` | number | the project id that the bill rate belongs to | | |
+| `user_id` | number | user id for the bill rate | yes | |
+| `rate` | float | bill rate | | |
+| `starts_at` | date | effective start date for the bill rate | yes | |
+| `ends_at` | date | effective end date for the bill rate | yes | |
+| `startdate` | date | _deprecated_ | yes | |
+| `enddate` | date | _deprecated_ | yes | |
+| `created_at` | date-time | time of creation | | yes |
+| `updated_at` | date-time | time of last update | | yes |
+
 
 Project-specific bill rates editable via the API require a valid `assignable_id` attribute value.
 
