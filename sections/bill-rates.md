@@ -39,18 +39,18 @@ POST /api/v1/projects/<project_id>/bill_rates
 
 | **Name** | **Type** | **Description** | **optional** |
 | -------- | -------- | --------------- | ------------ |
-| id | number | bill rate id |  |
-| discipline_id | number | discipline specific bill rate if set | yes |
-| role_id | number | role specific bill rate if set | yes |
-| assignable_id | number | the project id that the bill rate belongs to |  |
-| user_id | number | user id for the bill rate | yes |
-| rate | float | bill rate |  |
-| starts_at | date | effective start date for the bill rate | yes |
-| ends_at | date | effective end date for the bill rate | yes |
-| startdate | date | _deprecated_ | yes |
-| enddate | date | _deprecated_ | yes |
+| `id` | number | bill rate id |  |
+| `discipline_id` | number | discipline specific bill rate if set | yes |
+| `role_id` | number | role specific bill rate if set | yes |
+| `assignable_id` | number | the project id that the bill rate belongs to |  |
+| `user_id` | number | user id for the bill rate | yes |
+| `rate` | float | bill rate |  |
+| `starts_at` | date | effective start date for the bill rate | yes |
+| `ends_at` | date | effective end date for the bill rate | yes |
+| `startdate` | date | _deprecated_ | yes |
+| `enddate` | date | _deprecated_ | yes |
 
-Project specific bill rates editable via the API require a valid `assignable_id` attribute value.
+Project-specific bill rates editable via the API require a valid `assignable_id` attribute value.
 
 Project and user specific bill rate must not specify a `role_id` or `discipline_id`, because a specific user has been chosen and role and discipline do not apply for such a bill rate.
 
@@ -58,7 +58,7 @@ See more examples below.
 
 ## Examples
 
-A bill rate should have a JSON structure like below.
+A bill rate should have the following JSON structure:
 
 ```
 /* project default rate */
@@ -92,7 +92,7 @@ A bill rate should have a JSON structure like below.
 }
 ```
 
-Account specific bill rates will not have an assignable_id or a user_id, and will look like below. They may optionally have a role or discipline id, to indicate a default rate for that role and/or discipline.
+Account-specific bill rates will not have an `assignable_id` or a `user_id`, and will look like below. They may optionally have a `role_id` or `discipline_id`, to indicate a default rate for that role and/or discipline.
 
 ```
 {
@@ -109,7 +109,7 @@ Account specific bill rates will not have an assignable_id or a user_id, and wil
 }
 ```
 
-User specific bill rates on a project will have an `assignable_id` and a `user_id`. They may optionally also have a `starts_at` and `ends_at` values to indicate that the particular rate is applicable to a specific date range. When date range specific bill rates are added via the API, they will be preferred over the default rate for the same user. This preference is determined based on the start date of the assignment or time entry in question.
+User-specific bill rates on a project will have an `assignable_id` and a `user_id`. They may optionally also have a `starts_at` and `ends_at` values to indicate that the particular rate is applicable to a specific date range. When date range-specific bill rates are added via the API, they will be preferred over the default rate for the same user. This preference is determined based on the start date of the assignment or time entry in question.
 
 ```
 {

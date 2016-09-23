@@ -19,11 +19,11 @@ There are several ways in which you can stay informed about important changes to
 There are several ways you can ask for help with using the API.
 
 * For issues that require immediate attention, contact us via the support feature within the application user interface, or email support@10000ft.com.
-* For suggestions of feature requests and other non urgent issues, open an issue in this github repo.
+* For suggestions of feature requests and other non urgent issues, [open an issue](https://github.com/10Kft/10kft-api/issues) in this repo.
 
-When contacting support for assistance with using the API, please provide example API calls where possible. This greatly speeds up the time to resolve support requests. You can use cURL, available on unix platforms as well as windows, to create an example of your scenario, and including the curl command(s) along with your request for support.
+When contacting support for assistance with using the API, please provide example API calls where possible. This greatly speeds up the time to resolve support requests. You can use cURL, available on unix platforms as well as windows, to create an example of your scenario, and including the `curl` command(s) along with your request for support.
 
-Here are some example curl commands;
+Here are some example `curl` commands;
 
 ```
 # get the collection of users
@@ -106,9 +106,9 @@ Will get a JSON response like,
 }
 ```
 
-Unless otherwise noted, the API always responds withe **JSON**.
+Unless otherwise noted, the API always responds with **JSON**.
 
-## pagination
+## Pagination
 
 The pagination section in collections provide mechanisms to fetch additional data. The `previous` and `next` links provide access to the corresponding pages in the collection. You can override the default `per_page` value by providing an appropriate value in the URL query parameter. For example,
 
@@ -197,7 +197,7 @@ The API currently throttles incoming requests to prevent abuse and ensure fair u
 
 ### What to do when being throttled?
 
-Our current recommendation is to implement a progressive back-off approach until your request start processing normally. The psuedo-code below illustrate a simple scenario which you may adopt to suite your scenario.
+Our current recommendation is to implement a progressive back-off approach until your requests start processing normally. The psuedo-code below illustrate a simple scenario which you may adopt to suit your particular case.
 
 ```
 // pseudo-code
@@ -207,7 +207,7 @@ MULTIPLIER = 1
 
 MAX_RETRIES = 25
 
-while(runningÂ == true) {
+while(running == true) {
   response = get_api_response(url)
 
   // If hitting rate limit, re-try with progressive back off
