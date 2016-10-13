@@ -69,7 +69,7 @@ The API provides access to the following data collections available in your acco
   * [Phases](sections/phases.md)
 * [Time Entries](sections/time-entries.md)
 * [Assignments](sections/assignments.md)
-* Time & Expense Approvals (_coming soon_)
+* [Time & Expense Approvals](sections/approvals.md)
 
 ### Pro & Enterprise Only Endpoints
 
