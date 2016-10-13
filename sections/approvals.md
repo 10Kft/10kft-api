@@ -4,9 +4,12 @@
 
 In 10,000ft, certain record types are considered "approvable." Currently, these record types are time entries and expense items. Approvals are created when time entries or expense items are "submitted for approval."
 
-Approvals
 
 ## List Approvals
+
+```
+GET /api/v1/approvals
+```
 
 While you can get approvals directly from `/api/v1/approvals`, a more typical scenario is to include approvals when getting time entries or expense items by specifying "approvals" as a field. One advantage of this is that you also get "unsubmitted" records that do not yet have an associated approval record.
 
@@ -68,6 +71,7 @@ POST /api/v1/approvals
 
 Approvals are not created or updated directly. Rather, approvable records are submitted or approved through a POST request to `/api/v1/approvals`. **Note that only administrators and project managers can approve time and expenses, which means that API users can only submit time and expenses, but not approve.**
 
+
 ##### Required parameters:
 
 | **Parameter** | **Description** |
@@ -83,7 +87,7 @@ Approvals are not created or updated directly. Rather, approvable records are su
 | type | either "TimeEntry" or "ExpenseItem" |
 | updated_at | the "updated_at" time stamp of the time entry or expense item |
 
-"updated_at" is required to ensure that the time entry or expense item has not changed since the submitter or approver has viewed it. For example, if an approver views a time entry of 4 hours and intends to approve that time, but meanwhile someone else updates the time entry to be 5 hours instead of 4, the approver might unintentionally approve a 5 hour time entry while believing they are approving a 4 hour time entry. For this reason, approvals will only be created or updated for approvables that have the correct "updated_at" value.
+`updated_at` is required to ensure that the time entry or expense item has not changed since the submitter or approver has viewed it. For example, if an approver views a time entry of 4 hours and intends to approve that time, but meanwhile someone else updates the time entry to be 5 hours instead of 4, the approver might unintentionally approve a 5 hour time entry while believing they are approving a 4 hour time entry. For this reason, approvals will only be created or updated for approvables that have the correct `updated_at` value.
 
 Example
 
@@ -126,6 +130,7 @@ Response
   ]
 }
 ```
+
 
 ## Deleting Approvals
 
