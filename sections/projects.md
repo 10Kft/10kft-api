@@ -2,7 +2,9 @@
 
 ##### Endpoint: `/api/v1/projects`
 
-Project is a subclass of Assignable. You will see the id referring to a project as `assignable_id` in other models. Sub projects are called phases, and shares the same data model. A Phase has a `parent_id` that is not null. A project/phase can be deleted by setting the optional parameter archived to true, it can also be unarchived by setting archived to false.
+Project is a subclass of Assignable. You will see the `id` referring to a project as `assignable_id` in other models. Sub-projects are called phases and share the same data model. A Phase has a `parent_id` that is not `null`. A project or phase can be deleted by setting the optional `archived` parameter to `true`, it can also be unarchived by setting `archived` to `false`.
+
+Projects where `archived` is set to `true` cannot be updated. You must first unarchive (set `archived` to `false`) before updating the project.
 
 ## Project State
 
