@@ -11,7 +11,7 @@ The API allows you to directly manipulate project and phase specific bill rates.
 **Account specific bill rates**
 
 ```
-GET /api/v1/projects/bill_rates
+GET /api/v1/bill_rates
 ```
 
 **Project specific bill rates**
