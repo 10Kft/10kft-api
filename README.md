@@ -12,7 +12,7 @@ There are several ways in which you can stay informed about important changes to
 
 * Ask your friendly account Administrator to add your email as the developer contact for your account.
 * Subscribe to be notified when updates are made to this github repo by following it or using the watch feature.
-* Sign up to receive updates via the 10,000ft Developer API Announcements mailing list [here](http://eepurl.com/ZvuOb)
+* Sign up to receive updates via the 10,000ft Developer API Announcements mailing list [here](http://eepurl.com/cnTcHD)
 
 ### Getting help & reporting problems
 
