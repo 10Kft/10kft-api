@@ -12,7 +12,7 @@ Endpoints:
 Get Roles
 -------------
 
-* `GET /api/v1/roles` will return a [paginated list][pagination] of Roles.
+* `GET /api/v1/roles` will return a [paginated list](/README.md#pagination) of Roles.
 
 ###### Example JSON Response
 
