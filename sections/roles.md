@@ -14,6 +14,10 @@ Get Roles
 
 * `GET /api/v1/roles` will return a [paginated list](/README.md#pagination) of Roles.
 
+_Optional parameters:_
+
+- Respects [filtering parameters](/README.md#filtering)
+
 ###### Example JSON Response
 
 ```json

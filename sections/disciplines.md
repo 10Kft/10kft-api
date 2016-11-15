@@ -14,6 +14,10 @@ Get Disciplines
 
 * `GET /api/v1/discipline` will return a [paginated list](/README.md#pagination) of Disciplines.
 
+_Optional parameters:_
+
+- Respects [filtering parameters](/README.md#filtering)
+
 ###### Example JSON Response
 
 ```json

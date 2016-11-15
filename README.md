@@ -118,6 +118,14 @@ The pagination section in collections provide mechanisms to fetch additional dat
 GET https://app.10000ft.com/api/v1/users?per_page=100&page=3
 ```
 
+## Filtering
+
+Some resources in the 10,000ft API respect certain filtering parameters. Those optional parameters are as follows:
+
+- `filter_field` - The property to filter on.
+- `filter_list` - The value of `filter_field` to match.
+
+
 ## Authentication
 
 The API currently supports service token based authentication. This can be sent as a query parameter named `auth`, or as an HTTP header with the same name.
