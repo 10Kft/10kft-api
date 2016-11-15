@@ -12,7 +12,7 @@ Endpoints:
 Get Disciplines
 -------------
 
-* `GET /api/v1/discipline` will return a [paginated list](/README.md#pagination) of Disciplines.
+* `GET /api/v1/disciplines` will return a [paginated list](/README.md#pagination) of Disciplines.
 
 _Optional parameters:_
 
@@ -48,7 +48,7 @@ _Optional parameters:_
 Get a Discipline
 -------------
 
-* `GET /api/v1/discipline/1` will return the role with the ID of `1`.
+* `GET /api/v1/disciplines/1` will return the role with the ID of `1`.
 
 ###### Example JSON Response
 
