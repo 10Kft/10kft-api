@@ -1,41 +1,44 @@
 Roles
 =========
 
-_Description TBD_
+Roles currently must be created and assigned through the UI.
 
 Endpoints:
 
 - [Get Roles](#get-roles)
 - [Get a Role](#get-a-role)
-- [Create a Role](#create-a-role)
-- [Update a Role](#update-a-role)
-- [Destroy a Role](#destroy-a-role)
+
 
 Get Roles
 -------------
 
-* `GET /api/v1/roles` will return a [paginated list][pagination] of Roles visible to the current user.
+* `GET /api/v1/roles` will return a [paginated list][pagination] of Roles.
 
+###### Example JSON Response
+
+```json
+[
+  {
+    "id": 1,
+    "value": "Senior"
+  },
+  {
+    "id": 2,
+    "value": "Junior"
+  }
+]
+```
 
 Get a Role
 -------------
 
-* `GET /api/v1/roles/1` will return the Role with the given ID, granted they have permission.
+* `GET /api/v1/roles/1` will return the role with the ID of `1`.
 
+###### Example JSON Response
 
-Create a Role
--------------
-
-* `POST /api/v1/roles` will return the Role with the given ID, granted they have permission.
-
-
-Update a Role
--------------
-
-* `PUT /api/v1/roles` will return the Role with the given ID, granted they have permission.
-
-
-Destroy a Role
--------------
-
-* `DELETE /api/v1/roles` will return the Role with the given ID, granted they have permission.
+```json
+{
+  "id": 1,
+  "value": "Senior"
+}
+```
