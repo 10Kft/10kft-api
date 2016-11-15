@@ -17,16 +17,25 @@ Get Roles
 ###### Example JSON Response
 
 ```json
-[
-  {
-    "id": 1,
-    "value": "Senior"
+{
+  "paging": {
+    "per_page": 20,
+    "page": 1,
+    "previous": null,
+    "self": "/api/v1/roles?&page=1",
+    "next": null
   },
-  {
-    "id": 2,
-    "value": "Junior"
-  }
-]
+  "data": [
+    {
+      "id": 1,
+      "value": "Senior"
+    },
+    {
+      "id": 2,
+      "value": "Junior"
+    }
+  ]
+}
 ```
 
 Get a Role

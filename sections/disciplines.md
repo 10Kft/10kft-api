@@ -17,16 +17,27 @@ Get Disciplines
 ###### Example JSON Response
 
 ```json
-[
-  {
-    "id": 1,
-    "value": "JavaScript Developer"
+{
+  "paging": {
+    "per_page": 20,
+    "page": 1,
+    "previous": null,
+    "self": "/api/v1/disciplines?&page=1",
+    "next": null
   },
-  {
-    "id": 2,
-    "value": "Ruby Developer"
-  }
-]
+  "data": [
+    {
+      "id": 1,
+      "value": "JavaScript Developer"
+    },
+    {
+      "id": 2,
+      "value": "Ruby Developer"
+    }
+  ]
+}
+
+
 ```
 
 
