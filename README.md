@@ -73,7 +73,7 @@ The API provides access to the following data collections available in your acco
 
 ### Pro & Enterprise Only Endpoints
 
-* Custom Fields (_coming soon_)
+* [Custom Fields](sections/custom-fields.md)
 
 ## Collections & Objects
 
