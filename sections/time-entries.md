@@ -16,7 +16,7 @@ You can enter and confirm time for active users via the API, however this exclud
 | ------------- | --------------- |
 | from | get projects that start on or after this date |
 | to | get projects that end on or before this date |
-| with_suggestions | true to include suggested time entries based on assignments on the schedule |
+| with_suggestions | true to include suggested (unconfirmed) time entries based on assignments on the schedule |
 | per_page, page | Parameters for pagination.Default values are per_page = 20 , page = 1 ( the first ) |
 
 ```
