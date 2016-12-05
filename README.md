@@ -22,11 +22,11 @@ The API provides access to the following data collections available in your acco
 * [Assignments](sections/assignments.md)
 * [Bill Rates](sections/bill-rates.md)
 * [Statuses](sections/user-statuses.md) (_deprecated_)
-* Time & Expense Approvals (_coming soon_)
+* [Time & Expense Approvals](sections/approvals.md)
 
 ### Pro & Enterprise Only Endpoints
 
-* Custom Fields (_coming soon_)
+* [Custom Fields](sections/custom-fields.md)
 
 ## Questions?
 
