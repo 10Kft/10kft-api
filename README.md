@@ -61,14 +61,14 @@ The API provides access to the following data collections available in your acco
 
 * [Users](sections/users.md)
   * [User Tags](sections/user-tags.md)
-  * [Statuses](sections/user-statuses.md)
 * [Projects](sections/projects.md)
   * [Users by Project](sections/project-users.md)
   * [Project Tags](sections/project-tags.md)
-  * [Bill Rates](sections/bill-rates.md)
   * [Phases](sections/phases.md)
 * [Time Entries](sections/time-entries.md)
 * [Assignments](sections/assignments.md)
+* [Bill Rates](sections/bill-rates.md)
+* [Statuses](sections/user-statuses.md) (_deprecated_)
 * Time & Expense Approvals (_coming soon_)
 
 ### Pro & Enterprise Only Endpoints
