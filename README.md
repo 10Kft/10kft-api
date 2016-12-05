@@ -4,9 +4,9 @@ The 10,000ft API provides programmatic access to projects, users and time entrie
 
 # Overview
 
-* General information (read first)
-* How to get help or report a problem
-* How to setup a staging environment for testing
+* [General information](sections/first-things-first.md) (read first)
+* [How to get help or report a problem](sections/getting-help.md)
+* [How to setup a staging environment for testing](staging-environment.md)
 
 # API Endpoints
 
