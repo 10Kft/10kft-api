@@ -12,6 +12,7 @@ A user cannot be deleted by the API. A user can be archived by setting the optio
 | ------------- | --------------- |
 | fields | A comma separated list of additional fields to include in the response [ "tags", "assignments", "availabilities"] |
 | per_page, page | Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first ) |
+| with_archived | true to include deleted/archived users
 
 ```
 GET  /api/v1/users
