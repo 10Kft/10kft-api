@@ -6,14 +6,15 @@ The 10,000ft API provides programmatic access to projects, users and time entrie
 
 * [General information](sections/first-things-first.md) (read first)
 * [How to get help or report a problem](sections/getting-help.md)
-* [How to setup a staging environment for testing](sections/staging-environment.md)
+* [How to setup a staging environment for testing](sectionsstaging-environment.md)
 
-# API Endpoints
+# Endpoints
 
-The API provides access to the following data collections available in your account.
+The API provides access to the following data collections in your account via RESTful endpoints.
 
 * [Users](sections/users.md)
   * [User Tags](sections/user-tags.md)
+  * Availabilities (coming soon)
 * [Projects](sections/projects.md)
   * [Users by Project](sections/project-users.md)
   * [Project Tags](sections/project-tags.md)
@@ -24,10 +25,10 @@ The API provides access to the following data collections available in your acco
 * [Statuses](sections/user-statuses.md) (_deprecated_)
 * [Time & Expense Approvals](sections/approvals.md)
 
-### Pro & Enterprise Only Endpoints
+## Pro & Enterprise Only
 
 * [Custom Fields](sections/custom-fields.md)
 
-## Questions?
+# Questions?
 
 Please don't hesitate to reach out to us via the in-app support feature for questions or suggestions about using the 10,000ft API. We're here to help.
