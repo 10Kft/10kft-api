@@ -1,0 +1,21 @@
+# Getting help & reporting problems
+
+There are several ways you can ask for help or report a problem with using the API.
+
+* For issues that require immediate attention, contact us via the support feature within the application user interface, or email support@10000ft.com.
+* For suggestions of feature requests and other non urgent issues, [open an issue](https://github.com/10Kft/10kft-api/issues) in this repo.
+
+When contacting support for assistance with using the API, please provide example API calls where possible. This greatly speeds up the time to resolve support requests. You can use cURL, available on unix platforms as well as windows, to create an example of your scenario, and including the `curl` command(s) along with your request for support.
+
+Here are some example `curl` commands;
+
+```
+# get the collection of users
+curl -X GET https://api.10000ft.com/api/v1/users?auth=TOKEN \
+  -H "Content-Type: application/json"
+
+# update user 100 with a new last_name
+curl -X PUT https://api.10000ft.com/api/v1/users/100?auth=TOKEN \
+  -H "Content-Type: application/json" \
+  -d '{"last_name":"Silva"'}'
+```
