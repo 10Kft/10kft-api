@@ -14,7 +14,7 @@ The API provides access to the following data collections in your account via RE
 
 * [Users](sections/users.md)
   * [User Tags](sections/user-tags.md)
-  * Availabilities (coming soon)
+  * Availabilities (coming soon)  
 * [Projects](sections/projects.md)
   * [Users by Project](sections/project-users.md)
   * [Project Tags](sections/project-tags.md)
@@ -24,6 +24,7 @@ The API provides access to the following data collections in your account via RE
 * [Bill Rates](sections/bill-rates.md)
 * [Statuses](sections/user-statuses.md) (_deprecated_)
 * [Time & Expense Approvals](sections/approvals.md)
+* [Placeholder Resources](sections/placeholders.md)
 
 ## Pro & Enterprise Only
 
