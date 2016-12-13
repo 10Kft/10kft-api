@@ -1,23 +1,22 @@
-# Users
+# Placeholder Resources
 
-##### Endpoint: `/api/v1/users`
+##### Endpoint: `/api/v1/placeholder_resources`
 
-A user cannot be deleted by the API. A user can be archived by setting the optional parameter archived to true, it can also be unarchived by setting the optional parameter archived to false. You cannot archive the account owner.
-
-## List Users (index)
+## List Placeholder Resources (index)
 
 ##### Optional Parameters:
 
 | **Parameter** | **Description** |
 | ------------- | --------------- |
-| fields | A comma separated list of additional fields to include in the response [ "tags", "assignments", "availabilities"] |
+| fields | A comma separated list of additional fields to include in the response [ "assignments", "custom_field_values"] |
 | per_page, page | Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first ) |
-| with_archived | true to include deleted/archived users
 
 ```
-GET  /api/v1/users
- curl 'https://vnext.10000ft.com/api/v1/users?fields=tags,assignments&auth=...'
+GET  /api/v1/placeholder_resources
+ curl 'https://vnext.10000ft.com/api/v1/users?fields=assignments,custom_field_values&auth=...'
 ```
+
+Note that custom field values can only be accessed if custom fields are enabled for the account.
 
 ## Show User
 
