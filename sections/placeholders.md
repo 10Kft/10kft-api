@@ -48,52 +48,34 @@ POST  /api/v1/placeholder_resources
 
 Placeholders are referred to by title. The title is displayed wherever placeholders appear in the application e.g. on projects, the schedule, etc. Therefore, it is required to specify this parameter.
 
-## Update a User
+##### Optional Parameters:
 
-User specified by `id`
+| **Parameter** | **Description** |
+| ------------- | --------------- |
+| role | The placeholder's [role](sections/roles.md) in the organization. |
+| discipline | The placeholder's [discipline](sections/disciplines.md). |
+| location | The organizational location the placeholder belongs to. |
+
+##### Parameters not exposed through the API
+
+In the application's user interface, there are certain options available when creating and editing placeholder resources. For example, if a role and discipline are selected, the placeholder title is autopopulated as a combination of discipline and role. Options also exist to upload a thumbnail image for the placeholder, or to choose a color and abbreviation and then auto-generate a thumbnail. These options are currently not available through the API, and can only be used via the front-end UX.
+
+## Update a Placeholder
+
+Placeholder specified by `id`
 
 ```
-PUT  /api/v1/users/<user_id>
- curl -XPUT -d 'first_name=Bob' \
-             'https://vnext.10000ft.com/api/v1/users/12345?auth=...'
+PUT  /api/v1/placeholder_resources/<placeholder_resource_id>
+ curl -XPUT -d 'title=Senior Designer' \
+             'https://vnext.10000ft.com/api/v1/placeholder_resources/12345?auth=...'
 ```
 
-## Sample Response
+## Delete a Placeholder
+
+Placeholder resources may be deleted via the API, as follows.
 
 ```
-{
-  "data": [
-            {
-               "id": 1,
-               "account_owner": true,
-               "billability_target": 100.0,
-               "billable": true, "billrate": -1.0,
-               "deleted": false,
-               "deleted_at": null, # deprecated see archived_at
-               "archived_at": null,
-               "discipline": null,
-               "display_name": "Mark van Tilburgh", # read only
-               "email": "claes@example.com",
-               "employee_number": null,
-               "first_name": "Mark",
-               "guid": "40195EEC-2E47-403D-9E48-5B99A25FD2F9",
-               "hire_date": "2011-11-21",
-               "invitation_pending": false,
-               "last_name": "van Tilburgh",
-               "location": null,
-               "mobile_phone": null,
-               "office_phone": null,
-               "role": null,
-               "termination_date": null,
-               "thumbnail": "",
-             }
-          ],
-  "paging": {
-             "next": null,
-             "page": 1,
-             "per_page": 20,
-             "previous": null,
-             "self": "/api/v1/users?per_page=20&page=1"
-           }
-}
+DELETE  /api/v1/placeholder_resources/<placeholder_resource_id>
+ curl -XDELETE \
+             'https://vnext.10000ft.com/api/v1/placeholder_resources/12345?auth=...'
 ```
