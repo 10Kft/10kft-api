@@ -2,6 +2,8 @@
 
 ##### Endpoint: `/api/v1/placeholder_resources`
 
+Placeholder resources can be used for temporary resourcing on projects where the final resources are not yet known. Placeholders behave quite similarly to users, with a few differences discussed below.
+
 ## List Placeholder Resources (index)
 
 ##### Optional Parameters:
@@ -13,37 +15,38 @@
 
 ```
 GET  /api/v1/placeholder_resources
- curl 'https://vnext.10000ft.com/api/v1/users?fields=assignments,custom_field_values&auth=...'
+ curl 'https://vnext.10000ft.com/api/v1/placeholder_resources?fields=assignments,custom_field_values&auth=...'
 ```
 
-Note that custom field values can only be accessed if custom fields are enabled for the account.
+Note that custom field values can only be accessed if custom fields are enabled for the account. This is only possible for pro plans and up. See [custom fields](sections/custom fields.md) for details. 
 
-## Show User
+## Show Placeholder
 
 ##### Optional Parameters:
 
 | **Parameter** | **Description** |
 | ------------- | --------------- |
-| fields | A comma separated list of additional fields to include in the response [ "tags", "assignments", "availabilities"] |
+| fields | A comma separated list of additional fields to include in the response [ "assignments", "custom_field_values"] |
 | per_page, page | Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first ) |
-| archive | true to archive/false to unarchive |
 
 ```
-GET  /api/v1/users/<user_id>
- curl 'https://vnext.10000ft.com/api/v1/users/12345?fields=tags,assignments&auth=...'
+GET  /api/v1/placeholder_resources/<placeholder_resource_id>
+ curl 'https://vnext.10000ft.com/api/v1/placeholder_resources/12345?fields=assignments&auth=...'
 ```
 
-## Create a User
+## Create a Placeholder Resource
 
 ##### Required Parameters
 
-| `email` | `first_name` | `last_name` |
+| `title` |
 
 ```
-POST  /api/v1/users
- curl -d 'first_name=John&last_name=Smith&email=john@sample.com' \
-             'https://vnext.10000ft.com/api/v1/users?auth=...'
+POST  /api/v1/placeholder_resources
+ curl -d 'title=Designer' \
+             'https://vnext.10000ft.com/api/v1/placeholder_resources?auth=...'
 ```
+
+Placeholders are referred to by title. The title is displayed wherever placeholders appear in the application e.g. on projects, the schedule, etc. Therefore, it is required to specify this parameter.
 
 ## Update a User
 
