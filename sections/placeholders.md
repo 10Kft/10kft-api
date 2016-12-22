@@ -108,5 +108,10 @@ Time entries are not supported for placeholders, either through application fron
 
 Tags for placeholders are also not supported. [Custom fields](sections/custom-fields.md) should be used instead.
 
+## Placeholders on a Project
 
+Similar to [users on a project](sections/project-users.md), you can get the placeholder resources assigned to a project using the following API endpoint:
 
+```
+/api/v1/projects/<project_id>/placeholder_resources
+```
