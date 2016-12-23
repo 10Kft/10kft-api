@@ -18,7 +18,7 @@ GET  /api/v1/placeholder_resources
  curl 'https://vnext.10000ft.com/api/v1/placeholder_resources?fields=assignments,custom_field_values&auth=...'
 ```
 
-Note that custom field values can only be accessed if custom fields are enabled for the account. This is only possible for pro plans and up. See [custom fields](sections/custom fields.md) for details. 
+Note that custom field values can only be accessed if custom fields are enabled for the account. This is only possible for pro plans and up. See [custom fields](/sections/custom fields.md) for details. 
 
 ## Show Placeholder
 
@@ -38,7 +38,7 @@ GET  /api/v1/placeholder_resources/<placeholder_resource_id>
 
 ##### Required Parameters
 
-| `title` |
+* title
 
 ```
 POST  /api/v1/placeholder_resources
@@ -46,19 +46,19 @@ POST  /api/v1/placeholder_resources
              'https://vnext.10000ft.com/api/v1/placeholder_resources?auth=...'
 ```
 
-Placeholders are referred to by title. The title is displayed wherever placeholders appear in the application e.g. on projects, the schedule, etc. Therefore, it is required to specify this parameter.
+Placeholders are referred to by title. The title is displayed wherever placeholders appear in the application e.g., on projects, the schedule, etc. Therefore, it is required to specify this parameter.
 
 ##### Optional Parameters:
 
 | **Parameter** | **Description** |
 | ------------- | --------------- |
-| role | The placeholder's [role](sections/roles.md) in the organization. |
-| discipline | The placeholder's [discipline](sections/disciplines.md). |
+| role | The placeholder's [role](/sections/roles.md) in the organization. |
+| discipline | The placeholder's [discipline](/sections/disciplines.md). |
 | location | The organizational location the placeholder belongs to. |
 
 ##### Parameters not exposed through the API
 
-In the application's user interface, there are certain options available when creating and editing placeholder resources. For example, if a role and discipline are selected, the placeholder title is autopopulated as a combination of discipline and role. Options also exist to upload a thumbnail image for the placeholder, or to choose a color and abbreviation and then auto-generate a thumbnail. These options are currently not available through the API, and can only be used via the front-end UX.
+In the application's user interface, there are certain options available when creating and editing placeholder resources. For example, if a role and discipline are selected, the placeholder title is auto-populated as a combination of discipline and role. For example, a placeholder with discipline 'Engineering' and role 'Director' would be auto-assigned the title 'Engineering, Director'. Options also exist to upload a thumbnail image for the placeholder, or to choose a color and abbreviation and then auto-generate a thumbnail. These options are currently not available through the API, and can only be used via the user interface.
 
 ## Update a Placeholder
 
@@ -82,12 +82,12 @@ DELETE  /api/v1/placeholder_resources/<placeholder_resource_id>
 
 ## Placeholders and Users/People
 
-As noted above, placeholders behave similarly to real users. However, there are some differences. Here we discuss ways in which placeholders can be used similar to users in the API, and ways they are different.
+As noted above, placeholders behave similarly to real users in certain cases. However, there are some key differences. Here we discuss ways in which placeholders can be used similar to users in the API, and ways they are different.
 
 ##### Placeholder Assignments
 
-Assignments can be made, updated, and removed via the [Assignments](sections/assignments.md) API just as they can for users. 
-The only difference is that this is accessed through the placeholder_resources endpoint. In general, for the [Assignments](sections/assignments.md) API, a placeholder resource ID can be used as the user_id parameter.
+Assignments can be made, updated, and removed via the [Assignments](/sections/assignments.md) API just as they can for users. 
+The only difference is that this is accessed through the `placeholder_resources` endpoint. In general, for the [Assignments](/sections/assignments.md) API, a placeholder resource ID can be used as the `user_id` parameter.
 
 ```
 GET  /api/v1/placeholder_resources/<placeholder_resource_id>/assignments
@@ -96,21 +96,21 @@ GET  /api/v1/placeholder_resources/<placeholder_resource_id>/assignments
 
 ##### Placeholder Bill Rates
 
-If a placeholder is given a role/discipline, they will inherit account default bill rates for that role/discipline. Specific bill rates can also be created for placeholders using the [bill rates](sections/bill-rates.md) API. A placeholder ID can be specified as the user_id parameter. No additional parameters are required.
+If a placeholder is given a role/discipline, they will inherit account default bill rates for that role/discipline. Specific bill rates can also be created for placeholders using the [bill rates](/sections/bill-rates.md) API. A placeholder ID can be specified as the user_id parameter. No additional parameters are required.
 
 ##### Placeholder Custom Fields
 
-[Custom fields](sections/custom-fields.md) can be created for placeholders through the application UI. API docs coming soon.
+[Custom fields](/sections/custom-fields.md) can be created for placeholders through the application UI. API docs coming soon.
 
 ##### Not Supported: Time Entries, Expense Items and Tags
 
-Time entries are not supported for placeholders, either through application front-end or via API. When a placeholder is assigned to a project, we will generated scheduled hours based on the type of assignment and update budget projections, so that placeholders can be used for forecasting/projection. However, placeholders do not incur time, and no explicit time entry changes can be made for them. Expense items are similarly not available for placeholders.
+Time entries are not supported for placeholders, either through application front-end or via API. When a placeholder is assigned to a project, the system will generate scheduled hours based on the type of assignment and update budget projections, so that placeholders can be used for forecasting/projection. However, placeholders do not incur time, and no explicit time entry changes can be made for them. Expense items are similarly not available for placeholders.
 
-Tags for placeholders are also not supported. [Custom fields](sections/custom-fields.md) should be used instead.
+Tags for placeholders are also not supported. [Custom fields](/sections/custom-fields.md) should be used instead.
 
 ## Placeholders on a Project
 
-Similar to [users on a project](sections/project-users.md), you can get the placeholder resources assigned to a project using the following API endpoint:
+Similar to [users on a project](/sections/project-users.md), you can get the placeholder resources assigned to a project using the following API endpoint:
 
 ```
 /api/v1/projects/<project_id>/placeholder_resources
