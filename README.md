@@ -6,7 +6,7 @@ The 10,000ft API provides programmatic access to projects, users and time entrie
 
 * [General information](sections/first-things-first.md) (read first)
 * [How to get help or report a problem](sections/getting-help.md)
-* [How to setup a staging environment for testing](sectionsstaging-environment.md)
+* [How to setup a staging environment for testing](sections/staging-environment.md)
 
 # Endpoints
 
@@ -15,6 +15,7 @@ The API provides access to the following data collections in your account via RE
 * [Users](sections/users.md)
   * [User Tags](sections/user-tags.md)
   * Availabilities (coming soon)
+* [Placeholder Resources](sections/placeholders.md)
 * [Projects](sections/projects.md)
   * [Users by Project](sections/project-users.md)
   * [Project Tags](sections/project-tags.md)
