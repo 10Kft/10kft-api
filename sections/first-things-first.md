@@ -128,40 +128,55 @@ Respond with standard HTTP error messages, with 4XX codes to indicate client (ca
 HTTP/1.1 400 Bad Request { "message" : "The request body had invalid json" }
 ```
 
-## Throttling & Limits
+## Throttling & Rate-Limiting
 
-The API currently throttles incoming requests to prevent abuse and ensure fair use. When throttling has been triggered, the affected callers will receive a HTTP response with status `429 Too Many Requests`.
+The API throttles incoming requests to prevent abuse and ensure fair use.
 
-### What to do when being throttled?
+When an application exceeds the rate limit, the API will return a standard HTTP `429 Too Many Requests` response.
 
-Our current recommendation is to implement a progressive back-off approach until your requests start processing normally. The psuedo-code below illustrate a simple scenario which you may adopt to suit your particular case.
+### How to handle being throttled
+
+The specific details of rate limit policies in effect may vary without notice. Application developers should implement detection and handling of rate-limiting behavior using `X-Ratelimit-*` headers described below.
+
+When a request from your application receives a `429 Too many Requests` response, you can check the returned HTTP headers to see your current rate limit status:
+
+```
+X-RateLimit-Limit:120
+X-RateLimit-Remaining:0
+X-RateLimit-Reset:1482966442
+```
+
+The `X-RateLimit-Reset` provides the time at which the current rate limit window resets in UTC epoch seconds.
 
 ```
 // pseudo-code
 
-DELAY = 100
-MULTIPLIER = 1
-
 MAX_RETRIES = 25
 
+retry_count = 0
+
 while(running == true) {
-  response = get_api_response(url)
+  response = get_api_response(request_params)
 
-  // If hitting rate limit, re-try with progressive back off
-  while(retry_count < MAX_RETRIES && response.status == 429) {
+  // if the server throttled the request, re-try until a valid
+  // response is received or a maximum number of re-try attempts
+  // have been reached
+  //
+  while(response.status == 429 && retry_count < MAX_RETRIES) {
+    // extract the Time in X-RateLimit-Reset
+    x_rate_limit_reset_time = get_x_rate_limit_reset(response)
+
+    // wait until the rate limit time window has been reset
+    wait_until(x_rate_limit_reset_time)
+
+    // retry the call
+    response = get_api_response(request_params)
+
     retry_count += 1
-    MULTIPLIER = MULTIPLIER * 2
-
-    sleep(DELAY * MULTIPLIER)
-
-    response = get_api_response(url)
   }
 
   handle_response(response)
 
   retry_count = 0
-  MULTIPLIER = 1
 }
 ```
-
-The API does not expose `X-RateLimit` headers for clients to dynamically adjust their request rates.
