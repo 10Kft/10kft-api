@@ -1,17 +1,18 @@
 # Assignments
 
 ##### Endpoint: `/api/v1/users/<user_id>/assignments`
+##### Endpoint: `/api/v1/projects/<project_id>/assignments`
 
 Assignments connect a [User](users.md) to a [Project](projects.md) or a [Phase](phases.md) (part of a project) or a [LeaveType](leave-types).
 
-## List assignments for a User
+## List assignments for a User or Project
 
 ##### Optional parameters:
 
 | **Parameter** | **Description** |
 | ------------- | --------------- |
-| from |  get projects that start on or after this date |
-| to |  get projects that end on or before this date |
+| from |  get assignments that start on or after this date |
+| to |  get assignments that end on or before this date |
 | per_page, page |  Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first ) |
 
 ```
@@ -20,13 +21,27 @@ GET /api/v1/users/<user_id>/assignments
  curl 'https://vnext.10000ft.com/api/v1/users/1/assignments?auth=..'
 ```
 
-## Show an Assignment for a User
+```
+GET /api/v1/projects/<project_id>/assignments
+
+ curl 'https://vnext.10000ft.com/api/v1/projects/1/assignments?auth=..'
+```
+
+## Show an Assignment for a User or Project
 
 ```
 GET /api/v1/users/<user_id>/assignments/<assignment_id>
 
  curl 'https://vnext.10000ft.com/api/v1/users/1/assignments/456?auth=..'
 ```
+
+```
+GET /api/v1/projects/project_id/assignments/<assignment_id>
+
+ curl 'https://vnext.10000ft.com/api/v1/projects/1/assignments/456?auth=..'
+```
+
+Similarly, in the create and delete examples below, you can all the assignments API on projects specifying a user_id to create an assignment for that user, or to delete an assignment.
 
 ## Create an Assignment
 
