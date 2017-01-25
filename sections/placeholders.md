@@ -102,9 +102,12 @@ If a placeholder is given a role/discipline, they will inherit account default b
 
 [Custom fields](/sections/custom-fields.md) can be created for placeholders through the application UI. API docs coming soon.
 
-##### Not Supported: Time Entries, Expense Items and Tags
+##### Placeholder Time Entries
+Time tracking for placeholders is not supported - i.e. it is not possible to create or edit time entries for a placeholder. However, system-generated suggested entries are supported for placeholders. When a placeholder is assigned to a project, the system will generate scheduled hours based on the type of assignment and update budget projections, so that placeholders can be used for forecasting/projection. However, placeholders do not incur time, and no explicit time entry changes can be made for them. System-generated time entries for placeholders can be viewed via the [time entries](/sections/time-entries.md) API, by passing in the placeholder ID as the user_id parameter, similar to assignments.
 
-Time entries are not supported for placeholders, either through application front-end or via API. When a placeholder is assigned to a project, the system will generate scheduled hours based on the type of assignment and update budget projections, so that placeholders can be used for forecasting/projection. However, placeholders do not incur time, and no explicit time entry changes can be made for them. Expense items are similarly not available for placeholders.
+##### Not Supported: Expense Items and Tags
+
+Expense items are not available for placeholders.
 
 Tags for placeholders are also not supported. [Custom fields](/sections/custom-fields.md) should be used instead.
 
