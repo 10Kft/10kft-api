@@ -30,6 +30,13 @@ The API provides access to the following data collections in your account via RE
 
 * [Custom Fields](sections/custom-fields.md)
 
+## Third party libraries 
+
+A few of our customers have implemented and shared API client libraries to help using the 10Kft API easier. Depending on your scenario, you may benefit from adopting and improving on them. Here are a couple of references,
+
+* Revelry Labs / `ruby` / https://github.com/revelrylabs/tenk
+* Spindance / `ruby` / https://github.com/spindance/ten_thousand_feet
+
 # Questions?
 
 Please don't hesitate to reach out to us via the in-app support feature for questions or suggestions about using the 10,000ft API. We're here to help.
