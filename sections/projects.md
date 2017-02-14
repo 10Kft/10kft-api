@@ -8,7 +8,7 @@ Projects where `archived` is set to `true` cannot be updated. You must first una
 
 ## Project State
 
-`project_state` describes the state of the project (these values are read-only via API):
+`project_state` describes the state of the project:
 
 | Confirmed | Tentative | Internal |
 
