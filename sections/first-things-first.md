@@ -4,6 +4,15 @@ This documentation assumes that you have either signed up for a 10,000ft trial o
 
 We also assume that you are familiar with basic RESTful API concepts.
 
+```
+IMPORTANT
+
+  Use the staging / testing environment for validating your integration.
+  Do not perform stress or performance testing in staging or any other
+  account without informing 10Kft support and obtaining explicit approvals.
+  Violation of this may result in your account being suspended.
+```
+
 ## Being notified about important changes
 
 There are several ways in which you can stay informed about important changes to the API.
