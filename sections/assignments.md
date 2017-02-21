@@ -14,6 +14,7 @@ Assignments connect a [User](users.md) to a [Project](projects.md) or a [Phase](
 | from |  get assignments that start on or after this date |
 | to |  get assignments that end on or before this date |
 | per_page, page |  Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first ) |
+| with_phases	| true to include assignment to phases ( child projects ) |
 
 ```
 GET /api/v1/users/<user_id>/assignments
@@ -41,7 +42,7 @@ GET /api/v1/projects/project_id/assignments/<assignment_id>
  curl 'https://vnext.10000ft.com/api/v1/projects/1/assignments/456?auth=..'
 ```
 
-Similarly, in the create and delete examples below, you can all the assignments API on projects specifying a user_id to create an assignment for that user, or to delete an assignment.
+Similarly, in the create and delete examples below, you can call the assignments API on projects specifying a user_id to create an assignment for that user, or to delete an assignment.
 
 ## Create an Assignment
 
@@ -96,4 +97,4 @@ DELETE /api/v1/users/<user_id>/assignments/<assignment_id>
 }
 ```
 
-**Notes**: `repeition_id` is used for repeated assignments. The value will be NULL when the assignment is not part or a repeating series. `repeition_id` is equal to the parent assignment.
+**Notes**: `repetition_id` is used for repeated assignments. The value will be NULL when the assignment is not part or a repeating series. `repetition_id` is equal to the parent assignment.
