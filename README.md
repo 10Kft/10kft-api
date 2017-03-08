@@ -36,6 +36,7 @@ A few of our customers have implemented and shared API client libraries to help 
 
 * Revelry Labs / `ruby` / https://github.com/revelrylabs/tenk
 * Spindance / `ruby` / https://github.com/spindance/ten_thousand_feet
+* Work & Co / `go` / https://github.com/workco/go-tenkft
 
 # Questions?
 
