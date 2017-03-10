@@ -77,6 +77,8 @@ PUT /api/v1/custom_fields/<custom_field_id>
 | `is_visible_on_info_page` | boolean | boolean value, defaults to `true` |
 | `is_visible_as_filter` | boolean | boolean value, defaults to `false` |
 
+> :warning: When removing a value from `options` that is also the `default_value`, the `default_value` needs to be updated as well.
+
 ### Getting Custom Fields
 ```
 GET /api/v1/custom_fields

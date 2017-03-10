@@ -10,7 +10,7 @@ A user cannot be deleted by the API. A user can be archived by setting the optio
 
 | **Parameter** | **Description** |
 | ------------- | --------------- |
-| fields | A comma separated list of additional fields to include in the response [ "tags", "assignments", "availabilities"] |
+| fields | A comma separated list of additional fields to include in the response [ "tags", "assignments", "availabilities", "custom_field_values" ] |
 | per_page, page | Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first ) |
 | with_archived | true to include deleted/archived users
 
@@ -25,20 +25,23 @@ GET  /api/v1/users
 
 | **Parameter** | **Description** |
 | ------------- | --------------- |
-| fields | A comma separated list of additional fields to include in the response [ "tags", "assignments", "availabilities"] |
+| fields | A comma separated list of additional fields to include in the response [ "tags", "assignments", "availabilities", "custom_field_values"] |
 | per_page, page | Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first ) |
-| archive | true to archive/false to unarchive |
 
 ```
 GET  /api/v1/users/<user_id>
  curl 'https://vnext.10000ft.com/api/v1/users/12345?fields=tags,assignments&auth=...'
 ```
 
-## Create a User
+## Create User
 
-##### Required Parameters
+##### Required Parameters:
 
-| `email` | `first_name` | `last_name` |
+| **Parameter** | **Description** |
+| ------------- | --------------- |
+| `email` | Desired email address for the user |
+| `first_name` | User's first name |
+| `last_name` | User's last name |
 
 ```
 POST  /api/v1/users
@@ -49,6 +52,12 @@ POST  /api/v1/users
 ## Update a User
 
 User specified by `id`
+
+##### Optional Parameters:
+
+| **Parameter** | **Description** |
+| ------------- | --------------- |
+| archive | true to archive/false to unarchive |
 
 ```
 PUT  /api/v1/users/<user_id>
