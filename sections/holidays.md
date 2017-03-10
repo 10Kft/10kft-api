@@ -17,8 +17,8 @@ None.
 | **Name** | **Type** | **Description** | **Optional** | **Readonly** |
 | -------- | -------- | --------------- | ------------ | ------------- |
 | `id` | number | holiday id |  | yes |
-| `date` | date | the date of the holiday | yes | |
-| `name` | string | the name of the holiday | yes | |
+| `date` | date | the date of the holiday |  | yes |
+| `name` | string | the name of the holiday |  | yes |
 | `created_at` | date-time | time of creation | | yes |
 | `updated_at` | date-time | time of last update | | yes |
 
