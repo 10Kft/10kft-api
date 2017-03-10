@@ -25,12 +25,14 @@ The API provides access to the following data collections in your account via RE
 * [Bill Rates](sections/bill-rates.md)
 * [Statuses](sections/user-statuses.md) (_deprecated_)
 * [Time & Expense Approvals](sections/approvals.md)
+* [Holidays](sections/holidays.md)
+
 
 ## Pro & Enterprise Only
 
 * [Custom Fields](sections/custom-fields.md)
 
-## Third party libraries 
+## Third party libraries
 
 A few of our customers have implemented and shared API client libraries to help using the 10Kft API easier. Depending on your scenario, you may benefit from adopting and improving on them. Here are a couple of references,
 
