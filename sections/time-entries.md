@@ -33,6 +33,7 @@ Time entries by user
 ```
 GET /api/v1/users/<user_id>/time_entries
 GET /api/v1/users/<user_id>/time_entries/<id>
+GET /api/v1/users/<user_id>/time_entries?from=2017-03-14&to=2017-03-21  # user's time entries for given date-range 
 ```
 
 Time entries by project
@@ -40,6 +41,7 @@ Time entries by project
 ```
 GET /api/v1/projects/<project_id>/time_entries
 GET /api/v1/projects/<project_id>/time_entries/<id>
+GET /api/v1/projects/<project_id>/time_entries?from=2017-03-14&to=2017-03-21  # project's time entries for given date-range 
 ```
 
 All time entries in the account
@@ -47,15 +49,18 @@ All time entries in the account
 ```
 GET /api/v1/time_entries
 GET /api/v1/time_entries/<id>
+GET /api/v1/time_entries?from=2017-03-14&to=2017-03-21  # all time entries for given date-range
 ```
 
 ### Optional Query Parameters:
 
-| **Name** | **Description** |
-| ------------- | --------------- |
-| from | get projects that start on or after this date |
-| to | get projects that end on or before this date |
-| with_suggestions | true to include suggested (unconfirmed) time entries based on assignments on the schedule |
+| **Name** | **Description** | format |
+| ------------- | --------------- | --------------- |
+| from | get projects that start on or after this date | &from=2017-03-14 |
+| to | get projects that end on or before this date | &to=2017-03-21 |
+| with_suggestions | true to include suggested (unconfirmed) time entries based on assignments on the schedule | &with_suggestions=true |
+
+> IMPORTANT: *to* and *from* _must_ be a valid date formatted as `yyyy-mm-dd`
 
 **Creating Time Entries**
 
@@ -63,13 +68,14 @@ When creating time entries, a valid user_id, assignable_id, date and hours must 
 
 You can optionally specify values for `task` and `notes`. If you know a valid `bill_rate_id` matching the user and project of the time entry, you can specify that at the time of creating a time entry as well.
 
+
 ```
 POST /api/v1/users/<user_id>/time_entries
 
 {
   "user_id": <user_id>,
   "assignable_id": 1001,
-  "date": "2012-01-01",
+  "date": "2012-01-21",
   "hours": 0.5,
   "task": 'Travel',
   "notes": 'Drive to Seattle, WA to meet with 10Kft'
