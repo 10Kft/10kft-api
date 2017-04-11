@@ -15,15 +15,20 @@ Expense items are reported by a user on a project or leave type.
 | per_page, page | Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first ) |
 
 ```
+```
+
+## Expenses by User
+
+```
 GET /api/v1/users/<user_id>/expense_items
-curl 'https://vnext.10000ft.com/api/v1/users/1/expense_items?auth=...'
+GET /api/v1/users/<user_id>/expense_items/<id>
 ```
 
-## Show an Expense Item For a User
+## Expenses by Project
 
 ```
-GET /api/v1/users/<user_id>/expense_items/<expense_items_id>
-curl 'https://vnext.10000ft.com/api/v1/users/1/expense_items/123
+GET /api/v1/projects/<project_id>/expense_items
+GET /api/v1/projects/<project_id>/expense_items/<id>
 ```
 
 ## Create Expense Item
@@ -34,26 +39,18 @@ When creating expense items, at least date and amount need to be specified. Proj
 
 ```
 POST /api/v1/users/<user_id>/expense_items
-curl -d 'project_id=1&date=2013-10-10&amount=100' \
-    'https://vnext.10000ft.com/api/v1/users/1/expense_items'
-alt. curl -d 'date=2013-10-15&expense_items=100' \
-    'https://vnext.10000ft.com/api/v1/projects/987/users/1/expense_items'
 ```
 
 ## Update an Expense Item
 
 ```
 PUT /api/v1/projects/<project_id>/users/<user_id>/expense_items/<expense_item_id>
-curl -XPUT -d "amount=100"
-     'href="https://vnext.10000ft.com/api/v1/projects/5/users/1/expense_items/123
 ```
 
 ## Delete an Expense Item
 
 ```
- DELETE /api/v1/users/<user_id>/expense_items/<expense_items_id>
-curl -XDELETE
-    'https://vnext.10000ft.com/api/v1/users/5/expense_items/123'
+DELETE /api/v1/users/<user_id>/expense_items/<expense_items_id>
 ```
 
 ## Sample Response
