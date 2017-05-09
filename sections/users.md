@@ -65,6 +65,22 @@ PUT  /api/v1/users/<user_id>
              'https://vnext.10000ft.com/api/v1/users/12345?auth=...'
 ```
 
+## User Permission Levels
+
+Information about a user's permission level is contained in the user_type_id property in the API response. This value is an integer that can be interpreted as follows:
+
+| **user_type_id** | **Permission level** |
+| ------------- | --------------- |
+| 0 | None |
+| 1 | Administrator |
+| 2 | Project Manager |
+| 3 | Team Member |
+| 4 | Restricted Team Member |
+| 5 | Contractor |
+| 7 | Scheduler |
+
+Values not included in this list are reserved for internal/future use.
+
 ## Sample Response
 
 ```
