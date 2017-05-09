@@ -79,7 +79,7 @@ Information about a user's permission level is contained in the user_type_id pro
 | 5 | Contractor |
 | 7 | Scheduler |
 
-Values not included in this list are reserved for internal/future use.
+Values not included in this list are reserved for internal/future use. Setting the permission level via API is not supported, and can only be done through application UI.
 
 ## Sample Response
 
