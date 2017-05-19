@@ -124,8 +124,8 @@ POST /api/v1/users/<user_id>/custom_field_values
 
 ### Updating Custom Field Values
 ```
-PUT /api/v1/projects/<project_id>/custom_field_values
-PUT /api/v1/users/<user_id>/custom_field_values
+PUT /api/v1/projects/<project_id>/custom_field_values/<id>
+PUT /api/v1/users/<user_id>/custom_field_values/<id>
 ```
 ##### Editable parameters:
 
