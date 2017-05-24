@@ -41,12 +41,12 @@ POST /api/v1/users/<user_id>/availabilities
 | `starts_at` | date | effective start date for the availability block | yes | |
 | `ends_at` | date | effective end date for the availability block | yes | |
 | `day0` | number | available hours on day0 of the week | | |
-| `day1` | number | available hours on day0 of the week | | |
-| `day2` | number | available hours on day0 of the week | | |
-| `day3` | number | available hours on day0 of the week | | |
-| `day4` | number | available hours on day0 of the week | | |
-| `day5` | number | available hours on day0 of the week | | |
-| `day6` | number | available hours on day0 of the week | | |
+| `day1` | number | available hours on day1 of the week | | |
+| `day2` | number | available hours on day2 of the week | | |
+| `day3` | number | available hours on day3 of the week | | |
+| `day4` | number | available hours on day4 of the week | | |
+| `day5` | number | available hours on day5 of the week | | |
+| `day6` | number | available hours on day6 of the week | | |
 | `created_at` | date-time | time of creation | | yes |
 | `updated_at` | date-time | time of last update | | yes |
 
@@ -58,19 +58,18 @@ See more examples below.
 An availability block should have the following JSON structure:
 
 ```
+
 {
   "id": 52,
   "user_id": 269,
   "starts_at": "2017-01-30",
   "ends_at": "2017-07-28",
-  "days": [
-    0,
-    8,
-    8,
-    8,
-    4,
-    8,
-    0
-  ]
+  "day0": 0,
+  "day1": 8,
+  "day2": 8,
+  "day3": 4,
+  "day4": 8,
+  "day5": 8,
+  "day6": 0,
 }
 ```
