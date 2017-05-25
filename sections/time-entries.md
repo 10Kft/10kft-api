@@ -1,4 +1,4 @@
-# Time Entries by User
+# Time Entries
 
 Time Entries are a collection of hours tracked per project and user. There are two main kinds of time_entries.
 
@@ -7,10 +7,6 @@ Time Entries are a collection of hours tracked per project and user. There are t
 Suggested time entries (also know as unconfirmed time entries) are created by 10,000ft as a result of resources being assigned to a project. These are identifiable by the `is_suggestion: true` attribute on the time entry objects. Suggested time entries are not returned by the API by default and must be requested using the `with_suggestions=true` parameter on the GET API call to fetch time entries.
 
 Suggested time entries are read-only and are kept up to date by 10Kft as the corresponding assignments are updated.
-
-```
-GET /api/v1/users/<user_id>/time_entries?with_suggestions=true
-```
 
 ## Confirmed time entries.
 
@@ -24,32 +20,52 @@ Note that just like in the application UI, you cannot create new confirmed time 
 
 Time entries have an associated bill rate attached to them. When a new time entry is created, 10Kft will determine the appropriate bill rate for it (based on your account and project settings) and assign a values. When reading time entries, you can see this assigned bill rate.
 
+## Fields
+
+| **Name** | **Type** | **Description** | **Optional** | **Readonly** |
+| -------- | -------- | --------------- | ------------ | ------------- |
+| `id` | number | Time entry id |  | yes |
+| `user_id` | number | User or resource id |  |  |
+| `assignable_id` | number | Project or leave type id |  |  |
+| `assignable_type` | string | Project or LeaveType |  |  |
+| `date` | date | The date |  |  |
+| `hours` | number | Number of hours confirmed |  |  |
+| `is_suggestion` | boolean | Is this a suggested time entry |  | yes |
+| `scheduled_hours` | number | Number of hours scheduled (if this is a suggested time entry) |  |  |
+| `task` | string | A task category | yes |  |
+| `notes` | string | A note | yes |  |
+| `bill_rate` | number | The hourly rate for the time entered |  |  |
+| `bill_rate_id` | number | The rate id reference |  |  |
+| `created_at` | date-time | time of creation | | yes |
+| `updated_at` | date-time | time of last update | | yes |
+
 ## Endpoints:
 
-**Reading time entries**
-
-Time entries by user
-
 ```
+# Time entries by user
 GET /api/v1/users/<user_id>/time_entries
 GET /api/v1/users/<user_id>/time_entries/<id>
-GET /api/v1/users/<user_id>/time_entries?from=2017-03-14&to=2017-03-21  # user's time entries for given date-range 
-```
 
-Time entries by project
+# Time entries for given date-range
+GET /api/v1/users/<user_id>/time_entries?from=2017-03-14&to=2017-03-21  
 
-```
+# Time entries by project
 GET /api/v1/projects/<project_id>/time_entries
 GET /api/v1/projects/<project_id>/time_entries/<id>
-GET /api/v1/projects/<project_id>/time_entries?from=2017-03-14&to=2017-03-21  # project's time entries for given date-range 
-```
 
-All time entries in the account
-
-```
+# All time entries in the account
 GET /api/v1/time_entries
 GET /api/v1/time_entries/<id>
-GET /api/v1/time_entries?from=2017-03-14&to=2017-03-21  # all time entries for given date-range
+
+# Time entries for given date-range
+GET /api/v1/time_entries?from=2017-03-14&to=2017-03-21  
+
+# Updating a time entry
+PUT /api/v1/users/<user_id>/time_entries/id
+
+# Deleting a time entry
+DELETE /api/v1/users/<user_id>/time_entries/id
+
 ```
 
 ### Optional Query Parameters:
@@ -62,12 +78,11 @@ GET /api/v1/time_entries?from=2017-03-14&to=2017-03-21  # all time entries for g
 
 > IMPORTANT: *to* and *from* _must_ be a valid date formatted as `yyyy-mm-dd`
 
-**Creating Time Entries**
+### Creating Time Entries
 
 When creating time entries, a valid user_id, assignable_id, date and hours must be supplied. Assignable id can be `assignable_id`, `project_id` or `leave_type_id`.
 
 You can optionally specify values for `task` and `notes`. If you know a valid `bill_rate_id` matching the user and project of the time entry, you can specify that at the time of creating a time entry as well.
-
 
 ```
 POST /api/v1/users/<user_id>/time_entries
@@ -93,14 +108,6 @@ POST /api/v1/projects/<project_id>/time_entries
   "date": "2012-01-01",
   "hours": 4.0,
 }
-```
-
-**Other RESTful operations**
-
-```
-PUT /api/v1/users/<user_id>/time_entries/id
-
-DELETE /api/v1/users/<user_id>/time_entries/id
 ```
 
 ## Examples
