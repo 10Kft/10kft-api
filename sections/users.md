@@ -1,73 +1,60 @@
 # Users
 
-##### Endpoint: `/api/v1/users`
+The users collection allows you to access information about all users in the API.
 
-A user cannot be deleted by the API. A user can be archived by setting the optional parameter archived to true, it can also be unarchived by setting the optional parameter archived to false. You cannot archive the account owner.
-
-## List Users (index)
-
-##### Optional Parameters:
-
-| **Parameter** | **Description** |
-| ------------- | --------------- |
-| fields | A comma separated list of additional fields to include in the response [ "tags", "assignments", "availabilities", "custom_field_values" ] |
-| per_page, page | Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first ) |
-| with_archived | true to include deleted/archived users
+## Endpoints
 
 ```
-GET  /api/v1/users
- curl 'https://vnext.10000ft.com/api/v1/users?fields=tags,assignments&auth=...'
+GET /api/v1/users
+
+GET /api/v1/users/<id>
+
+PUT /api/v1/users/<id>
+
+POST /api/v1/users
 ```
 
-## Show User
+## Fields:
 
-##### Optional Parameters:
+| **Name** | **Type** | **Description** | **Optional** | **Readonly** |
+| -------- | -------- | --------------- | ------------ | ------------- |
+| `id` | number | availability block id |  | yes |
+| `first_name` | string | The first name |  |  |
+| `last_name` | string | The last name |  |  |
+| `display_name` | string | The display name |  | yes |
+| `email` | string | The first name |  |  |
+| `user_type_id` | number | The role of the user (see below) |  | yes |
+| `billable` | boolean | reserved |  |  |
+| `hire_date` | date | Date user was hired | yes |  |
+| `termination_date` | date | Date user was terminated | yes |  |
+| `mobile_phone` | string | A phone number | yes |  |
+| `office_phone` | string | A phone number | yes |  |
+| `archived` | boolean | The user has been archived |  |  |
+| `archived_at` | date-time | When the user was archived | yes | yes |
+| `deleted` | boolean | deprecated |  |  |
+| `archived_at` | date-time | deprecated |  | yes |
+| `account_owner` | boolean | Is this user the account owner | yes | yes |
+| `invitation_pending` | boolean | reserved | yes | yes |
+| `user_settings` | string | reserved | yes |  |
+| `guid` | string | Unique id of the user |  | yes |
+| `employee_number` | string | The employee number | yes |  |
+| `role` | string | The role | yes |  |
+| `discipline` | string | The discipline | yes |  |
+| `location` | string | The location | yes |  |
+| `type` | string | reserved |  | yes |
+| `has_login` | boolean | The user has setup a login |  | yes |
+| `login_type` | string | reserved |  | yes |
+| `thumbnail` | string | A url to a user profile image | yes | yes |
+| `created_at` | date-time | time of creation | | yes |
+| `updated_at` | date-time | time of last update | | yes |
 
-| **Parameter** | **Description** |
-| ------------- | --------------- |
-| fields | A comma separated list of additional fields to include in the response [ "tags", "assignments", "availabilities", "custom_field_values"] |
-| per_page, page | Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first ) |
+### Deleting vs Archiving
 
-```
-GET  /api/v1/users/<user_id>
- curl 'https://vnext.10000ft.com/api/v1/users/12345?fields=tags,assignments&auth=...'
-```
+A user cannot be deleted via the API but they may be archived by setting the optional parameter archived to true while updating a user. It can also be unarchived by setting the optional parameter archived to false. You cannot archive the account owner.
 
-## Create User
+### User Type
 
-##### Required Parameters:
-
-| **Parameter** | **Description** |
-| ------------- | --------------- |
-| `email` | Desired email address for the user |
-| `first_name` | User's first name |
-| `last_name` | User's last name |
-
-```
-POST  /api/v1/users
- curl -d 'first_name=John&last_name=Smith&email=john@sample.com' \
-             'https://vnext.10000ft.com/api/v1/users?auth=...'
-```
-
-## Update a User
-
-User specified by `id`
-
-##### Optional Parameters:
-
-| **Parameter** | **Description** |
-| ------------- | --------------- |
-| archive | true to archive/false to unarchive |
-
-```
-PUT  /api/v1/users/<user_id>
- curl -XPUT -d 'first_name=Bob' \
-             'https://vnext.10000ft.com/api/v1/users/12345?auth=...'
-```
-
-## User Permission Levels
-
-Information about a user's permission level is contained in the user_type_id property in the API response. This value is an integer that can be interpreted as follows:
+Information about a user's role is contained in the user_type_id property.
 
 | **user_type_id** | **Permission level** |
 | ------------- | --------------- |
@@ -79,44 +66,44 @@ Information about a user's permission level is contained in the user_type_id pro
 | 5 | Contractor |
 | 7 | Scheduler |
 
-Values not included in this list are reserved for internal/future use. Setting the permission level via API is not supported, and can only be done through application UI.
+Values not described in this list are reserved for internal/future use.
+
+Setting the user_type_id via API is not supported.
 
 ## Sample Response
 
 ```
 {
-  "data": [
-            {
-               "id": 1,
-               "account_owner": true,
-               "billability_target": 100.0,
-               "billable": true, "billrate": -1.0,
-               "deleted": false,
-               "deleted_at": null, # deprecated see archived_at
-               "archived_at": null,
-               "discipline": null,
-               "display_name": "Mark van Tilburgh", # read only
-               "email": "claes@example.com",
-               "employee_number": null,
-               "first_name": "Mark",
-               "guid": "40195EEC-2E47-403D-9E48-5B99A25FD2F9",
-               "hire_date": "2011-11-21",
-               "invitation_pending": false,
-               "last_name": "van Tilburgh",
-               "location": null,
-               "mobile_phone": null,
-               "office_phone": null,
-               "role": null,
-               "termination_date": null,
-               "thumbnail": "",
-             }
-          ],
-  "paging": {
-             "next": null,
-             "page": 1,
-             "per_page": 20,
-             "previous": null,
-             "self": "/api/v1/users?per_page=20&page=1"
-           }
+  "id": 1,
+  "first_name": "Chris",
+  "last_name": "James",
+  "display_name": "Chris James",
+  "email": "chris@example.com",
+  "user_type_id": 1,
+  "billable": true,
+  "hire_date": null,
+  "termination_date": null,
+  "mobile_phone": null,
+  "office_phone": null,
+  "archived": false,
+  "archived_at": null,
+  "deleted": false,
+  "deleted_at": null,
+  "account_owner": false,
+  "invitation_pending": false,
+  "user_settings": 1376392,
+  "guid": "96d769c7-1b4e-4b07-8baf-5ed6f2b915aa",
+  "employee_number": null,
+  "role": "Senior",
+  "discipline": "Program Management",
+  "location": "Seattle",
+  "type": "User",
+  "billability_target": 100,
+  "billrate": -1,
+  "has_login": true,
+  "login_type": "saml",
+  "thumbnail": ""
+  "created_at": "2015-11-13T20:38:10Z",
+  "updated_at": "2015-11-13T20:38:10Z"
 }
 ```
