@@ -4,7 +4,7 @@
 
 ## List Users for a given Project
 
-Users are associated to a project by [Assignments](assignments).
+Users are associated to a project by [Assignments](assignments.md).
 
 ##### Optional Parameters:
 
