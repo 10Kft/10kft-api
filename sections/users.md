@@ -18,7 +18,7 @@ POST /api/v1/users
 
 | **Name** | **Type** | **Description** | **Optional** | **Readonly** |
 | -------- | -------- | --------------- | ------------ | ------------- |
-| `id` | number | availability block id |  | yes |
+| `id` | number | the user id |  | yes |
 | `first_name` | string | The first name |  |  |
 | `last_name` | string | The last name |  |  |
 | `display_name` | string | The display name |  | yes |
