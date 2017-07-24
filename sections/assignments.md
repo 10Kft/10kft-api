@@ -11,8 +11,8 @@ Assignments connect a [User](users.md) to a [Project](projects.md) or a [Phase](
 
 | **Parameter** | **Description** |
 | ------------- | --------------- |
-| from |  get assignments that start on or after this date |
-| to |  get assignments that end on or before this date |
+| from |  get assignments that end after this date |
+| to |  get assignments that start before this date |
 | per_page, page |  Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first ) |
 | with_phases	| true to include assignment to phases ( child projects ) |
 
