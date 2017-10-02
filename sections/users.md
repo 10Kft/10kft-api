@@ -50,7 +50,7 @@ POST /api/v1/users
 
 ### Deleting vs Archiving
 
-A user cannot be deleted via the API but they may be archived by setting the optional parameter archived to true while updating a user. It can also be unarchived by setting the optional parameter archived to false.
+A user cannot be deleted via the API but they may be archived by setting the optional parameter archived to true while updating a user. It can also be unarchived by setting the optional parameter archived to false. You cannot archive the account owner.
 
 ### User Type
 
