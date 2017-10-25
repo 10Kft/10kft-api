@@ -32,6 +32,12 @@ The API provides access to the following data collections in your account via RE
 
 * [Custom Fields](sections/custom-fields.md)
 
+## API integration case studies
+
+Some case studies of our customers using our API to build new tools and applications using the 10Kft API.
+
+  * [Fancy Pants Group](https://www.10000ft.com/blog/fancy-pants-group-case-study), a digital creative studio based in New York, recently used our API to develop and launch a custom project importer cheekily called Job the Builder. Their goal is to make it easy for everyone on their 100-person team to see and communicate consistent data across multiple tools.
+  
 ## Third party libraries
 
 A few of our customers have implemented and shared API client libraries to help using the 10Kft API easier. Depending on your scenario, you may benefit from adopting and improving on them. Here are a couple of references,
