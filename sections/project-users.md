@@ -12,6 +12,7 @@ Users are associated to a project by [Assignments](assignments.md).
 | ------------- | --------------- |
 | fields | A comma separated list of additional fields to include in the response, optional values [ "tags", "assignments", "availabilities"] |
 | per_page, page | Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first ) |
+| with_phases |	If set to `true`, includes users who are assigned to phases ( child projects ) |
 
 ## List Users
 
