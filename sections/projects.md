@@ -99,28 +99,72 @@ Dates need to be in UTC
 ## Sample Response
 
 ```
-{
-  "archived": false,
-  "client": "ABCDE",
-  "created_at": "2013-09-12T04:32:28Z",
-  "deleted_at": null, # deprecated look at "archived_at"
-  "archived_at": null,
-  "description": null,
-  "ends_at": "2013-09-18",
-  "guid": "52b13423-9185-4ed6-9992-ae9ebe8ff204",
-  "has_pending_updates": true, # only appears in show, not index calls
-  "id": 4,
-  "name": "Klaras Birthday",
-  "parent_id": null,
-  "phase_name": null,
-  "project_code": "",
-  "project_state": "Confirmed",
-  "secureurl": null,
-  "secureurl_expiration": null,
-  "settings": 0,
-  "starts_at": "2013-09-11",
-  "thumbnail": null,
-  "timeentry_lockout": -1,
-  "updated_at": "2013-09-12T04:32:28Z"
+GET  https://api.10000ft.com/api/v1/projects/<project_id>?fields=tags,summary,children,has_pending_updates&today=27-07-2016&per_page=100000&auth=<token>
+```
+
+{  
+  "id":821065,
+  "archived":false,
+  "archived_at":null,
+  "description":"",
+  "guid": "xxxx-xxxx-xxxx-xxxx-xxxx-xxxx",
+  "name":"10K Example for Wayne",
+  "parent_id":null,
+  "phase_name":null,
+  "project_code":"",
+  "secureurl":"https://10kftprojectimages.s3.amazonaws.com/a62ffd30-316f-4cb6-9c7f-eca45d07a35d/499af1a7-bc6b-446f-8535-4472e6159246.png",
+  "secureurl_expiration":"3000-01-01T00:00:00Z",
+  "settings":0,
+  "timeentry_lockout":-1,
+  "ends_at":"2015-12-31",
+  "starts_at":"2015-01-01",
+  "deleted_at":null,
+  "created_at":"2015-11-06T18:00:40Z",
+  "updated_at":"2016-04-19T18:21:16Z",
+  "use_parent_bill_rates":false,
+  "thumbnail":"https://10kftprojectimages.s3.amazonaws.com/a62ffd30-316f-4cb6-9c7f-eca45d07a35d/499af1a7-bc6b-446f-8535-4472e6159246.png",
+  "type":"Project",
+  "has_pending_updates":false,
+  "client":null,
+  "project_state":"Internal",
+  "tags":{  
+    "paging":{  
+      "self":"/api/v1/projects/821065/tags?per_page=1&page=1",
+      "next":null,
+      "previous":null,
+      "page":1,
+      "per_page":1
+    },
+    "data":[  
+      {  
+        "id":1207009,
+        "value":"Sales"
+      }
+    ]
+  },
+  "children":{  
+    "paging":{  
+      "self":"/api/v1/projects/821065/tags?per_page=100000&page=1",
+      "next":null,
+      "previous":null,
+      "page":1,
+      "per_page":100000
+    },
+    "data":[  
+
+    ]
+  },
+  "bounding_startdate":"2015-01-01",
+  "bounding_enddate":"2016-07-01",
+  "confirmed_hours":1283.600000000003,
+  "confirmed_dollars":160450.0,
+  "approved_hours":0,
+  "approved_dollars":0,
+  "unconfirmed_hours":87.60000000000002,
+  "unconfirmed_dollars":10950.0,
+  "scheduled_hours":1322.400000000003,
+  "scheduled_dollars":165300.0,
+  "future_hours":0,
+  "future_dollars":0
 }
 ```
