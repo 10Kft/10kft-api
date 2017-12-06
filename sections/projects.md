@@ -62,6 +62,14 @@ GET  /api/v1/projects/<project_id>
 GET  /api/v1/projects?sort_field=created&sort_order=ascending
 ```
 
+
+### List projects with archives
+```
+GET  /api/v1/projects?fields=tags,budget_items&with_archived=true
+```
+
+Notes: Set `with_archived` to true to include deleted/archived projects in searches. Set `archived` to true to archive a project. Set `archived` to false to unarchive a project.
+
 ## Create a project
 
 ```
