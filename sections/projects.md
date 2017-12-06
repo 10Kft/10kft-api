@@ -42,6 +42,13 @@ Projects where `archived` is set to `true` cannot be updated. You must first una
 GET  /api/v1/projects?fields=tags,budget_items
 ```
 
+## List projects with archived
+```
+GET  /api/v1/projects?fields=tags,budget_items&with_archived=true
+```
+
+Notes: Set `with_archived` to true to include archived projects in searches. Set `archived` to true to archive a project. Set `archived` to false to unarchive a project.
+
 ## Filter projects
 
 ```
