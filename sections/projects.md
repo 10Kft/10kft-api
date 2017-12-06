@@ -63,7 +63,7 @@ GET  /api/v1/projects?sort_field=created&sort_order=ascending
 ```
 
 
-### List projects with archives
+## List projects with archives
 ```
 GET  /api/v1/projects?fields=tags,budget_items&with_archived=true
 ```
