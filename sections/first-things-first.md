@@ -4,15 +4,14 @@ This documentation assumes that you have either signed up for a 10,000ft trial o
 
 We also assume that you are familiar with basic RESTful API concepts.
 
-```
-  IMPORTANT
+⚠️⚠️
+**NOTE:** Many of the APIs used by the 10,000ft web applicaiton are internal APIs only, and are not indended for public use. In many cases, they are highly specialized and may behave unpredictably, and change or break without warning. We do not offer support for integrations with APIs intended for internal use.
+⚠️⚠️
 
-  Use the staging / testing environment for validating your integration.
-  Do not perform stress or performance testing in staging or any other
-  account without informing 10,000ft support and obtaining explicit
-  approval. Violation of this may result in your account being
-  suspended.
-```
+## 🚨🚨🚨 IMPORTANT 🚨🚨🚨
+Use the staging / testing environment for validating your integration. Do not perform stress or performance testing in staging or any other account without informing 10,000ft support and obtaining explicit approval. Violation of this may result in your account being suspended.
+
+
 
 ## Being notified about important changes
 
