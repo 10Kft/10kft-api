@@ -10,7 +10,7 @@ The 10,000ft API provides programmatic access to projects, users and time entrie
 
 # Need help?
 
-* Email questions on using the API support@10000ft.com 
+* Email questions to support@10000ft.com 
 * Have a suggestion for improving our API documentation? Send us a pull-request or email support.
 
 # Endpoints
