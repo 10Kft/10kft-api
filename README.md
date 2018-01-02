@@ -5,12 +5,12 @@ The 10,000ft API provides programmatic access to projects, users and time entrie
 # Overview
 
 * [General information](sections/first-things-first.md) (read first)
-* [How to get help or report a problem](sections/getting-help.md)
 * [How to setup a staging environment for testing](sections/staging-environment.md)
 
 # Need help?
 
-* Email questions to support@10000ft.com 
+* Email questions to support@10000ft.com
+  * Read more on how to report a problem [here](sections/getting-help.md).
 * Have a suggestion for improving our API documentation? Send us a pull-request or email support.
 
 # Endpoints
