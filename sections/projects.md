@@ -24,7 +24,7 @@ Projects where `archived` is set to `true` cannot be updated. You must first una
 | ------------- | --------------- |
 | from | get projects that start on or after this date |
 | to | get projects that end on or before this date |
-| fields | a comma separated list, optional values [ "tags", "budget_items", "project_state" , "phase_count", "summary", "custom_field_values" ] Will add additional fields to the output |
+| fields | a comma separated list, optional values [ "children", "tags", "budget_items", "project_state" , "phase_count", "summary", "custom_field_values" ] Will add additional fields to the output |
 | filter_field | Specifies the property to filter on. "project_state" is the only supported value |
 | filter_list | The value of "filter_field" to match, outputs will be projects with state matching this value. Possible values: Internal, Tentative, Confirmed |
 | sort_field | Field to sort the return document. Possible values: created or updated |
@@ -49,6 +49,12 @@ GET  /api/v1/projects?fields=tags,budget_items&with_archived=true
 
 Notes: Set `with_archived` to true to include archived projects in searches. Set `archived` to true to archive a project. Set `archived` to false to unarchive a project.
 
+## List projects with sorting
+
+```
+GET  /api/v1/projects?sort_field=created&sort_order=ascending
+```
+
 ## Filter projects
 
 ```
@@ -63,10 +69,10 @@ Notes: `project_state` is the only supported filter field at present.
 GET  /api/v1/projects/<project_id>
 ```
 
-## List projects with sorting
+## Show a project with its phases
 
 ```
-GET  /api/v1/projects?sort_field=created&sort_order=ascending
+GET  /api/v1/projects/<project_id>?fields=children
 ```
 
 ## Create a project
