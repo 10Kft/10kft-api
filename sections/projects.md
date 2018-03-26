@@ -10,7 +10,9 @@ Projects where `archived` is set to `true` cannot be updated. You must first una
 
 `project_state` describes the state of the project:
 
-| Confirmed | Tentative | Internal |
+- Confirmed
+- Tentative
+- Internal
 
 ## Locking Time Entries
 
@@ -22,8 +24,9 @@ Projects where `archived` is set to `true` cannot be updated. You must first una
 
 | **Parameter** | **Description** |
 | ------------- | --------------- |
-| from | get projects that start on or after this date |
-| to | get projects that end on or before this date |
+| from | get projects that end on or after this date |
+| to | get projects that start on or before this date |
+| strict | set to `true` to restrict the projects to only those contained entirely within the `from` and `to` params |
 | fields | a comma separated list, optional values [ "children", "tags", "budget_items", "project_state" , "phase_count", "summary", "custom_field_values" ] Will add additional fields to the output |
 | filter_field | Specifies the property to filter on. "project_state" is the only supported value |
 | filter_list | The value of "filter_field" to match, outputs will be projects with state matching this value. Possible values: Internal, Tentative, Confirmed |
