@@ -1,6 +1,6 @@
 # Reports API
 
-The `reports` endpoints allow you to generate report rows or totals by specifying the parameters of a report in a `POST` request. The response is a JSON representation of the report rows or totals as seen in the reports UI.
+The `reports` endpoints allow you to generate report rows or totals by specifying the parameters of a report in the JSON payload of a `POST` request. The response is a JSON representation of the report rows or totals as seen in the reports UI.
 
 ## Endpoints
 
@@ -20,6 +20,60 @@ With the exception of `today` and `calc_incurred_using`, each of the following p
 | `today` | string | the date on which "future scheduled" begins, in `YYYY-MM-DD` format | current UTC date |
 | `calc_incurred_using` | string | one of `confirmed-unconfirmed`, `confirmed`, or `approved` | `"confirmed-unconfirmed"` |
 
+#### Example Request Params:
+
+```js
+// POST /api/v1/reports/rows
+{
+  "view": "time_fees_hours",
+  "time_frame": "this_week",
+  "group_by": ["project_id", "user_id"],
+  "filters": {
+    "client": {
+      "operation": "inclusion",
+      "values": ["Mango Inc."]
+    },
+    "people_tags": {
+      "operation": "exclusion",
+      "values": ["intern"]
+    }
+  },
+  "today": "2018-03-28",
+  "calc_incurred_using": "confirmed-unconfirmed"
+}
+```
+
+#### Example Response:
+
+```js
+{
+  "params": {
+    "view": "time_fees_hours",
+    // ... Other request params
+  },
+  "dates": {
+    "today": "2018-03-28",
+    "range": {
+      "from": "2018-03-26",
+      "to": "2018-04-01"
+    }
+  },
+  "rows": [
+    {
+      "project_id": 1771900,
+      "project_name": "Design Planning & Management",
+      "user_id": 200088,
+      "user_name": "Bobby Taleb",
+      "incurred_hours": 6,
+      "scheduled_hours": 10,
+      "difference_from_past_scheduled_hours": 0,
+      "future_scheduled_hours": 4,
+      "total_hours": 10
+    },
+    // ... More rows
+  ]
+}
+```
 
 ## `view`
 
@@ -46,7 +100,16 @@ There are currently ten supported views, which correspond to the reports availab
 
 ## `time_frame`
 
-The time frame of a report is specified as an object with "from" and "to" attributes that each specify a date in the format YYYY-MM-DD. There are also several shortcut strings for common time frames.
+The time frame of a report is specified as an object with "from" and "to" attributes that each specify a date in the format YYYY-MM-DD.
+
+```js
+"time_frame": {
+  "from": "2018-01-01",
+  "to": "2018-12-31"
+}
+```
+
+There are also several shortcut strings for common time frames.
 
 - `this_week`
 - `this_month`
@@ -65,6 +128,12 @@ The time frame of a report is specified as an object with "from" and "to" attrib
 - `last_and_next_90`
 
 ## `group_by`
+
+The `group_by` param is an array of strings that specify which attributes to group and sort rows by. Note that, while the reports UI restricts grouping to 2 levels, the API currently allows up to 5 levels.
+
+```js
+"group_by": ["client", "phase_name", "user_id", "date"]
+```
 
 The following are all the valid attributes that rows can be grouped by. Note that utilization reports have an additional restriction such that rows can only be grouped by user attributes or date attributes.
 
