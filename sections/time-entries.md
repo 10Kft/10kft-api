@@ -82,7 +82,7 @@ DELETE /api/v1/users/<user_id>/time_entries/id
 
 When creating time entries, a valid user_id, assignable_id, date and hours must be supplied. Assignable id can be `assignable_id`, `project_id` or `leave_type_id`.
 
-You can optionally specify values for `task` and `notes`, which must be less than 256 characters in length. If you know a valid `bill_rate_id` matching the user and project of the time entry, you can specify that at the time of creating a time entry as well.
+You can optionally specify values for `task` and `notes`, which must be fewer than 256 characters in length. If you know a valid `bill_rate_id` matching the user and project of the time entry, you can specify that at the time of creating a time entry as well.
 
 ```
 POST /api/v1/users/<user_id>/time_entries
