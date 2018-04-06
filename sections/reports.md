@@ -17,8 +17,8 @@ With the exception of `today` and `calc_incurred_using`, each of the following p
 | [`time_frame`](#time_frame) | object or string | a custom time frame object or the name of the time frame | `"this_week"` |
 | [`group_by`](#group_by) | array of strings | the attributes to group rows by | `["project_id"]` (or `["user_id"]` for utilization) |
 | [`filters`](#filters) | object of objects | the attributes and values to include or exclude | `null` |
-| `today` | string | the date on which "future scheduled" begins, in `YYYY-MM-DD` format | current UTC date |
-| `calc_incurred_using` | string | one of `confirmed-unconfirmed`, `confirmed`, or `approved` | `"confirmed-unconfirmed"` |
+| [`today`](#today) | string | the date on which "future scheduled" begins, in `YYYY-MM-DD` format | current UTC date |
+| [`calc_incurred_using`](#calc_incurred_using) | string | one of `confirmed-unconfirmed`, `confirmed`, or `approved` | `"confirmed-unconfirmed"` |
 
 #### Example Request Params:
 
@@ -209,3 +209,29 @@ Filtering on `custom_fields` is slightly different in that, instead of a single 
   ]
 }
 ```
+
+## `today`
+
+The `today` param is the date on which past/incurred time ends and future scheduled time begins. The expected format is "YYYY-MM-DD".
+
+## `calc_incurred_using`
+
+There are 3 options for calculating incurred time:
+
+- `confirmed-unconfirmed` (default, always used in reports UI)
+- `confirmed`
+- `approved`
+
+The reports UI always uses `confirmed-unconfirmed`. If your account settings specify that incurred time should use confirmed time only, the reports UI will still use the `confirmed-unconfirmed` option, but will additionally apply a default filter on `entry_type`, removing unconfirmed time, which has the same effect with regards to incurred calculations.
+
+```json
+"calc_incurred_using": "confirmed-unconfirmed",
+"filters": {
+  "entry_type": {
+    "operation": "exclusion",
+    "values": ["Unconfirmed"]
+  }
+}
+```
+
+The only difference between the two methods (filtering out unconfirmed time vs specifying `calc_incurred_using` as `confirmed`) is in how past scheduled time is calculated in the case where no corresponding confirmed time exists for a given day of an assignment. Filtering out unconfirmed time affects both incurred _and_ past scheduled time, whereas specifying `calc_incurred_using` as `confirmed` does not affect past scheduled time. One way to think about it is, when `calc_incurred_using` is set to `confirmed`, the report is calculated as if the "clear suggestions" button was pushed on everyone's timesheets.
