@@ -14,10 +14,6 @@ Projects where `archived` is set to `true` cannot be updated. You must first una
 - Tentative
 - Internal
 
-## Locking Time Entries
-
-`timeentry_lockout` is marked as -1 when the the feature is disabled. When `timeentry_lockout` >= 0 indicates how old time entries can be before they are locked and cannot be changed.
-
 ## List Projects (index)
 
 ##### Optional Parameters:
@@ -101,6 +97,18 @@ PUT  /api/v1/projects/1245
   "ends_at": "2015-05-31"
 }
 ```
+
+## Locking Time Entries
+
+`timeentry_lockout` is used to control when new time entries are no longer accepted to a project. 
+
+| **Value** | **Description** |
+| ------------- | --------------- |
+| -1 | Not locked |
+| 0 | Locked |
+| 7 | Locked for entries more than 7 calendar days ago. This can be any positive integer value |
+
+Note that positive integer values in this attribute are numbers of days relative to today's date on the calendar. We do not support setting this lockout value to a specific date.
 
 ## Delete a Project
 
