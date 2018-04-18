@@ -110,6 +110,8 @@ PUT  /api/v1/projects/1245
 
 Note that positive integer values in this attribute are numbers of days relative to today's date on the calendar. We do not support setting this lockout value to a specific date.
 
+If your project has phases, note that this must also be set for each phase assignable_id for it to take effect as intended.
+
 ## Delete a Project
 
 ```
