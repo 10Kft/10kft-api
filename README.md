@@ -32,10 +32,16 @@ The API provides access to the following data collections in your account via RE
 * [Time & Expense Approvals](sections/approvals.md)
 * [Holidays](sections/holidays.md)
 
-
 ## Pro & Enterprise Only
 
 * [Custom Fields](sections/custom-fields.md)
+
+## Zapier Integration
+
+Our Zapier integration helps you integrating with the 10,000ft API in convenient and powerful ways and connect many other apps and services used by yor team. 
+
+* [10,000ft on Zapier](https://zapier.com/apps/10000ft/integrations)
+* [Getting started with Zapier](sections/zapier-integration.md)
 
 # Case studies
 
