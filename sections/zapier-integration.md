@@ -45,7 +45,7 @@ And here are the steps in detail,
   * Search and select the `Find User by ID` action
   * Configure it to find the user for the `user_id` from the New Assignment trigger we setup above
   
-  <img src="../assets/make-a-zap/6.png" alt="find user by id options" height="800">
+<img src="../assets/make-a-zap/6.png" alt="find user by id options" height="800">
   
 * Add a step to search 10,000ft and lookup details for the assignable_id in the assignment
   * Add a step and select 10,000ft as the app
@@ -56,12 +56,11 @@ And here are the steps in detail,
   * Configure it to send an email to user in the New Assignment
   * When you are done, the email template will look like this,
   
-  <img src="../assets/make-a-zap/email-template-options.png" alt="email template options" height="800">
-
+<img src="../assets/make-a-zap/email-template-options.png" alt="email template options" height="800">
 
 * Test and enable your Zap.
 
-Now, every time a new assignment is made on the 10,000ft schedule, the person who was added to the schedule will be sent an email with the name of the Project (or Leave) that they were assigned to and the start date of that assignment.
+Now, everytime a new assignment is made on the 10,000ft schedule, the person who was added to the schedule will be sent an email with the name of the Project (or Leave) that they were assigned to and the start date of that assignment.
 
 ## Connecting 10,000ft with Zapier
 
