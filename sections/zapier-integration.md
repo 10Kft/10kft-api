@@ -5,7 +5,6 @@ Zapier is a web automation service that lets you integrate 10,000ft with thousan
 ## Requirements
 
 * A 10,000ft account 
-  * A 10,000ft API Token accessible via settings in your account
 * A Zapier account
 * Optionally, an account with each service that will be connected with 10,000ft via Zapier
 
