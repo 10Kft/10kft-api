@@ -36,7 +36,7 @@ The API provides access to the following data collections in your account via RE
 
 * [Custom Fields](sections/custom-fields.md)
 
-## Zapier Integration
+# Zapier Integration
 
 Our Zapier integration helps you integrating with the 10,000ft API in convenient and powerful ways and connect many other apps and services used by yor team. 
 
