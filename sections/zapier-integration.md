@@ -74,7 +74,7 @@ And here are the steps in detail,
 
 Now, when a new assignment is made on the 10,000ft schedule, the person who was assigned will be sent an email with the name of the Project (or Leave) that they were assigned to and the start date of that assignment.
 
-## Fiters & additional considerations
+## Filters & additional considerations
 
 Zapier Filters are useful when building integrations with 10,000ft. You can use any attribute from a trigger of search action when implementing a filter. The `Type` attribute available in 10,000ft users and assignabled are particularly useful. For example, in the example above your Zap would typically exclude Placeholder users. This would be implemented by adding a FIlter to you Zap as shown below.
 
@@ -118,7 +118,9 @@ Familiarize yourself with the different types of users and assignables available
 
 ## More details about the 10,000ft API 
 
-Zapier is a convenient and powerful way to consume the 10,000ft API. The triggers, actions and searches allow you to access commonly used API functionality without having to develop custom API integrations or write software code. For more details, ee [10,000ft API documentation](../README.md).
+Zapier is a convenient and powerful way to consume the 10,000ft API. The triggers, actions and searches listed above allow you to access commonly used API functionality without having to develop custom API integrations or write software code. 
+
+The 10,000ft API provides access to a number of advancaed features that are not currently supported with our Zapier triggers and actions. See [10,000ft API documentation](../README.md) for more details and email us questions to support@10000ft.com.
 
 
 
