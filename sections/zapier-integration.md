@@ -71,10 +71,15 @@ And here are the steps in detail,
   * Configure it to send an email to user in the New Assignment
   * When you are done, the email template will look like this,
   
-
 * Test and enable your Zap.
 
-Now, everytime a new assignment is made on the 10,000ft schedule, the person who was added to the schedule will be sent an email with the name of the Project (or Leave) that they were assigned to and the start date of that assignment.
+Now, when a new assignment is made on the 10,000ft schedule, the person who was assigned will be sent an email with the name of the Project (or Leave) that they were assigned to and the start date of that assignment.
+
+## Fiters & additional considerations
+
+Zapier Filters are useful when building integrations with 10,000ft. You can use any attribute from a trigger of search action when implementing a filter. The `Type` attribute available in 10,000ft users and assignabled are particularly useful. For example, in the example above your Zap would typically exclude Placeholder users. This would be implemented by adding a FIlter to you Zap as shown below.
+
+  <img src="../assets/make-a-zap/filter-options.png" alt="email filter options" width="480">
 
 
-
+Familiarize yourself with the different types of users and assignables available in 10,000ft when designing your 10,000ft Zaps so you can get the result you are trying to achive with your integration. Contact 10,000ft support with any questions.
