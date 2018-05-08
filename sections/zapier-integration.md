@@ -81,8 +81,7 @@ Zapier Filters are useful when building integrations with 10,000ft. You can use 
 
   <img src="../assets/make-a-zap/filter-options.png" alt="email filter options" width="480">
 
-
-Familiarize yourself with the different types of users and assignables available in 10,000ft when designing your 10,000ft Zaps so you can get the result you are trying to achive with your integration. Contact 10,000ft support with any questions.
+Familiarize yourself with the different types of users and assignables available in 10,000ft when designing your 10,000ft Zaps so you can get the result you are trying to achive with your integration. See [10,000ft API documentation](../README.md) for more details on specific attributes.
 
 ## Triggers
 
@@ -118,17 +117,9 @@ Familiarize yourself with the different types of users and assignables available
 * **Find Assignable by Name** Finds an existing assignable by name.
 * **Find Project by Name** Finds an existing project by name.
 
+## More details about the 10,000ft API 
 
-
-
-
-
-
-
-
-
-
-
+Zapier is a convenient and powerful way to consume the 10,000ft API. The triggers, actions and searches allow you to access commonly used API functionality without having to develop custom API integrations or write software code. For more details, ee [10,000ft API documentation](../README.md).
 
 
 
