@@ -83,3 +83,58 @@ Zapier Filters are useful when building integrations with 10,000ft. You can use 
 
 
 Familiarize yourself with the different types of users and assignables available in 10,000ft when designing your 10,000ft Zaps so you can get the result you are trying to achive with your integration. Contact 10,000ft support with any questions.
+
+## Triggers
+
+10,000ft provides the following Triggers
+
+* **New Assignment** Triggers when a new assignment is created.
+* **New User** Triggers when a new user is created.
+* **New Project** Triggers when a new project gets created.
+* **New Time Entry** Triggers when a new time entry is created.
+* **Assignment Updated** Triggers when an assignment is updated.
+* **User Updated** Triggers when a new user is updated.
+* **Project Updated** Triggers when a project gets updated.
+* **Time Entry Updated** Triggers when a new time entry is updated.
+
+## Actions
+
+10,000ft provides the following actions for creating or updating information in your 10,000ft account via Zapier
+
+* **Create Project** Create a new project.
+* **Create User** Create a new team member.
+* **Create Time Entry** Create a new time entry.
+* **Update Project** Updates a project.
+* **Update User** Updates a team member.
+* **Update Time Entry** Update a time entry.
+
+## Searches
+
+* **Find Assignable by ID** Finds an existing assignable by the assignable's ID. An assignable is anything that can be assigned to a user such as a Project or Leave type.
+* **Find Project by ID** Finds an existing project using the project's ID.
+* **Find User by ID** Finds an existing user by their ID.
+* **Find User by Email** Finds an existing user by their email.
+* **Find User by Name** Finds an existing user by their name.
+* **Find Assignable by Name** Finds an existing assignable by name.
+* **Find Project by Name** Finds an existing project by name.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
