@@ -11,6 +11,17 @@ Zapier is a web automation service that lets you integrate 10,000ft with thousan
 
 Zapier provides free and paid plans. See the [Zapier pricing page](https://zapier.com/app/pricing) for more info.
 
+## Connecting 10,000ft with Zapier
+
+  * This step is only required when connecting 10,000ft with your Zapier account for the first time
+  * Start by making a new Zap in your Zapier account
+  * Find the 10,000ft app and pick any trigger to initiate the setup
+  * When prompted, add the 10,000ft API Token into Zapier, test and save your connection
+    
+    <img src="../assets/make-a-zap/3.png" alt="add API token" width="480">
+  
+Once the connection is setup and tested, you can use it to make new Zap. Lets go through the steps and setup an example Zap.
+
 ## Configuring a Zap
 
 Configuring a 10,000ft Zap typically involves,
@@ -65,9 +76,5 @@ And here are the steps in detail,
 
 Now, everytime a new assignment is made on the 10,000ft schedule, the person who was added to the schedule will be sent an email with the name of the Project (or Leave) that they were assigned to and the start date of that assignment.
 
-## Connecting 10,000ft with Zapier
-
-  * This step is only required when connecting 10,000ft with your Zapier account for the first time
-  * Add the 10,000ft API Token into Zapier when prompted, test and save your connection.
 
 
