@@ -25,6 +25,7 @@ The API provides access to the following data collections in your account via RE
   * [Users by Project](sections/project-users.md)
   * [Project Tags](sections/project-tags.md)
   * [Phases](sections/phases.md)
+* [Leave Types](sections/leave-types.md)
 * [Time Entries](sections/time-entries.md)
 * [Assignments](sections/assignments.md)
 * [Bill Rates](sections/bill-rates.md)
