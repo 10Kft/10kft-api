@@ -3,7 +3,7 @@
 ##### Endpoint: `/api/v1/users/<user_id>/assignments`
 ##### Endpoint: `/api/v1/projects/<project_id>/assignments`
 
-Assignments connect a [User](users.md) to a [Project](projects.md) or a [Phase](phases.md) (part of a project) or a [LeaveType](leave-types).
+Assignments connect a [User](users.md) to a [Project](projects.md) or a [Phase](phases.md) (part of a project) or a [LeaveType](leave-types.md).
 
 ## List assignments for a User or Project
 
