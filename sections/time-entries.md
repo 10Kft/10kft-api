@@ -74,6 +74,8 @@ DELETE /api/v1/users/<user_id>/time_entries/id
 | ------------- | --------------- | --------------- |
 | from | get projects that start on or after this date | &from=2017-03-14 |
 | to | get projects that end on or before this date | &to=2017-03-21 |
+| sort_field | Field to sort the return document. Possible values: created or updated |
+| sort_order | order to sort the results on. Possible values: ascending or descending |
 | with_suggestions | true to include suggested (unconfirmed) time entries based on assignments on the schedule | &with_suggestions=true |
 
 > IMPORTANT: *to* and *from* _must_ be a valid date formatted as `yyyy-mm-dd`
