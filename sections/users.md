@@ -43,7 +43,7 @@ POST /api/v1/users
 | `archived` | boolean | The user has been archived |  |  |
 | `archived_at` | date-time | When the user was archived | yes | yes |
 | `deleted` | boolean | deprecated |  |  |
-| `archived_at` | date-time | deprecated |  | yes |
+| `deleted_at` | date-time | deprecated |  | yes |
 | `account_owner` | boolean | Is this user the account owner | yes | yes |
 | `invitation_pending` | boolean | reserved | yes | yes |
 | `user_settings` | string | reserved | yes |  |
