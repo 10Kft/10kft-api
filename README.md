@@ -36,7 +36,7 @@ The API provides access to the following data collections in your account via RE
 ## Pro & Enterprise Only
 
 * [Custom Fields](sections/custom-fields.md)
-* [Reports (Preview/Beta)](sections/reports.md)
+* [Reports](sections/reports.md)
 
 # Zapier Integration
 
