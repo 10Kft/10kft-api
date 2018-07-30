@@ -24,3 +24,10 @@ curl  -d "phase_name=Winding%20up&starts_at=2013-09-15&ends_at=2013-09-16"  \
 curl  -XPUT -d "phase_name=Another%20Name&"  \
                          "https://vnext.10000ft.com/api/v1/projects/4/phases/456?auth=..."
 ```
+
+## Delete a Phase for a Project
+
+```
+curl  -i -X DELETE "https://vnext.10000ft.com/api/v1/projects/4/phases/[phase_id]?auth=..."
+```
+NOTE: A phase cannot be deleted unless it contains no assignments.
