@@ -19,13 +19,13 @@ Assignments connect a [User](users.md) to a [Project](projects.md) or a [Phase](
 ```
 GET /api/v1/users/<user_id>/assignments
 
- curl 'https://vnext.10000ft.com/api/v1/users/1/assignments?auth=..'
+ curl 'https://vnext.10000ft.com/api/v1/users/<user_id>/assignments?auth=..'
 ```
 
 ```
 GET /api/v1/projects/<project_id>/assignments
 
- curl 'https://vnext.10000ft.com/api/v1/projects/1/assignments?auth=..'
+ curl 'https://vnext.10000ft.com/api/v1/projects/<project_id>/assignments?auth=..'
 ```
 
 ## Show an Assignment for a User or Project
@@ -33,28 +33,31 @@ GET /api/v1/projects/<project_id>/assignments
 ```
 GET /api/v1/users/<user_id>/assignments/<assignment_id>
 
- curl 'https://vnext.10000ft.com/api/v1/users/1/assignments/456?auth=..'
+ curl 'https://vnext.10000ft.com/api/v1/users/<user_id>/assignments/<assignment_id>?auth=..'
 ```
 
 ```
 GET /api/v1/projects/project_id/assignments/<assignment_id>
 
- curl 'https://vnext.10000ft.com/api/v1/projects/1/assignments/456?auth=..'
+ curl 'https://vnext.10000ft.com/api/v1/projects/<project_id>/assignments/<assignment_id>?auth=..'
 ```
 
 Similarly, in the create and delete examples below, you can call the assignments API on projects specifying a user_id to create an assignment for that user, or to delete an assignment.
 
 ## Create an Assignment
 
-Typical parameters: `starts_at`, `ends_at`, `percent`, `fixed_hours`
+Typical parameters: `starts_at`, `ends_at`, `allocation_mode (percent, hours_per_day, fixed_hours)`, `percent`, `hours_per_day`, `fixed_hours`
 
 ```
 POST /api/v1/users/<user_id>/assignments
 
- curl -d 'leave_id=1&starts_at=2013-10-10&ends_at=2013-10-15'  \
+ curl -d 'leave_id=<leave_id>&starts_at=<YEAR-MO-DAY>&ends_at=<YEAR-MO-DAY>'  \
                  'https://vnext.10000ft.com/api/v1/users/1/assignments?auth=...'
 
- curl -d 'leave_id=1&starts_at=2013-10-10&ends_at=2013-10-15&percent=0.25'  \
+ curl -d 'leave_id=<leave_id>&starts_at=<YEAR-MO-DAY>&ends_at=<YEAR-MO-DAY>&percent=0.25'  \
+                 'https://vnext.10000ft.com/api/v1/users/1/assignments?auth=...'
+                 
+ curl -d 'leave_id=<leave_id>&starts_at=<YEAR-MO-DAY>&ends_at=<YEAR-MO-DAY>&allocation_mode=hours_per_day&hours_per_day=<hours>'  \
                  'https://vnext.10000ft.com/api/v1/users/1/assignments?auth=...'
 ```
 
@@ -63,7 +66,7 @@ POST /api/v1/users/<user_id>/assignments
 ```
 DELETE /api/v1/users/<user_id>/assignments/<assignment_id>
 
- curl -XDELETE 'https://vnext.10000ft.com/api/v1/users/1/assignments/456?auth=...'
+ curl -XDELETE 'https://vnext.10000ft.com/api/v1/users/<user_id>/assignments/<assignment_id>?auth=...'
 ```
 
 ## Sample Response
