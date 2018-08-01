@@ -52,13 +52,13 @@ Typical parameters: `starts_at`, `ends_at`, `allocation_mode (percent, hours_per
 POST /api/v1/users/<user_id>/assignments
 
  curl -d 'leave_id=<leave_id>&starts_at=<YEAR-MO-DAY>&ends_at=<YEAR-MO-DAY>'  \
-                 'https://vnext.10000ft.com/api/v1/users/1/assignments?auth=...'
+                 'https://vnext.10000ft.com/api/v1/users/<user_id>/assignments?auth=...'
 
  curl -d 'leave_id=<leave_id>&starts_at=<YEAR-MO-DAY>&ends_at=<YEAR-MO-DAY>&percent=0.25'  \
-                 'https://vnext.10000ft.com/api/v1/users/1/assignments?auth=...'
+                 'https://vnext.10000ft.com/api/v1/users/<user_id>/assignments?auth=...'
                  
  curl -d 'leave_id=<leave_id>&starts_at=<YEAR-MO-DAY>&ends_at=<YEAR-MO-DAY>&allocation_mode=hours_per_day&hours_per_day=<hours>'  \
-                 'https://vnext.10000ft.com/api/v1/users/1/assignments?auth=...'
+                 'https://vnext.10000ft.com/api/v1/users/<user_id>/assignments?auth=...'
 ```
 
 ## Remove an Assignment for a User
