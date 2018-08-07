@@ -127,7 +127,9 @@ project.created and project.updated webhooks.
 unreachable or in error, it may be automatically unsubscribed. Further, returning a 410 code on a webhook will also automatically
 unsubscribe it.
 
+## Can Webhooks be viewed or edited from the application front-end?
 
+At the moment there is no front end support for webhooks, they exist only as an API feature.
 
 
 
