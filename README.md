@@ -1,6 +1,8 @@
-# 10,000ft API
+# 10,000ft API (Pro and Enterprise only)
 
 The 10,000ft API provides programmatic access to projects, users and time entries in your account, commonly referred to as _resources_ in the rest of this API documentation. The API implements a standard HTTP REST pattern and allows callers with appropriate authentication and authorization to programmatically create, read, update and delete these resources.
+
+API access is available only on Pro and Enterprise plans of 10000ft.
 
 # Overview
 
@@ -32,9 +34,6 @@ The API provides access to the following data collections in your account via RE
 * [Statuses](sections/user-statuses.md) (_deprecated_)
 * [Time & Expense Approvals](sections/approvals.md)
 * [Holidays](sections/holidays.md)
-
-## Pro & Enterprise Only
-
 * [Custom Fields](sections/custom-fields.md)
 * [Reports](sections/reports.md)
 
