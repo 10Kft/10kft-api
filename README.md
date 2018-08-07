@@ -36,7 +36,7 @@ The API provides access to the following data collections in your account via RE
 * [Holidays](sections/holidays.md)
 * [Custom Fields](sections/custom-fields.md)
 * [Reports](sections/reports.md)
-* [Webhooks](sections/reports.md) *New*
+* [Webhooks](sections/reports.md) * *New!* *
 
 # Zapier Integration
 
