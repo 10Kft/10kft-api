@@ -36,7 +36,10 @@ The API provides access to the following data collections in your account via RE
 * [Holidays](sections/holidays.md)
 * [Custom Fields](sections/custom-fields.md)
 * [Reports](sections/reports.md)
-* (**New!**) [Webhooks](sections/webhooks.md)
+
+# Webhooks (New!)
+
+The 10,000ft API now supports webhooks for certain events. See [the webhooks page](sections/webhooks.md) for details.
 
 # Zapier Integration
 
