@@ -30,7 +30,7 @@ Lists all the webhooks for your organization.
 
 #### Example
 
-```json
+```
 GET /api/v1/webhooks/
 
 curl 'https://vnext.10000ft.com/api/v1/webhooks?&auth=..'
