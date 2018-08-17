@@ -175,7 +175,7 @@ The following changes do *not* trigger updated events.
 
 - Creating assignments for users on a project (though these are reported as assignment events)
 
-#### Webhook return values
+## What should you return from your webhook processing code?
 
 10000ft keeps track of return values from webhook processing code, and if a webhook is behaving poorly e.g. consistently 
 unreachable or in error, it may be automatically unsubscribed. Further, returning a 410 code on a webhook will also automatically unsubscribe it.
