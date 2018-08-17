@@ -1,4 +1,4 @@
-# Webhooks (New!)
+# Webhooks (Pro, New!)
 
 ##### Endpoint: `/api/v1/webhooks`
 
