@@ -2,7 +2,7 @@
 
 ##### Endpoint: `/api/v1/webhooks`
 
-The webhooks feature allows users to register, via the API, a webhook 
+Webhooks allow users to register, via the API, a webhook 
 that they can use to receive notifications about key events in their account.
 Currently, webhooks are supported for the following events.
 
@@ -98,8 +98,7 @@ This is currently not permitted.
 
 ## Webhook Limits
 
-A limit of 10 webhooks per event type per account is enforced. If more webhooks are needed, we recommend
-that the webhook processing logic be consolidated at a single endpoint.
+To prevent repetitive posting of the same webhook payload, no more than 10 webhooks per event type are permitted. 
 
 ## Webhook Payloads
 
