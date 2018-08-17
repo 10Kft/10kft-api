@@ -46,7 +46,7 @@ Similarly, in the create and delete examples below, you can call the assignments
 
 ## Create an Assignment
 
-Typical parameters: `starts_at`, `ends_at`, `allocation_mode (percent, hours_per_day, fixed_hours)`, `percent`, `hours_per_day`, `fixed_hours`
+Typical parameters: `starts_at`, `ends_at`, `allocation_mode (percent, hours_per_day, fixed)`, `percent`, `hours_per_day`, `fixed_hours`
 
 ```
 POST /api/v1/users/<user_id>/assignments
