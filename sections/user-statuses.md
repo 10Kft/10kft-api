@@ -15,6 +15,14 @@ Valid statuses are:
 
 A new "current status" is set by simply creating a new status for the user.
 
+## Endpoints
+
+```
+GET /api/v1/users/statuses
+
+POST  /api/v1/users/<user_id>/statuses
+```
+
 ## Show List of Statuses For a User
 
 ```

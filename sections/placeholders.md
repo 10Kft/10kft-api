@@ -4,21 +4,35 @@
 
 Placeholder resources can be used for temporary resourcing on projects where the final resources are not yet known. Placeholders behave quite similarly to users, with a few differences discussed below.
 
+## Endpoints
+
+```
+GET  /api/v1/placeholder_resources/<placeholder_resource_id>
+
+GET  /api/v1/placeholder_resources/<placeholder_resource_id>/assignments
+
+POST  /api/v1/placeholder_resources
+
+PUT  /api/v1/placeholder_resources/<placeholder_resource_id>
+
+DELETE  /api/v1/placeholder_resources/<placeholder_resource_id>
+```
+
 ## List Placeholder Resources (index)
 
 ##### Optional Parameters:
 
 | **Parameter** | **Description** |
 | ------------- | --------------- |
-| fields | A comma separated list of additional fields to include in the response [ "assignments", "custom_field_values"] |
-| per_page, page | Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first ) |
+| `fields` | A comma separated list of additional fields to include in the response [ "assignments", "custom_field_values"] |
+| `per_page`, `page` | Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first ) |
 
 ```
 GET  /api/v1/placeholder_resources
  curl 'https://vnext.10000ft.com/api/v1/placeholder_resources?fields=assignments,custom_field_values&auth=...'
 ```
 
-Note that custom field values can only be accessed if custom fields are enabled for the account. This is only possible for pro plans and up. See [custom fields](/sections/custom fields.md) for details. 
+Note that custom field values can only be accessed if custom fields are enabled for the account. This is only possible for pro plans and up. See [custom fields](/sections/custom fields.md) for details.
 
 ## Show Placeholder
 
@@ -86,7 +100,7 @@ As noted above, placeholders behave similarly to real users in certain cases. Ho
 
 ##### Placeholder Assignments
 
-Assignments can be made, updated, and removed via the [Assignments](/sections/assignments.md) API just as they can for users. 
+Assignments can be made, updated, and removed via the [Assignments](/sections/assignments.md) API just as they can for users.
 The only difference is that this is accessed through the `placeholder_resources` endpoint. In general, for the [Assignments](/sections/assignments.md) API, a placeholder resource ID can be used as the `user_id` parameter.
 
 ```

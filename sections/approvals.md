@@ -4,6 +4,17 @@
 
 In 10,000ft, certain record types are considered "approvable." Currently, these record types are time entries and expense items. Approvals are created when time entries or expense items are "submitted for approval."
 
+## Endpoints
+
+```
+GET /api/v1/approvals
+
+GET /api/v1/users/<user_id>/time_entries?fields=tags
+
+POST /api/v1/approvals
+
+DELETE /api/v1/approvals/<approval_id>
+```
 
 ## List Approvals
 

@@ -4,14 +4,16 @@ Budget item categories are a set of lookup values for your organization which ca
 
 There is an account level definition of budget categories, made available via:
 
-```
-/api/v1/time_entry_categories
-```
-
-or
+## Endpoints
 
 ```
-/api/v1/expense_item_categories 
+GET /api/v1/time_entry_categories
+
+GET /api/v1/expense_item_categories
+
+GET /api/v1/projects/<project_id>/time_entry_categories
+
+GET /api/v1/projects/<project_id>/expense_item_categories
 ```
 
 in the format:

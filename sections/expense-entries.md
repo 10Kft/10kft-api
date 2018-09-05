@@ -4,15 +4,31 @@
 
 Expense items are reported by a user on a project or leave type.
 
+## Endpoints
+```
+GET /api/v1/users/<user_id>/expense_items
+
+GET /api/v1/users/<user_id>/expense_items/<id>
+
+GET /api/v1/projects/<project_id>/expense_items
+
+GET /api/v1/projects/<project_id>/expense_items/<id>
+
+POST /api/v1/users/<user_id>/expense_items
+
+PUT /api/v1/projects/<project_id>/users/<user_id>/expense_items/<expense_item_id>
+
+DELETE /api/v1/users/<user_id>/expense_items/<expense_items_id>
+```
 ## List Expense Items for a User
 
 ##### Optional parameters:
 
 | **Parameter** | **Description** |
 | ------------- | --------------- |
-| from | get expenses reported on or after this date |
-| to | get expenses reported on or before this date |
-| per_page, page | Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first ) |
+| `from` | get expenses reported on or after this date |
+| `to` | get expenses reported on or before this date |
+| `per_page`, `page` | Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first ) |
 
 ```
 ```

@@ -1,17 +1,7 @@
 # Users
+##### Endpoint: `/api/v1/users`
 
 The users collection allows you to access information about all users in the API.
-
-##### Optional parameters:
-
-| **Parameter** | **Description** |
-| ------------- | --------------- |
-| per_page, page | Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first )|
-| fields | A comma separated list of additional fields to include in the response, optional values [ "tags", "assignments", "availabilities", "custom_field_values" ] |
-| sort_field | Field to sort the return document. Possible values: `created`, `updated`, `first_name`, `last_name`, `hire_date`, `termination_date` |
-| sort_order | Order to sort the results on. Possible values: `ascending` or `descending` |
-| with_archived	| If set to `true`, includes archived users |
-| include_placeholders	| If set to `true`, includes placeholder users |
 
 ## Endpoints
 
@@ -59,6 +49,18 @@ POST /api/v1/users
 | `created_at` | date-time | time of creation | | yes |
 | `updated_at` | date-time | time of last update | | yes |
 
+##### Optional GET parameters:
+
+| **Parameter** | **Description** |
+| ------------- | --------------- |
+| per_page, page | Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first )|
+| fields | A comma separated list of additional fields to include in the response, optional values [ "tags", "assignments", "availabilities", "custom_field_values" ] |
+| sort_field | Field to sort the return document. Possible values: `created`, `updated`, `first_name`, `last_name`, `hire_date`, `termination_date` |
+| sort_order | Order to sort the results on. Possible values: `ascending` or `descending` |
+| with_archived	| If set to `true`, includes archived users |
+| include_placeholders	| If set to `true`, includes placeholder users |
+
+
 ### Deleting vs Archiving
 
 A user cannot be deleted via the API but they may be archived by setting the optional parameter archived to true while updating a user. It can also be unarchived by setting the optional parameter archived to false. You cannot archive the account owner.
@@ -81,7 +83,22 @@ Values not described in this list are reserved for internal/future use.
 
 Setting the user_type_id via API is not supported.
 
+## Create a user
+```
+POST  /api/v1/users
+
+{
+  "first_name": "Chris",
+  "last_name": "James",
+  "email": "chris@example.com",
+}
+```
+Creating a new user creates a resource only user. Resource only users can be used for scheduling. However, if you want the new user to be able to track their time they need to be invited through the `People` tab on your `Account Settings`.
+
 ## Sample Response
+```
+GET  https://api.10000ft.com/api/v1/users/1?auth=<token>
+```
 
 ```
 {

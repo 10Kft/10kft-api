@@ -7,6 +7,16 @@ There are two ways to list user tags:
 *   Get a list of tags for a single user using the `/api/v1/user/<user_id>/tags` endpoint.
 *   Adding the parameter `fields=tags` when listing/viewing through `/api/v1/users`
 
+## Endpoints
+
+```
+GET /api/v1/users/<user_id>/tags
+
+GET /api/v1/users?fields=tags
+
+POST /api/v1/users/<user_id>/tags
+```
+
 ## Create and attach tags to users
 
 Attaching a tag to a user is technically a "find-or-create" operation. If you post a tag with information that does not exist for your organization it will be created and attached to the user specified. If the tag already exists, it will just be attached. If you try to create the same tag multiple times, it will just be attached once.

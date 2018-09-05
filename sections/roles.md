@@ -1,12 +1,15 @@
-Roles
-=========
+# Roles
 
 Roles currently must be created and assigned through the UI.
 
-Endpoints:
+## Endpoints
 
-- [Get Roles](#get-roles)
-- [Get a Role](#get-a-role)
+```
+GET /api/v1/roles
+
+GET /api/v1/roles/<id>
+```
+
 
 
 Get Roles
@@ -18,7 +21,7 @@ _Optional parameters:_
 
 - Respects [filtering parameters](/README.md#filtering)
 
-###### Example JSON Response
+#### Example JSON Response
 
 ```json
 {
@@ -47,7 +50,7 @@ Get a Role
 
 * `GET /api/v1/roles/1` will return the role with the ID of `1`.
 
-###### Example JSON Response
+#### Example JSON Response
 
 ```json
 {

@@ -2,21 +2,31 @@
 
 ##### Endpoint: `/api/v1/webhooks`
 
-Webhooks allow users to register, via the API, a webhook 
+Webhooks allow users to register, via the API, a webhook
 that they can use to receive notifications about key events in their account.
 Currently, webhooks are supported for the following events.
 
+## Endpoints
 
+```
+GET /api/v1/webhooks
+
+POST /api/v1/webhooks
+
+DELETE /api/v1/webhooks/<webhook_id>
+```
+
+## Fields:
 | **Event Type** | **Description** |
 | ------------- | --------------- |
-| project.created | fires when a new project is created |
-| project.updated | fires when a project is updated |
-| time.entry.created | fires when a new time entry is created |
-| time.entry.updated | fires when a time entry is updated |
-| user.created | fires when a new time entry is created |
-| user.updated | fires when a user is updated |
-| assignment.created | fires when a new assignment is created |
-| assignment.updated | fires when an assignment is updated |
+| `project.created` | fires when a new project is created |
+| `project.updated` | fires when a project is updated |
+| `time.entry.created` | fires when a new time entry is created |
+| `time.entry.updated` | fires when a time entry is updated |
+| `user.created` | fires when a new time entry is created |
+| `user.updated`| fires when a user is updated |
+| `assignment.created` | fires when a new assignment is created |
+| `assignment.updated` | fires when an assignment is updated |
 
 
 ## List Webhooks
@@ -41,7 +51,7 @@ curl 'https://vnext.10000ft.com/api/v1/webhooks?&auth=..'
 ```
 {
   "paging": {
-   ...  
+   ...
   },
   "data": [
     {
@@ -59,11 +69,11 @@ curl 'https://vnext.10000ft.com/api/v1/webhooks?&auth=..'
 
 **Field** | **Description** |
 | ------------- | --------------- |
-| id | unique identifier for the webhook |
-| organization_id | unique identifier for the organization to which the webhook belongs |
-| url | url associated with the webhook, to which events are posted |
-| status | status of the webhook |
-| event_type | type of event associated with the webhook |
+| `id` | unique identifier for the webhook |
+| `organization_id` | unique identifier for the organization to which the webhook belongs |
+| `url` | url associated with the webhook, to which events are posted |
+| `status` | status of the webhook |
+| `event_type` | type of event associated with the webhook |
 
 #### Webhook Status
 
@@ -83,7 +93,7 @@ POST /api/v1/webhooks
 | event_type | type of event associated with the webhook |
 | url | url to which events should be posted |
 
-Both parameters are required. The 'event_type' must be one of the supported types mentioned above. 
+Both parameters are required. The 'event_type' must be one of the supported types mentioned above.
 The url must be https with a valid host.
 
 ## Deleting a webhook
@@ -98,11 +108,11 @@ This is currently not permitted.
 
 ## Webhook Limits
 
-To prevent repetitive posting of the same webhook payload, no more than 10 webhooks per event type are permitted. 
+To prevent repetitive posting of the same webhook payload, no more than 10 webhooks per event type are permitted.
 
 ## Webhook Payloads
 
-When a webhook is registered for a particular event type with the 10000ft API, 
+When a webhook is registered for a particular event type with the 10000ft API,
 every time an event of that type occurs, a POST is made to the webhook URL containing
 data about the affected object. For example, if a webhook is registered for the project.created
 event, every time a new project is created, a POST with the details of the created project is made to the
@@ -120,8 +130,8 @@ webhook's URL. This POST data is known as the webhook payload. A webhook payload
 The "type" field indicates what type of event occurred, and is always one of the event types listed above.
 The "data" field is exactly the same as what would be returned if the actual object
 were fetched through the API via a GET call. Refer to the [Projects](projects.md), [Users](users.md),
-[Time Entries](time-entries.md) and [Assignments](assignments.md) documentation for the exact format and return values 
-for the GET output. The data is exactly the same as a simple GET call output, with no additional fields 
+[Time Entries](time-entries.md) and [Assignments](assignments.md) documentation for the exact format and return values
+for the GET output. The data is exactly the same as a simple GET call output, with no additional fields
 requested. It is not possible to request additional fields in the webhook payload, e.g. to request custom field values
 or bill rates or other data that can be requested through the 'fields' parameter in typical API calls. If such additional
 data is needed when processing a webhook, it is recommended that you make a GET request using the object ID returned in
@@ -158,7 +168,7 @@ Adding phases to a project does trigger an event, but it is a separate event for
 
 #### Phases
 
-While separate webhooks for phase events do not exist, phase create and update events will be reported on 
+While separate webhooks for phase events do not exist, phase create and update events will be reported on
 project.created and project.updated webhooks.
 
 #### Users
@@ -176,7 +186,7 @@ The following changes do *not* trigger updated events.
 
 ## What should you return from your webhook processing code?
 
-10000ft keeps track of return values from webhook processing code, and if a webhook is behaving poorly e.g. consistently 
+10000ft keeps track of return values from webhook processing code, and if a webhook is behaving poorly e.g. consistently
 unreachable or in error, it may be automatically unsubscribed. Further, returning a 410 code on a webhook will also automatically unsubscribe it.
 
 ## Can Webhooks be viewed or edited from the application front-end?

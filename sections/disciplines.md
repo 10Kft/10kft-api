@@ -3,11 +3,13 @@ Disciplines
 
 Disciplines currently must be created and assigned through the UI.
 
-Endpoints:
+## Endpoints
 
-- [Get Disciplines](#get-disciplines)
-- [Get a Discipline](#get-a-discipline)
+```
+GET /api/v1/disciplines
 
+GET GET /api/v1/disciplines/<id>
+```
 
 Get Disciplines
 -------------
@@ -18,7 +20,7 @@ _Optional parameters:_
 
 - Respects [filtering parameters](/README.md#filtering)
 
-###### Example JSON Response
+#### Example JSON Response
 
 ```json
 {
@@ -48,9 +50,9 @@ _Optional parameters:_
 Get a Discipline
 -------------
 
-* `GET /api/v1/disciplines/1` will return the role with the ID of `1`.
+* `GET /api/v1/disciplines/1` will return the discipline with the ID of `1`.
 
-###### Example JSON Response
+#### Example JSON Response
 
 ```json
 {

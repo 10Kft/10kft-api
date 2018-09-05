@@ -5,16 +5,32 @@
 
 Assignments connect a [User](users.md) to a [Project](projects.md) or a [Phase](phases.md) (part of a project) or a [LeaveType](leave-types.md).
 
+## Endpoints
+
+```
+GET /api/v1/users/<user_id>/assignments
+
+GET /api/v1/projects/<project_id>/assignments
+
+GET /api/v1/users/<user_id>/assignments/<assignment_id>
+
+GET /api/v1/projects/project_id/assignments/<assignment_id>
+
+POST /api/v1/users/<user_id>/assignments
+
+DELETE /api/v1/users/<user_id>/assignments/<assignment_id>
+```
+
 ## List assignments for a User or Project
 
 ##### Optional parameters:
 
 | **Parameter** | **Description** |
 | ------------- | --------------- |
-| from |  get assignments that end after this date |
-| to |  get assignments that start before this date |
-| per_page, page |  Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first ) |
-| with_phases	| true to include assignment to phases ( child projects ) |
+| `from` |  get assignments that end after this date |
+| `to` |  get assignments that start before this date |
+| `per_page`, `page` |  Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first ) |
+| `with_phases`	| true to include assignment to phases ( child projects ) |
 
 ```
 GET /api/v1/users/<user_id>/assignments
@@ -56,7 +72,7 @@ POST /api/v1/users/<user_id>/assignments
 
  curl -d 'leave_id=<leave_id>&starts_at=<YEAR-MO-DAY>&ends_at=<YEAR-MO-DAY>&percent=0.25'  \
                  'https://vnext.10000ft.com/api/v1/users/1/assignments?auth=...'
-                 
+
  curl -d 'leave_id=<leave_id>&starts_at=<YEAR-MO-DAY>&ends_at=<YEAR-MO-DAY>&allocation_mode=hours_per_day&hours_per_day=<hours>'  \
                  'https://vnext.10000ft.com/api/v1/users/1/assignments?auth=...'
 ```

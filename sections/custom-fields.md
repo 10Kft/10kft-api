@@ -4,6 +4,20 @@
 
 ##### Endpoint `/api/v1/custom_fields`
 
+## Endpoints
+
+```
+GET /api/v1/custom_fields
+
+GET /api/v1/custom_fields/<custom_field_id>
+
+POST /api/v1/custom_fields
+
+PUT /api/v1/custom_fields/<custom_field_id>
+
+DELETE /api/v1/custom_fields/<custom_field_id>
+```
+
 ## Fields:
 
 | **Name** | **Type** | **Description** | **Optional** | **Readonly** |

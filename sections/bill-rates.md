@@ -32,7 +32,7 @@ POST /api/v1/projects/<project_id>/bill_rates
 
 | **Name** | **Description** |
 | ------ | --------------- |
-| rebuild_assignments | rebuild all assignments for this project with the new bill rate |
+| `rebuild_assignments` | rebuild all assignments for this project with the new bill rate |
 
 ## Fields:
 

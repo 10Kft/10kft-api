@@ -6,6 +6,21 @@ Project is a subclass of Assignable. You will see the `id` referring to a projec
 
 Projects where `archived` is set to `true` cannot be updated. You must first unarchive (set `archived` to `false`) before updating the project.
 
+## Endpoints
+
+```
+GET /api/v1/projects
+
+GET  /api/v1/projects/<project_id>
+
+POST  /api/v1/projects
+
+PUT  /api/v1/projects/<project_id>
+
+DELETE  /api/v1/projects/<project_id>
+
+```
+
 ## Project State
 
 `project_state` describes the state of the project:
@@ -20,20 +35,20 @@ Projects where `archived` is set to `true` cannot be updated. You must first una
 
 | **Parameter** | **Description** |
 | ------------- | --------------- |
-| from | get projects that end on or after this date |
-| to | get projects that start on or before this date |
-| strict | set to `true` to restrict the projects to only those contained entirely within the `from` and `to` params |
-| fields | a comma separated list, optional values [ "children", "tags", "budget_items", "project_state" , "phase_count", "summary", "custom_field_values" ] Will add additional fields to the output |
-| filter_field | Specifies the property to filter on. "project_state" is the only supported value |
-| filter_list | The value of "filter_field" to match, outputs will be projects with state matching this value. Possible values: Internal, Tentative, Confirmed |
-| sort_field | Field to sort the return document. Possible values: created or updated |
-| sort_order | order to sort the results on. Possible values: ascending or descending |
-| project_code | project code to find, exact match |
-| phase_name | phase name to find, exact match |
-| with_archived | true to include deleted/archived projects |
-| with_phases | true to include phases ( child projects ) |
-| per_page, page | Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first )|
-| archived | true to archive/false to unarchive |
+| `from` | get projects that end on or after this date |
+| `to` | get projects that start on or before this date |
+| `strict` | set to `true` to restrict the projects to only those contained entirely within the `from` and `to` params |
+| `fields` | a comma separated list, optional values [ "children", "tags", "budget_items", "project_state" , "phase_count", "summary", "custom_field_values" ] Will add additional fields to the output |
+| `filter_field` | Specifies the property to filter on. "project_state" is the only supported value |
+| `filter_list` | The value of "filter_field" to match, outputs will be projects with state matching this value. Possible values: Internal, Tentative, Confirmed |
+| `sort_field` | Field to sort the return document. Possible values: created or updated |
+| `sort_order` | order to sort the results on. Possible values: ascending or descending |
+| `project_code` | project code to find, exact match |
+| `phase_name` | phase name to find, exact match |
+| `with_archived` | true to include deleted/archived projects |
+| `with_phases` | true to include phases ( child projects ) |
+| `per_page`, `page` | Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first )|
+| `archived` | true to archive/false to unarchive |
 
 ## List projects
 
@@ -100,7 +115,7 @@ PUT  /api/v1/projects/1245
 
 ## Locking Time Entries
 
-`timeentry_lockout` is used to control when new time entries are no longer accepted to a project. 
+`timeentry_lockout` is used to control when new time entries are no longer accepted to a project.
 
 | **Value** | **Description** |
 | ------------- | --------------- |
@@ -129,7 +144,7 @@ GET  https://api.10000ft.com/api/v1/projects/<project_id>?fields=tags,summary,ch
 ```
 
 ```
-{  
+{
   "id":821065,
   "archived":false,
   "archived_at":null,
@@ -154,30 +169,30 @@ GET  https://api.10000ft.com/api/v1/projects/<project_id>?fields=tags,summary,ch
   "has_pending_updates":false,
   "client":null,
   "project_state":"Internal",
-  "tags":{  
-    "paging":{  
+  "tags":{
+    "paging":{
       "self":"/api/v1/projects/821065/tags?per_page=1&page=1",
       "next":null,
       "previous":null,
       "page":1,
       "per_page":1
     },
-    "data":[  
-      {  
+    "data":[
+      {
         "id":1207009,
         "value":"Sales"
       }
     ]
   },
-  "children":{  
-    "paging":{  
+  "children":{
+    "paging":{
       "self":"/api/v1/projects/821065/tags?per_page=100000&page=1",
       "next":null,
       "previous":null,
       "page":1,
       "per_page":100000
     },
-    "data":[  
+    "data":[
 
     ]
   },

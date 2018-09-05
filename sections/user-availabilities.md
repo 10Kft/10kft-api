@@ -1,3 +1,21 @@
+# User Availabilities
+
+##### Endpoint: `/api/v1/users/<user_id>/availabilities`
+
+## Endpoints:
+
+```
+GET /api/v1/users/<user_id>/availabilities
+
+GET /api/v1/users/<user_id>/availabilities/<id>
+
+PUT /api/v1/users/<user_id>/availabilities/<id>
+
+DELETE /api/v1/users/<user_id>/availabilities/<id>
+
+POST /api/v1/users/<user_id>/availabilities
+```
+
 # Availabilities
 
 In 10,000ft we have the concept of a work week. It defines the days of the week that are to be considered work days and the number of work hours for those days. Given this work week, you can determine the number of work hours per day, in any given date range. The work week is configurable by an account administrator, via the account settings pages.
@@ -17,20 +35,6 @@ Day0 represents Sunday of the week, day1 Monday and so on. This is irrespective 
 Availability block start and end dates specify a date range during which the given custom available hours apply. Both `starts_at` and `ends_at` values are optional. If starts_at is nil, it implies that the given availabilities are to be used infinitely into the past. Similarly a null ends_at implies that the values are to be used infinitely into the future.
 
 Overlapping date ranges in multiple availability blocks for the same user are accepted but will produce unpredictable results.
-
-## Endpoints:
-
-```
-GET /api/v1/users/<user_id>/availabilities
-
-GET /api/v1/users/<user_id>/availabilities/<id>
-
-PUT /api/v1/users/<user_id>/availabilities/<id>
-
-DELETE /api/v1/users/<user_id>/availabilities/<id>
-
-POST /api/v1/users/<user_id>/availabilities
-```
 
 ## Fields:
 

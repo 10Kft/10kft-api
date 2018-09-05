@@ -8,6 +8,26 @@ Value for `item_type` could be one of `TimeFees` / `TimeFeesDays` / `Expenses`
 
 `TimeFeesDays` are actually in unit hours.
 
+## Endpoints
+
+```
+GET /api/v1/projects/<project_id>/budget_items
+
+GET /api/v1/budget_items
+
+GET /api/v1/projects/<project_id>/budget_items/<budget_item_id>
+
+GET /api/v1/budget_items/<budget_item_id>
+
+POST /api/v1/projects/<project_id>/budget_items
+
+PUT /api/v1/budget_items/<budget_item_id>
+
+PUT /api/v1/projects/<project_id>/budget_items/<budget_item_id>
+
+DELETE /api/v1/budget_items/<budget_item_id>
+```
+
 ## List Budget Items
 
 ##### Required Parameters:

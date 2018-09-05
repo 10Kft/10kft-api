@@ -2,23 +2,34 @@
 
 Time Entries are a collection of hours tracked per project and user. There are two main kinds of time_entries.
 
-## Suggested time entries
+## Endpoints:
 
-Suggested time entries (also know as unconfirmed time entries) are created by 10,000ft as a result of resources being assigned to a project. These are identifiable by the `is_suggestion: true` attribute on the time entry objects. Suggested time entries are not returned by the API by default and must be requested using the `with_suggestions=true` parameter on the GET API call to fetch time entries.
+```
+# Time entries by user
+GET /api/v1/users/<user_id>/time_entries
+GET /api/v1/users/<user_id>/time_entries/<id>
 
-Suggested time entries are read-only and are kept up to date by 10Kft as the corresponding assignments are updated.
+# Time entries for given date-range
+GET /api/v1/users/<user_id>/time_entries?from=2017-03-14&to=2017-03-21
 
-## Confirmed time entries.
+# Time entries by project
+GET /api/v1/projects/<project_id>/time_entries
+GET /api/v1/projects/<project_id>/time_entries/<id>
 
-Confirmed time entries are what a user (or the API) has explicitly created to indicate that they have spent some time working on a project.
+# All time entries in the account
+GET /api/v1/time_entries
+GET /api/v1/time_entries/<id>
 
-## Time Entries and Resource Only Users
+# Time entries for given date-range
+GET /api/v1/time_entries?from=2017-03-14&to=2017-03-21
 
-Note that just like in the application UI, you cannot create new confirmed time entries for resource only users via the API. You can read suggested time entries for all users via the API.
+# Updating a time entry
+PUT /api/v1/users/<user_id>/time_entries/id
 
-## Bill Rates
+# Deleting a time entry
+DELETE /api/v1/users/<user_id>/time_entries/id
 
-Time entries have an associated bill rate attached to them. When a new time entry is created, 10Kft will determine the appropriate bill rate for it (based on your account and project settings) and assign a values. When reading time entries, you can see this assigned bill rate.
+```
 
 ## Fields
 
@@ -39,44 +50,36 @@ Time entries have an associated bill rate attached to them. When a new time entr
 | `created_at` | date-time | time of creation | | yes |
 | `updated_at` | date-time | time of last update | | yes |
 
-## Endpoints:
+## Time Entries and Resource Only Users
 
-```
-# Time entries by user
-GET /api/v1/users/<user_id>/time_entries
-GET /api/v1/users/<user_id>/time_entries/<id>
+Just like in the application UI, **you cannot create new confirmed time entries for resource only users** via the API. You can read suggested time entries for all users via the API.
 
-# Time entries for given date-range
-GET /api/v1/users/<user_id>/time_entries?from=2017-03-14&to=2017-03-21  
+Note that if you've created useres through the API, they exist as resource only users until they have
+been invited and then logged into the system.
 
-# Time entries by project
-GET /api/v1/projects/<project_id>/time_entries
-GET /api/v1/projects/<project_id>/time_entries/<id>
+## Suggested time entries
 
-# All time entries in the account
-GET /api/v1/time_entries
-GET /api/v1/time_entries/<id>
+Suggested time entries (also know as unconfirmed time entries) are created by 10,000ft as a result of resources being assigned to a project. These are identifiable by the `is_suggestion: true` attribute on the time entry objects. Suggested time entries are not returned by the API by default and must be requested using the `with_suggestions=true` parameter on the GET API call to fetch time entries.
 
-# Time entries for given date-range
-GET /api/v1/time_entries?from=2017-03-14&to=2017-03-21  
+Suggested time entries are read-only and are kept up to date by 10Kft as the corresponding assignments are updated.
 
-# Updating a time entry
-PUT /api/v1/users/<user_id>/time_entries/id
+## Confirmed time entries.
 
-# Deleting a time entry
-DELETE /api/v1/users/<user_id>/time_entries/id
+Confirmed time entries are what a user (or the API) has explicitly created to indicate that they have spent some time working on a project.
 
-```
+## Bill Rates
+
+Time entries have an associated bill rate attached to them. When a new time entry is created, 10Kft will determine the appropriate bill rate for it (based on your account and project settings) and assign a values. When reading time entries, you can see this assigned bill rate.
 
 ### Optional Query Parameters:
 
-| **Name** | **Description** | format |
+| **Name** | **Description** | **format** |
 | ------------- | --------------- | --------------- |
-| from | get projects that start on or after this date | &from=2017-03-14 |
-| to | get projects that end on or before this date | &to=2017-03-21 |
-| sort_field | Field to sort the return document. Possible values: created or updated |
-| sort_order | order to sort the results on. Possible values: ascending or descending |
-| with_suggestions | true to include suggested (unconfirmed) time entries based on assignments on the schedule | &with_suggestions=true |
+| `from` | get projects that start on or after this date | &from=2017-03-14 |
+| `to` | get projects that end on or before this date | &to=2017-03-21 |
+| `sort_field` | Field to sort the return document. Possible values: created or updated |
+| `sort_order` | order to sort the results on. Possible values: ascending or descending |
+| `with_suggestions` | true to include suggested (unconfirmed) time entries based on assignments on the schedule | &with_suggestions=true |
 
 > IMPORTANT: *to* and *from* _must_ be a valid date formatted as `yyyy-mm-dd`
 

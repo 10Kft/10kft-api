@@ -4,6 +4,14 @@
 
 LeaveType is a subclass of Assignable. You will see the id refering to a project as `assignable_id` in other models. LeaveType is an assignable that you can assign time to, not being part of a project, such as Vacation.
 
+## Endpoints
+
+```
+GET  /api/v1/leave_types
+
+GET  /api/v1/leave_types/<leave_type_id>
+```
+
 ## List Leave Types (index)
 
 ```

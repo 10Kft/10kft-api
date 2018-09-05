@@ -12,7 +12,7 @@ GET /api/v1/holidays
 
 | **Parameter** | **Description** |
 | ------------- | --------------- |
-| per_page, page |  Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first ) |
+| `per_page`, `page` |  Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first ) |
 
 ## Fields:
 
