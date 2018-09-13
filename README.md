@@ -36,6 +36,9 @@ The API provides access to the following data collections in your account via RE
 * [Holidays](sections/holidays.md)
 * [Custom Fields](sections/custom-fields.md)
 * [Reports](sections/reports.md)
+* [Status Options](sections/status-options.md)
+* [Subtasks](sections/subtasks.md)
+* [Subtask Counts](sections/subtask-counts.md)
 
 # Webhooks (New!)
 
@@ -43,7 +46,7 @@ The 10,000ft API now supports webhooks for certain events. See [the webhooks pag
 
 # Zapier Integration
 
-Our Zapier integration helps you integrating with the 10,000ft API in convenient and powerful ways and connect many other apps and services used by yor team. 
+Our Zapier integration helps you integrating with the 10,000ft API in convenient and powerful ways and connect many other apps and services used by yor team.
 
 * [10,000ft on Zapier](https://zapier.com/apps/10000ft/integrations)
 * [Getting started with Zapier](sections/zapier-integration.md)
@@ -53,7 +56,7 @@ Our Zapier integration helps you integrating with the 10,000ft API in convenient
 Some case studies of our customers using our API to build new tools and applications using the 10Kft API.
 
   * [Fancy Pants Group](https://www.10000ft.com/blog/fancy-pants-group-case-study), a digital creative studio based in New York, recently used our API to develop and launch a custom project importer cheekily called Job the Builder. Their goal is to make it easy for everyone on their 100-person team to see and communicate consistent data across multiple tools.
-  
+
 # Third party libraries
 
 A few of our customers have implemented and shared API client libraries to help using the 10Kft API easier. Depending on your scenario, you may benefit from adopting and improving on them. Here are a couple of references,
