@@ -31,7 +31,6 @@ The API provides access to the following data collections in your account via RE
 * [Time Entries](sections/time-entries.md)
 * [Assignments](sections/assignments.md)
 * [Subtasks](sections/subtasks.md)
-  * [Subtask Counts](sections/subtask-counts.md)
 * [Bill Rates](sections/bill-rates.md)
 * [Statuses](sections/user-statuses.md) (_deprecated_)
 * [Time & Expense Approvals](sections/approvals.md)

@@ -56,7 +56,7 @@ POST /api/v1/users/<user_id>/assignments
 
  curl -d 'leave_id=<leave_id>&starts_at=<YEAR-MO-DAY>&ends_at=<YEAR-MO-DAY>&percent=0.25'  \
                  'https://vnext.10000ft.com/api/v1/users/1/assignments?auth=...'
-                 
+
  curl -d 'leave_id=<leave_id>&starts_at=<YEAR-MO-DAY>&ends_at=<YEAR-MO-DAY>&allocation_mode=hours_per_day&hours_per_day=<hours>'  \
                  'https://vnext.10000ft.com/api/v1/users/1/assignments?auth=...'
 ```
@@ -101,3 +101,44 @@ DELETE /api/v1/users/<user_id>/assignments/<assignment_id>
 ```
 
 **Notes**: `repetition_id` is used for repeated assignments. The value will be NULL when the assignment is not part or a repeating series. `repetition_id` is equal to the parent assignment.
+
+# Subtask Counts
+
+##### Endpoint: `/api/v1/projects/<project_id>/assignments?fields=subtasks_counts`
+
+This endpoint returns an array of subtasks counts for completed and total subtasks under each assignment record. This endpoint is a view-only endpoint.
+
+##### Example JSON Response
+
+```
+{
+  "data": [
+    {
+        "id": 12345,
+        "allocation_mode": "percent",
+        "percent": 1,
+        "user_id": null,
+        "assignable_id": 123,
+        "ends_at": "2018-06-27",
+        "starts_at": "2018-06-21",
+        "bill_rate": null,
+        "bill_rate_id": null,
+        "repetition_id": null,
+        "created_at": "2018-06-21T23:01:09Z",
+        "updated_at": "2018-06-21T23:01:09Z",
+        "all_day_assignment": true,
+        "resource_request_id": null,
+        "status": null,
+        "status_option_id": 1,
+        "description": "Build wireframes",
+        "note": null,
+        "subtask_counts": {
+            "completed": 5,
+            "total": 10
+        }
+    },
+    ...
+}
+
+```
+
