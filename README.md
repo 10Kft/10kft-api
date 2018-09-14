@@ -30,6 +30,8 @@ The API provides access to the following data collections in your account via RE
 * [Leave Types](sections/leave-types.md)
 * [Time Entries](sections/time-entries.md)
 * [Assignments](sections/assignments.md)
+* [Subtasks](sections/subtasks.md)
+  * [Subtask Counts](sections/subtask-counts.md)
 * [Bill Rates](sections/bill-rates.md)
 * [Statuses](sections/user-statuses.md) (_deprecated_)
 * [Time & Expense Approvals](sections/approvals.md)
@@ -37,8 +39,6 @@ The API provides access to the following data collections in your account via RE
 * [Custom Fields](sections/custom-fields.md)
 * [Reports](sections/reports.md)
 * [Status Options](sections/status-options.md)
-* [Subtasks](sections/subtasks.md)
-* [Subtask Counts](sections/subtask-counts.md)
 
 # Webhooks (New!)
 
