@@ -7,6 +7,13 @@ API access is available only on Pro and Enterprise plans of 10000ft.
 # Overview
 
 * [General information](sections/first-things-first.md) (read first)
+  * [Collections & Objects](https://github.com/10Kft/10kft-api/blob/master/sections/first-things-first.md#collections--objects)
+  * [Pagination](https://github.com/10Kft/10kft-api/blob/master/sections/first-things-first.md#pagination)
+  * [Authentication](https://github.com/10Kft/10kft-api/blob/master/sections/first-things-first.md#authentication)
+  * [Optional Fields](https://github.com/10Kft/10kft-api/blob/master/sections/first-things-first.md#optional-fields)
+  * [Date/Time Formatting](https://github.com/10Kft/10kft-api/blob/master/sections/first-things-first.md#date--time-formatting)
+  * [Error Handling](https://github.com/10Kft/10kft-api/blob/master/sections/first-things-first.md#error-handling)
+  * [Throttling/Rate-limiting](https://github.com/10Kft/10kft-api/blob/master/sections/first-things-first.md#throttling--rate-limiting)
 * [How to setup a staging environment for testing](sections/staging-environment.md)
 
 # Need help?
