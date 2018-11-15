@@ -57,7 +57,7 @@ POST /api/v1/users/<user_id>/assignments
  curl -d 'leave_id=<leave_id>&starts_at=<YEAR-MO-DAY>&ends_at=<YEAR-MO-DAY>&percent=0.25'  \
 
                  'https://vnext.10000ft.com/api/v1/users/<user_id>/assignments?auth=...'
-                 
+
  curl -d 'leave_id=<leave_id>&starts_at=<YEAR-MO-DAY>&ends_at=<YEAR-MO-DAY>&allocation_mode=hours_per_day&hours_per_day=<hours>'  \
                  'https://vnext.10000ft.com/api/v1/users/<user_id>/assignments?auth=...'
 ```
@@ -102,6 +102,93 @@ DELETE /api/v1/users/<user_id>/assignments/<assignment_id>
 ```
 
 **Notes**: `repetition_id` is used for repeated assignments. The value will be NULL when the assignment is not part or a repeating series. `repetition_id` is equal to the parent assignment.
+
+# Create Assignment with Subtasks
+
+##### Endpoint: `/api/v1/assignments`
+
+This endpoint allows an assignment to be created with subtasks. It takes all the same post parameters as a regular assignment create with the addition of the `subtasks` POST parameter. This endpoint returns the assignment object created with the nested subtasks created within it.
+
+## Endpoint
+
+```POST /api/v1/assignments```
+
+##### Params
+
+| param | description |
+| ------ | --------- |
+| subtasks | array of one or more subtask objects |
+
+##### Example POST params
+
+```
+POST {
+  "user_id": null,
+  "assignable_id": 123,
+  "ends_at": "2018-06-27",
+  "starts_at": "2018-06-21",
+  "status_option_id": 1,
+  "description": "Build wireframes",
+  "note": null,
+  "subtasks": [
+    {
+      "description": "New Task",
+      "completed": false
+    }
+  ]
+}
+```
+
+##### Example JSON Response
+
+```
+{
+  "data": [
+    {
+        "id": 12345,
+        "allocation_mode": "percent",
+        "percent": 1,
+        "user_id": null,
+        "assignable_id": 123,
+        "ends_at": "2018-06-27",
+        "starts_at": "2018-06-21",
+        "bill_rate": null,
+        "bill_rate_id": null,
+        "repetition_id": null,
+        "created_at": "2018-06-21T23:01:09Z",
+        "updated_at": "2018-06-21T23:01:09Z",
+        "all_day_assignment": true,
+        "resource_request_id": null,
+        "status": null,
+        "status_option_id": 1,
+        "description": "Build wireframes",
+        "note": null,
+        "subtasks": {
+          "paging": {
+              "self": "/api/v1/assignments/12345/subtasks?per_page=20&page=1",
+              "next": null,
+              "previous": null,
+              "page": 1,
+              "per_page": 20
+          },
+          "data": [
+            {
+              "id": 436,
+              "assignment_id": 12345,
+              "organization_id": 1,
+              "assignable_id": 123,
+              "description": "New Task",
+              "completed": false,
+              "updated_at": "2018-11-01T20:00:34Z",
+              "created_at": "2018-11-01T20:00:34Z",
+              "updated_by": 1
+            }
+          ]
+      }
+    },
+    ...
+}
+```
 
 # Subtask Counts
 
