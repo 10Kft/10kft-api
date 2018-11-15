@@ -175,7 +175,6 @@ POST {
             {
               "id": 436,
               "assignment_id": 12345,
-              "organization_id": 1,
               "assignable_id": 123,
               "description": "New Task",
               "completed": false,
