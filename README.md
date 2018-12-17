@@ -46,6 +46,8 @@ The API provides access to the following data collections in your account via RE
 * [Custom Fields](sections/custom-fields.md)
 * [Reports](sections/reports.md)
 * [Status Options](sections/status-options.md)
+* [Assignables](sections/assignables.md)
+
 
 # Webhooks (New!)
 
