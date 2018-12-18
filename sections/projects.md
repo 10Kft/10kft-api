@@ -75,6 +75,7 @@ GET  /api/v1/projects/<project_id>?fields=children
 ```
 
 ## Create a project
+Note: You cannot add thumbnails to the project through the API
 
 ```
 POST  /api/v1/projects
@@ -87,6 +88,7 @@ POST  /api/v1/projects
 ```
 
 ## Update a Project
+Note: You cannot add thumbnails to the project through the API
 
 ```
 PUT  /api/v1/projects/1245
@@ -100,7 +102,7 @@ PUT  /api/v1/projects/1245
 
 ## Locking Time Entries
 
-`timeentry_lockout` is used to control when new time entries are no longer accepted to a project. 
+`timeentry_lockout` is used to control when new time entries are no longer accepted to a project.
 
 | **Value** | **Description** |
 | ------------- | --------------- |
@@ -129,7 +131,7 @@ GET  https://api.10000ft.com/api/v1/projects/<project_id>?fields=tags,summary,ch
 ```
 
 ```
-{  
+{
   "id":821065,
   "archived":false,
   "archived_at":null,
@@ -154,30 +156,30 @@ GET  https://api.10000ft.com/api/v1/projects/<project_id>?fields=tags,summary,ch
   "has_pending_updates":false,
   "client":null,
   "project_state":"Internal",
-  "tags":{  
-    "paging":{  
+  "tags":{
+    "paging":{
       "self":"/api/v1/projects/821065/tags?per_page=1&page=1",
       "next":null,
       "previous":null,
       "page":1,
       "per_page":1
     },
-    "data":[  
-      {  
+    "data":[
+      {
         "id":1207009,
         "value":"Sales"
       }
     ]
   },
-  "children":{  
-    "paging":{  
+  "children":{
+    "paging":{
       "self":"/api/v1/projects/821065/tags?per_page=100000&page=1",
       "next":null,
       "previous":null,
       "page":1,
       "per_page":100000
     },
-    "data":[  
+    "data":[
 
     ]
   },
