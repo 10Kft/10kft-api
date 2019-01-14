@@ -113,7 +113,7 @@ Setting the user_type_id via API is not supported.
   "billrate": -1,
   "has_login": true,
   "login_type": "saml",
-  "thumbnail": ""
+  "thumbnail": "",
   "created_at": "2015-11-13T20:38:10Z",
   "updated_at": "2015-11-13T20:38:10Z"
 }
