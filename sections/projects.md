@@ -90,6 +90,7 @@ GET  /api/v1/projects/<project_id>?fields=children
 ```
 
 ## Create a project
+Note: You cannot add thumbnails to the project through the API
 
 ```
 POST  /api/v1/projects
@@ -102,6 +103,7 @@ POST  /api/v1/projects
 ```
 
 ## Update a Project
+Note: You cannot add thumbnails to the project through the API
 
 ```
 PUT  /api/v1/projects/1245

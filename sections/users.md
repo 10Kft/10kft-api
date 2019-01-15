@@ -130,7 +130,7 @@ GET  https://api.10000ft.com/api/v1/users/1?auth=<token>
   "billrate": -1,
   "has_login": true,
   "login_type": "saml",
-  "thumbnail": ""
+  "thumbnail": "",
   "created_at": "2015-11-13T20:38:10Z",
   "updated_at": "2015-11-13T20:38:10Z"
 }

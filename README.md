@@ -7,6 +7,13 @@ API access is available only on Pro and Enterprise plans of 10000ft.
 # Overview
 
 * [General information](sections/first-things-first.md) (read first)
+  * [Collections & Objects](https://github.com/10Kft/10kft-api/blob/master/sections/first-things-first.md#collections--objects)
+  * [Pagination](https://github.com/10Kft/10kft-api/blob/master/sections/first-things-first.md#pagination)
+  * [Authentication](https://github.com/10Kft/10kft-api/blob/master/sections/first-things-first.md#authentication)
+  * [Optional Fields](https://github.com/10Kft/10kft-api/blob/master/sections/first-things-first.md#optional-fields)
+  * [Date/Time Formatting](https://github.com/10Kft/10kft-api/blob/master/sections/first-things-first.md#date--time-formatting)
+  * [Error Handling](https://github.com/10Kft/10kft-api/blob/master/sections/first-things-first.md#error-handling)
+  * [Throttling/Rate-limiting](https://github.com/10Kft/10kft-api/blob/master/sections/first-things-first.md#throttling--rate-limiting)
 * [How to setup a staging environment for testing](sections/staging-environment.md)
 
 # Need help?
@@ -27,15 +34,20 @@ The API provides access to the following data collections in your account via RE
   * [Users by Project](sections/project-users.md)
   * [Project Tags](sections/project-tags.md)
   * [Phases](sections/phases.md)
+* [Project Budgets](sections/budget-items.md)
 * [Leave Types](sections/leave-types.md)
 * [Time Entries](sections/time-entries.md)
 * [Assignments](sections/assignments.md)
+* [Subtasks](sections/subtasks.md)
 * [Bill Rates](sections/bill-rates.md)
 * [Statuses](sections/user-statuses.md) (_deprecated_)
 * [Time & Expense Approvals](sections/approvals.md)
 * [Holidays](sections/holidays.md)
 * [Custom Fields](sections/custom-fields.md)
 * [Reports](sections/reports.md)
+* [Status Options](sections/status-options.md)
+* [Assignables](sections/assignables.md)
+
 
 # Webhooks (New!)
 
@@ -43,7 +55,7 @@ The 10,000ft API now supports webhooks for certain events. See [the webhooks pag
 
 # Zapier Integration
 
-Our Zapier integration helps you integrating with the 10,000ft API in convenient and powerful ways and connect many other apps and services used by yor team. 
+Our Zapier integration helps you integrating with the 10,000ft API in convenient and powerful ways and connect many other apps and services used by yor team.
 
 * [10,000ft on Zapier](https://zapier.com/apps/10000ft/integrations)
 * [Getting started with Zapier](sections/zapier-integration.md)
@@ -53,7 +65,7 @@ Our Zapier integration helps you integrating with the 10,000ft API in convenient
 Some case studies of our customers using our API to build new tools and applications using the 10Kft API.
 
   * [Fancy Pants Group](https://www.10000ft.com/blog/fancy-pants-group-case-study), a digital creative studio based in New York, recently used our API to develop and launch a custom project importer cheekily called Job the Builder. Their goal is to make it easy for everyone on their 100-person team to see and communicate consistent data across multiple tools.
-  
+
 # Third party libraries
 
 A few of our customers have implemented and shared API client libraries to help using the 10Kft API easier. Depending on your scenario, you may benefit from adopting and improving on them. Here are a couple of references,
