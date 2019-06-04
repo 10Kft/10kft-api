@@ -122,6 +122,8 @@ POST /api/v1/users/<user_id>/custom_field_values
 | `user_id` or `project_id` | number | `id` of the associated user or assignable (can be inferred from URL) |
 | `value` | string or array | the actual value |
 
+:warning: **Note**: Only multi-select custom fields (i.e., those with a `data_type` of `3`) can accept an array as a value in a `POST` request. This will create one custom field value record for each value in the array. Note that subsequent `POST` requests will overwrite the current values. If you wish to append to an array of custom field values associated with a custom field, it is necessary to `POST` the entire array (i.e., the current array values, plus any additions). Similarly, if you wish you delete certain values, you must post the desired final values.
+
 ### Updating Custom Field Values
 ```
 PUT /api/v1/projects/<project_id>/custom_field_values/<id>
@@ -131,7 +133,7 @@ PUT /api/v1/users/<user_id>/custom_field_values/<id>
 
 | **Parameter** | **Type** | **Description** |
 | ------------- | -------- | --------------- |
-| `value` | string or array | the actual value |
+| `value` | string | the actual value |
 
 ### Getting Custom Field Values
 ```
