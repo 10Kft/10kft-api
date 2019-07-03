@@ -34,7 +34,7 @@ POST /api/v1/users
 | `last_name` | string | The last name |  |  |
 | `display_name` | string | The display name |  | yes |
 | `email` | string | The first name |  |  |
-| `user_type_id` | number | The role of the user (see below) |  | yes |
+| `user_type_id` | number | The role of the user (see below) |  |  |
 | `billable` | boolean | reserved |  |  |
 | `hire_date` | date | Date user was hired | yes |  |
 | `termination_date` | date | Date user was terminated | yes |  |
@@ -79,7 +79,7 @@ Information about a user's role is contained in the user_type_id property.
 
 Values not described in this list are reserved for internal/future use.
 
-Setting the user_type_id via API is not supported.
+API users may set the `user_type_id` of a user to any value except `1` (Administrator). Updating a user to be an administrator must be done through the app.
 
 ## Sample Response
 
