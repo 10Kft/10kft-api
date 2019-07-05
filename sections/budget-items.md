@@ -16,7 +16,6 @@ Value for `item_type` could be one of `TimeFees` / `TimeFeesDays` / `Expenses`
 
 ```
 GET /api/v1/projects/<project_id>/budget_items
- curl "https://vnext.10000ft.com/api/v1/budget_items?item_type=TimeFees&auth=..
  curl "https://vnext.10000ft.com/api/v1/projects/12345/budget_items?item_type=TimeFees&auth=..
 ```
 
