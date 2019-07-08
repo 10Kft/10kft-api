@@ -2,7 +2,7 @@
 
 Time Entries are a collection of hours tracked per project and user. There are two main kinds of time_entries.
 
-## Suggested time entries
+## Suggested (aka Unconfirmed) time entries
 
 Suggested time entries (also know as unconfirmed time entries) are created by 10,000ft as a result of resources being assigned to a project. These are identifiable by the `is_suggestion: true` attribute on the time entry objects. Suggested time entries are not returned by the API by default and must be requested using the `with_suggestions=true` parameter on the GET API call to fetch time entries.
 
