@@ -114,6 +114,7 @@ Information about the user's license type is contained in the `license_type` pro
   "discipline": "Program Management",
   "location": "Seattle",
   "type": "User",
+  "license_type": "licensed",
   "billability_target": 100,
   "billrate": -1,
   "has_login": true,
