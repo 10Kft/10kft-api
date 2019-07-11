@@ -55,6 +55,7 @@ POST /api/v1/users
 | `type` | string | reserved |  | yes |
 | `has_login` | boolean | The user has setup a login |  | yes |
 | `login_type` | string | reserved |  | yes |
+| `license_type` | string | The user's license type (see below). Defaults to `licensed` |  yes |  |
 | `thumbnail` | string | A url to a user profile image | yes | yes |
 | `created_at` | date-time | time of creation | | yes |
 | `updated_at` | date-time | time of last update | | yes |
@@ -80,6 +81,10 @@ Information about a user's role is contained in the user_type_id property.
 Values not described in this list are reserved for internal/future use.
 
 Setting the user_type_id via API is not supported.
+
+### License Type
+
+Information about the user's license type is contained in the `license_type` property. Accepted values are currently `licensed` and `managed_resource`. Both types count toward the applicable limits on your plan. See Settings > People in 10,000ft for more information.
 
 ## Sample Response
 
@@ -109,6 +114,7 @@ Setting the user_type_id via API is not supported.
   "discipline": "Program Management",
   "location": "Seattle",
   "type": "User",
+  "license_type": "licensed",
   "billability_target": 100,
   "billrate": -1,
   "has_login": true,
