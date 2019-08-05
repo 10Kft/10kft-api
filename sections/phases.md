@@ -25,6 +25,15 @@ curl  -XPUT -d "phase_name=Another%20Name&"  \
                          "https://vnext.10000ft.com/api/v1/projects/[project_id]/phases/456?auth=..."
 ```
 
+### Bill Rates
+If you wish for the phase to inherit the parent project's bill rates after create, the `use_parent_bill_rates` flag can be passed with a `PUT` request as follows:
+
+```
+curl  -XPUT -d "use_parent_bill_rates=true"  \
+                         "https://vnext.10000ft.com/api/v1/projects/[project_id]/phases/456?auth=..."
+```
+
+
 ## Delete a Phase for a Project
 
 ```
