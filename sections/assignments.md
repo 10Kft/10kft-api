@@ -127,7 +127,7 @@ This endpoint allows an assignment to be created with subtasks. It takes all the
 
 ```
 {
-  "created_assignments": [
+  "assignments": [
     {
         0: 
           allocation_mode: "percent"
@@ -151,6 +151,7 @@ This endpoint allows an assignment to be created with subtasks. It takes all the
           updated_at: "2019-08-21T15:11:08Z"
           user_id: 8
       },
+    "created_ids": [8771] // Deprecated
     "repetition_id": 8668
 }
 ```
