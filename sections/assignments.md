@@ -103,7 +103,21 @@ DELETE /api/v1/users/<user_id>/assignments/<assignment_id>
 
 **Notes**: `repetition_id` is used for repeated assignments. The value will be NULL when the assignment is not part or a repeating series. `repetition_id` is equal to the parent assignment.
 
-# Create Assignment with Subtasks
+## Repeat an Assignment
+
+```
+POST /api/v1/projects/<project_id>/assignments/<assignment_id>/repetitions
+```
+
+##### Params
+
+| param | description |
+| ------ | --------- |
+| frequency_weeks | integer value of the frequency with which to repeat the assignment (e.g., 1 = every week) |
+| count | integer value of the total number of weeks to repeat the assignment |
+
+
+## Create Assignment with Subtasks
 
 ##### Endpoint: `/api/v1/assignments`
 
@@ -189,7 +203,7 @@ POST {
 }
 ```
 
-# Subtask Counts
+## Subtask Counts
 
 ##### Endpoint: `/api/v1/projects/<project_id>/assignments?fields=subtasks_counts`
 
