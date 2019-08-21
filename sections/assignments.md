@@ -123,6 +123,38 @@ POST /api/v1/projects/<project_id>/assignments/<assignment_id>/repetitions
 
 This endpoint allows an assignment to be created with subtasks. It takes all the same post parameters as a regular assignment create with the addition of the `subtasks` POST parameter. This endpoint returns the assignment object created with the nested subtasks created within it.
 
+##### Example JSON Response
+
+```
+{
+  "created_assignments": [
+    {
+        0: 
+          allocation_mode: "percent"
+          assignable_id: 4
+          bill_rate: 1
+          bill_rate_id: 4249
+          created_at: "2019-08-21T15:11:08Z"
+          description: ""
+          ends_at: "2019-09-06"
+          fixed_hours: null
+          hours_per_day: null
+          id: 8669
+          note: ""
+          organization_id: 1
+          percent: 1
+          repetition_id: 8668
+          resource_request_id: null
+          starts_at: "2019-08-30"
+          status: null
+          status_option_id: null
+          updated_at: "2019-08-21T15:11:08Z"
+          user_id: 8
+      },
+    "repetition_id": 8668
+}
+```
+
 ## Endpoint
 
 ```POST /api/v1/assignments```
