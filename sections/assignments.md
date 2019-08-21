@@ -114,7 +114,7 @@ POST /api/v1/projects/<project_id>/assignments/<assignment_id>/repetitions
 | param | description |
 | ------ | --------- |
 | frequency_weeks | integer value of the frequency with which to repeat the assignment (e.g., 1 = every week) |
-| count | integer value of the total number of weeks to repeat the assignment |
+| count | integer value (less than 52) of the total number of weeks to repeat the assignment |
 
 
 ## Create Assignment with Subtasks
