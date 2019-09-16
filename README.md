@@ -18,7 +18,7 @@ API access is available only on Pro and Enterprise plans of 10000ft.
 
 # Need help?
 
-* Email questions to support@10000ft.com
+* Contact us via our [Support Page](https://help.smartsheet.com/contact?contactType=10k-support)
   * Read more on how to report a problem [here](sections/getting-help.md).
 * Have a suggestion for improving our API documentation? Send us a pull-request or email support.
 
