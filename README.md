@@ -76,4 +76,4 @@ A few of our customers have implemented and shared API client libraries to help 
 
 # Questions?
 
-Please don't hesitate to reach out to us via the in-app support feature for questions or suggestions about using the 10,000ft API. We're here to help.
+Questions or feedback about our API, please submit a support ticket at our [Support Page](https://help.smartsheet.com/contact?contactType=10k-support) 
