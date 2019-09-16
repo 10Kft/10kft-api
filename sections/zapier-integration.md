@@ -120,7 +120,9 @@ Familiarize yourself with the different types of users and assignables available
 
 Zapier is a convenient and powerful way to consume the 10,000ft API. The triggers, actions and searches listed above allow you to access commonly used API functionality without having to develop custom API integrations or write software code. 
 
-The 10,000ft API provides access to a number of advancaed features that are not currently supported with our Zapier triggers and actions. See [10,000ft API documentation](../README.md) for more details and email us questions to support@10000ft.com.
+The 10,000ft API provides access to a number of advancaed features that are not currently supported with our Zapier triggers and actions. See [10,000ft API documentation](../README.md) for more details.
+
+Have a question? Contact us via our [Support Page](https://help.smartsheet.com/contact?contactType=10k-support). We are here to help!
 
 
 
