@@ -9,7 +9,7 @@ There is no additional charge for maintaining a test account on vnext.
 * Visit [`https://vnext.10000ft.com/signup`](https://vnext.10000ft.com/signup) to setup a test account.
 * The API end point base URL for `vnext` is `https://vnext-api.10000ft.com/api/v1/`
 * To access your test account, visit `https://vnext.10000ft.com` and sign in with your test account credentials.
-* For support on vnext integration, contact us via email at `support@10000ft.com`
+* For support on vnext integration, contact us via our [Support Page](https://help.smartsheet.com/contact?contactType=10k-support)
 
 ### What changes when moving my integration to production?
 
