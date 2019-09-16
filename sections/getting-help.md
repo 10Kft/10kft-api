@@ -2,7 +2,7 @@
 
 There are several ways you can ask for help or report a problem with using the API.
 
-* For issues that require immediate attention, contact us via the support feature within the application user interface, or email support@10000ft.com.
+* For issues that require immediate attention, contact us via our [Support Page](https://help.smartsheet.com/contact?contactType=10k-support)
 
 When contacting support for assistance with using the API, please provide example API calls where possible. This greatly speeds up the time to resolve support requests. You can use cURL, available on unix platforms as well as windows, to create an example of your scenario, and including the `curl` command(s) along with your request for support.
 
