@@ -1,8 +1,8 @@
-# 10,000ft API (Pro and Enterprise only)
+# 10,000ft API (Pro, Enterprise and Business plans)
 
 The 10,000ft API provides programmatic access to projects, users and time entries in your account, commonly referred to as _resources_ in the rest of this API documentation. The API implements a standard HTTP REST pattern and allows callers with appropriate authentication and authorization to programmatically create, read, update and delete these resources.
 
-API access is available only on Pro and Enterprise plans of 10000ft.
+API access is available on Pro, Enterprise and Business plans of 10000ft. As of June 2019, all new plans purchased are Business, and include API access. For customers prior to this date, API access is based on your current plan.
 
 # Overview
 
