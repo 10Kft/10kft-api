@@ -1,0 +1,137 @@
+---
+title: 10,000ft API
+
+language_tabs:
+
+toc_footers:
+
+# List the includes in the order you want them to appear
+# on the page
+includes:
+  - first-things-first
+  - approvals
+  - assignables
+  - assignments
+  - bill-rates
+  - budget-item-categories
+  - budget-items
+  - custom-fields
+  - disciplines
+  - expense-entries
+  - getting-help
+  - holidays
+  - leave-types
+  - phases
+  - placeholders
+  - project-tags
+  - project-users
+  - projects
+  - reports
+  - roles
+  - staging-environment
+  - status-options
+  - subtasks
+  - time-entries
+  - user-availabilities
+  - user-statuses
+  - user-tags
+  - users
+  - webhooks
+  - zapier-integration
+
+search: false
+---
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KW34LR"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KW34LR');</script>
+<!-- End Google Tag Manager -->
+
+# <span class="customTOCSectionHeading">10,000ft API (Pro and Enterprise only)</span>
+
+<aside class="notice">Last updated: 02/05/2019</aside>
+
+The 10,000ft API provides programmatic access to projects, users and time entries in your account, commonly referred to as _resources_ in the rest of this API documentation. The API implements a standard HTTP REST pattern and allows callers with appropriate authentication and authorization to programmatically create, read, update and delete these resources.
+
+API access is available only on Pro and Enterprise plans of 10000ft.
+
+# Overview
+
+* [General information](#before-starting-to-use-the-10,000ft-api) (read first)
+  * [Collections & Objects](#collections-&-objects)
+  * [Pagination](#pagination)
+  * [Authentication](#authentication)
+  * [Optional Fields](#optional-fields)
+  * [Date/Time Formatting](#date-&-time-formatting)
+  * [Error Handling](#error-handling)
+  * [Throttling/Rate-limiting](#throttling-&-rate-limiting)
+* [How to setup a staging environment for testing](#how-do-i-access-the-staging-environment?)
+
+# Need help?
+
+* Contact us via our [Support Page](https://help.smartsheet.com/contact?contactType=10k-support)
+  * Read more on how to report a problem [here](#getting-help-&-reporting-problems).
+* Have a suggestion for improving our API documentation? Send us a pull-request or email support.
+
+# Endpoints
+
+The API provides access to the following data collections in your account via RESTful endpoints.
+
+* [Users](sections/users.md)
+  * [User Tags](sections/user-tags.md)
+  * [Availabilities](sections/user-availabilities.md)
+* [Placeholder Resources](sections/placeholders.md)
+* [Projects](sections/projects.md)
+  * [Users by Project](sections/project-users.md)
+  * [Project Tags](sections/project-tags.md)
+  * [Phases](sections/phases.md)
+* [Project Budgets](sections/budget-items.md)
+* [Leave Types](sections/leave-types.md)
+* [Time Entries](sections/time-entries.md)
+* [Assignments](sections/assignments.md)
+* [Subtasks](sections/subtasks.md)
+* [Bill Rates](sections/bill-rates.md)
+* [Statuses](sections/user-statuses.md) (_deprecated_)
+* [Time & Expense Approvals](sections/approvals.md)
+* [Holidays](sections/holidays.md)
+* [Custom Fields](sections/custom-fields.md)
+* [Reports](sections/reports.md)
+* [Status Options](sections/status-options.md)
+* [Assignables](sections/assignables.md)
+
+
+# Webhooks (New!)
+
+The 10,000ft API now supports webhooks for certain events. See [the webhooks page](sections/webhooks.md) for details.
+
+# Zapier Integration
+
+Our Zapier integration helps you integrating with the 10,000ft API in convenient and powerful ways and connect many other apps and services used by yor team.
+
+* [10,000ft on Zapier](https://zapier.com/apps/10000ft/integrations)
+* [Getting started with Zapier](sections/zapier-integration.md)
+
+# Case studies
+
+Some case studies of our customers using our API to build new tools and applications using the 10Kft API.
+
+  * [Fancy Pants Group](https://www.10000ft.com/blog/fancy-pants-group-case-study), a digital creative studio based in New York, recently used our API to develop and launch a custom project importer cheekily called Job the Builder. Their goal is to make it easy for everyone on their 100-person team to see and communicate consistent data across multiple tools.
+
+# Third party libraries
+
+A few of our customers have implemented and shared API client libraries to help using the 10Kft API easier. Depending on your scenario, you may benefit from adopting and improving on them. Here are a couple of references,
+
+* Revelry Labs / `ruby` / https://github.com/revelrylabs/tenk
+* Spindance / `ruby` / https://github.com/spindance/ten_thousand_feet
+* Work & Co / `go` / https://github.com/workco/go-tenkft
+
+# Questions?
+
+Questions or feedback about our API, please submit a support ticket at our [Support Page](https://help.smartsheet.com/contact?contactType=10k-support) 
+
+<h1 id="configuration"><span class="customTOCSectionHeading">Pages</span></h1>
