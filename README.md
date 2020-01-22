@@ -37,6 +37,7 @@ The API provides access to the following data collections in your account via RE
 * [Project Budgets](sections/budget-items.md)
 * [Leave Types](sections/leave-types.md)
 * [Time Entries](sections/time-entries.md)
+* [Expense Items](sections/expense-items.md)
 * [Assignments](sections/assignments.md)
 * [Subtasks](sections/subtasks.md)
 * [Bill Rates](sections/bill-rates.md)

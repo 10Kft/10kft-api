@@ -1,4 +1,4 @@
-# Expense Entries
+# Expense Items
 
 ##### Endpoint: `/api/v1/users/<user_id>/expense_items`
 
@@ -14,8 +14,6 @@ Expense items are reported by a user on a project or leave type.
 | to | get expenses reported on or before this date |
 | per_page, page | Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first ) |
 
-```
-```
 
 ## Expenses by User
 
