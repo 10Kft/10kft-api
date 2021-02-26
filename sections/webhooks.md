@@ -133,7 +133,7 @@ Some of our data types, such as projects and users, are fairly complex and have 
 
 #### Assignments
 
-For assignments, any permitted change to an assignment (dates, allocation mode, percent, etc.) will trigger an updated event.
+For assignments, any permitted change to an assignment (dates, allocation mode, percent, etc.) will trigger an updated event. **Note: Changing the assignee will trigger an `assignment.deleted` followed by an `assignment.created` event. We handle assignee changes differently than other attributes internally.**
 
 #### Time Entries
 
