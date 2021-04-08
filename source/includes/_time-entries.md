@@ -1,43 +1,37 @@
 # Time Entries
 
-Time Entries are a collection of hours tracked per project and user. There are two main kinds of time_entries.
+Time Entries are a collection of hours tracked per project and user. There are two types of time entries: **suggested** and **confirmed**
 
-## Suggested (aka Unconfirmed) time entries
+## Suggested time entries
 
 Suggested time entries (also know as unconfirmed time entries) are created by 10,000ft as a result of resources being assigned to a project. These are identifiable by the `is_suggestion: true` attribute on the time entry objects. Suggested time entries are not returned by the API by default and must be requested using the `with_suggestions=true` parameter on the GET API call to fetch time entries.
 
 Suggested time entries are read-only and are kept up to date by 10Kft as the corresponding assignments are updated.
 
-## Confirmed time entries.
+## Confirmed time entries
 
 Confirmed time entries are what a user (or the API) has explicitly created to indicate that they have spent some time working on a project.
 
-## Time Entries and Resource Only Users
-
-Note that just like in the application UI, you cannot create new confirmed time entries for resource only users via the API. You can read suggested time entries for all users via the API.
-
-## Bill Rates
-
-Time entries have an associated bill rate attached to them. When a new time entry is created, 10Kft will determine the appropriate bill rate for it (based on your account and project settings) and assign a values. When reading time entries, you can see this assigned bill rate.
+_Note that just like in the application UI, you cannot create new confirmed time entries for resource only users via the API. You can read suggested time entries for all users via the API._
 
 ## Fields
 
-| **Name** | **Type** | **Description** | **Optional** | **Readonly** |
-| -------- | -------- | --------------- | ------------ | ------------- |
-| `id` | number | Time entry id |  | yes |
-| `user_id` | number | User or resource id |  |  |
-| `assignable_id` | number | Project or leave type id |  |  |
-| `assignable_type` | string | Project or LeaveType |  |  |
-| `date` | date | The date |  |  |
-| `hours` | number | Number of hours confirmed |  |  |
-| `is_suggestion` | boolean | Is this a suggested time entry |  | yes |
-| `scheduled_hours` | number | Number of hours scheduled (if this is a suggested time entry) |  |  |
-| `task` | string | A task category | yes |  |
-| `notes` | string | A note | yes |  |
-| `bill_rate` | number | The hourly rate for the time entered |  |  |
-| `bill_rate_id` | number | The rate id reference |  |  |
-| `created_at` | date-time | time of creation | | yes |
-| `updated_at` | date-time | time of last update | | yes |
+| **Name** | **Type** | **Description** | **Required** | **Readonly** | **Default value**
+| -------- | -------- | --------------- | ------------ | ------------- | ------------- |
+| `id` | number | Time entry id | | yes | NEXT(ID) |
+| `user_id` | number | User id (licensed user only) | yes |  |  |
+| `assignable_id` | number | Project, Phase or Leave type id | yes |  |  |
+| `assignable_type` | string | Project or LeaveType |  | yes |  |
+| `date` | date | The date | yes |  |  |
+| `hours` | number | Number of hours confirmed | yes |  |  |
+| `is_suggestion` | boolean | Is this a suggested time entry |  | yes |  |
+| `scheduled_hours` | number | Number of hours scheduled (suggested time only) |  | yes |  |
+| `task` | string | A task category |  |  |  |
+| `notes` | string | A note |  |  |  |
+| `bill_rate` | number | The hourly rate for the time entered |  | yes |  |
+| `bill_rate_id` | number | The rate id reference |  |  | Detect rate |
+| `created_at` | date-time | time of creation | | yes | NOW()
+| `updated_at` | date-time | time of last update | | yes | NOW()
 
 ## Endpoints:
 
@@ -79,6 +73,10 @@ DELETE /api/v1/users/<user_id>/time_entries/id
 | with_suggestions | true to include suggested (unconfirmed) time entries based on assignments on the schedule | &with_suggestions=true |
 
 > IMPORTANT: *to* and *from* _must_ be a valid date formatted as `yyyy-mm-dd`
+
+## Bill Rates
+
+Time entries have an associated bill rate attached to them. When a new time entry is created, 10Kft will determine the appropriate bill rate for it (based on your account and project settings) and assign a values. When reading time entries, you can see this assigned bill rate.
 
 ### Creating Time Entries
 
