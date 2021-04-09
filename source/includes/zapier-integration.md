@@ -17,7 +17,7 @@ Zapier provides free and paid plans. See the [Zapier pricing page](https://zapie
   * Find the 10,000ft app and pick any trigger to initiate the setup
   * When prompted, add the 10,000ft API Token into Zapier, test and save your connection
     
-    <img src="../assets/make-a-zap/3.png" alt="add API token" width="480">
+    <img src="../images/make-a-zap/3.png" alt="add API token" width="480">
   
 Once the connection is setup and tested, you can use it to make new Zap. Lets go through the steps and setup an example Zap.
 
@@ -38,7 +38,7 @@ Configuring a 10,000ft Zap typically involves,
 
 Lets try a specific example. In the steps below we will make a Zap that will send an email to when one of your team members are assigned to a project. When you are done, this is what the outline of your Zap will look like,
 
-  <img src="../assets/make-a-zap/overview.png" alt="overview" width="480">
+  <img src="../images/make-a-zap/overview.png" alt="overview" width="480">
 
 And here are the steps in detail,
 
@@ -47,12 +47,12 @@ And here are the steps in detail,
 * Search for the 10,000ft app and select it
 * Select a 10,000ft Trigger (e.g. New Assignment)
   
-  <img src="../assets/make-a-zap/1.png" alt="new assignment trigger" width="480">
+  <img src="../images/make-a-zap/1.png" alt="new assignment trigger" width="480">
 
 * Connect your 10,000ft app if prompted by supplying your 10,000ft API token
 * Add a step to search 10,000ft and lookup details for the user_id in the assignment
   
-  <img src="../assets/make-a-zap/6.png" alt="find user by id options" width="480">
+  <img src="../images/make-a-zap/6.png" alt="find user by id options" width="480">
 
   * Add a step and select 10,000ft as the app
   * Search and select the `Find User by ID` action
@@ -64,7 +64,7 @@ And here are the steps in detail,
   * Configure it to find the assignable for the `assignable_id` from the New Assignment trigger we setup above
 * Add a step to send an email
   
-  <img src="../assets/make-a-zap/email-template-options.png" alt="email template options" width="480">
+  <img src="../images/make-a-zap/email-template-options.png" alt="email template options" width="480">
 
   * Select the Email by Zapier app
   * Configure it to send an email to user in the New Assignment
@@ -78,9 +78,9 @@ Now, when a new assignment is made on the 10,000ft schedule, the person who was 
 
 Zapier Filters are useful when building integrations with 10,000ft. You can use any attribute from a trigger of search action when implementing a filter. The `Type` attribute available in 10,000ft users and assignabled are particularly useful. For example, in the example above your Zap would typically exclude Placeholder users. This would be implemented by adding a FIlter to you Zap as shown below.
 
-  <img src="../assets/make-a-zap/filter-options.png" alt="email filter options" width="480">
+  <img src="../images/make-a-zap/filter-options.png" alt="email filter options" width="480">
 
-Familiarize yourself with the different types of users and assignables available in 10,000ft when designing your 10,000ft Zaps so you can get the result you are trying to achive with your integration. See [10,000ft API documentation](../README.md) for more details on specific attributes.
+Familiarize yourself with the different types of users and assignables available in 10,000ft when designing your 10,000ft Zaps so you can get the result you are trying to achive with your integration. See [10,000ft API documentation](#overview) for more details on specific attributes.
 
 ## Triggers
 
@@ -120,7 +120,7 @@ Familiarize yourself with the different types of users and assignables available
 
 Zapier is a convenient and powerful way to consume the 10,000ft API. The triggers, actions and searches listed above allow you to access commonly used API functionality without having to develop custom API integrations or write software code. 
 
-The 10,000ft API provides access to a number of advancaed features that are not currently supported with our Zapier triggers and actions. See [10,000ft API documentation](../README.md) for more details.
+The 10,000ft API provides access to a number of advancaed features that are not currently supported with our Zapier triggers and actions. See [10,000ft API documentation](#overview) for more details.
 
 Have a question? Contact us via our [Support Page](https://help.smartsheet.com/contact?contactType=10k-support). We are here to help!
 

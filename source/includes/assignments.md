@@ -3,7 +3,7 @@
 ##### Endpoint: `/api/v1/users/<user_id>/assignments`
 ##### Endpoint: `/api/v1/projects/<project_id>/assignments`
 
-Assignments connect a [User](users.md) to a [Project](projects.md) or a [Phase](phases.md) (part of a project) or a [LeaveType](leave-types.md).
+Assignments connect a [User](#users) to a [Project](#projects) or a [Phase](#phases) (part of a project) or a [LeaveType](#leave-types).
 
 ## List assignments for a User or Project
 
@@ -48,7 +48,7 @@ Similarly, in the create and delete examples below, you can call the assignments
 
 Typical parameters: `starts_at`, `ends_at`, `allocation_mode (percent, hours_per_day, fixed)`, `percent`, `hours_per_day`, `fixed_hours`
 
-```
+```shell
 POST /api/v1/users/<user_id>/assignments
 
  curl -d 'leave_id=<leave_id>&starts_at=<YEAR-MO-DAY>&ends_at=<YEAR-MO-DAY>'  \

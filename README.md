@@ -49,7 +49,6 @@ The API provides access to the following data collections in your account via RE
 * [Status Options](sections/status-options.md)
 * [Assignables](sections/assignables.md)
 
-
 # Webhooks (New!)
 
 The 10,000ft API now supports webhooks for certain events. See [the webhooks page](sections/webhooks.md) for details.

@@ -12,11 +12,11 @@ Endpoints:
 Get Disciplines
 -------------
 
-* `GET /api/v1/disciplines` will return a [paginated list](/README.md#pagination) of Disciplines.
+* `GET /api/v1/disciplines` will return a [paginated list](#pagination) of Disciplines.
 
 _Optional parameters:_
 
-- Respects [filtering parameters](/README.md#filtering)
+- Respects [filtering parameters](#filtering)
 
 ###### Example JSON Response
 

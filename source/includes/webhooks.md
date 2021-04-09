@@ -119,8 +119,8 @@ webhook's URL. This POST data is known as the webhook payload. A webhook payload
 
 The "type" field indicates what type of event occurred, and is always one of the event types listed above.
 The "data" field is exactly the same as what would be returned if the actual object
-were fetched through the API via a GET call. Refer to the [Projects](projects.md), [Users](users.md),
-[Time Entries](time-entries.md) and [Assignments](assignments.md) documentation for the exact format and return values 
+were fetched through the API via a GET call. Refer to the [Projects](#projects), [Users](#users),
+[Time Entries](#time-entries) and [Assignments](#assignments) documentation for the exact format and return values 
 for the GET output. The data is exactly the same as a simple GET call output, with no additional fields 
 requested. It is not possible to request additional fields in the webhook payload, e.g. to request custom field values
 or bill rates or other data that can be requested through the 'fields' parameter in typical API calls. If such additional

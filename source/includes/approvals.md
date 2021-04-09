@@ -24,7 +24,7 @@ curl 'https://vnext.10000ft.com/api/v1/users/1/time_entries?fields=approvals&aut
 
 Response
 
-```
+```json
 {
   "paging": {
     ...
@@ -91,7 +91,7 @@ Approvals are not created or updated directly. Rather, approvable records are su
 
 Example
 
-```
+```shell
 POST /api/v1/approvals
 
 # request body
