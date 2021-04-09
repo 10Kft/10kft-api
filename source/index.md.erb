@@ -17,7 +17,7 @@ includes:
   - budget-items
   - custom-fields
   - disciplines
-  - expense-entries
+  - expense-items
   - getting-help
   - holidays
   - leave-types
@@ -52,71 +52,70 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-KW34LR');</script>
 <!-- End Google Tag Manager -->
 
-# <span class="customTOCSectionHeading">10,000ft API (Pro and Enterprise only)</span>
+# <span class="customTOCSectionHeading">10,000ft API (Pro, Enterprise and Business plans)</span>
 
-<aside class="notice">Last updated: 02/05/2019</aside>
+<aside class="notice">Last updated: 04/09/2021</aside>
 
 The 10,000ft API provides programmatic access to projects, users and time entries in your account, commonly referred to as _resources_ in the rest of this API documentation. The API implements a standard HTTP REST pattern and allows callers with appropriate authentication and authorization to programmatically create, read, update and delete these resources.
 
-API access is available only on Pro and Enterprise plans of 10000ft.
+API access is available on Pro, Enterprise and Business plans of 10000ft. As of June 2019, all new plans purchased are Business, and include API access. For customers prior to this date, API access is based on your current plan.
 
 # Overview
 
-* [General information](#before-starting-to-use-the-10,000ft-api) (read first)
-  * [Collections & Objects](#collections-&-objects)
+* [General information](#first-things-first) (read first)
+  * [Collections & Objects](#collections--objects)
   * [Pagination](#pagination)
   * [Authentication](#authentication)
   * [Optional Fields](#optional-fields)
-  * [Date/Time Formatting](#date-&-time-formatting)
+  * [Date/Time Formatting](#date--time-formatting)
   * [Error Handling](#error-handling)
-  * [Throttling/Rate-limiting](#throttling-&-rate-limiting)
-* [How to setup a staging environment for testing](#how-do-i-access-the-staging-environment?)
+  * [Throttling/Rate-limiting](#throttling--rate-limiting)
+* [How to setup a staging environment for testing](#staging-environment)
 
 # Need help?
 
 * Contact us via our [Support Page](https://help.smartsheet.com/contact?contactType=10k-support)
-  * Read more on how to report a problem [here](#getting-help-&-reporting-problems).
+  * Read more on how to report a problem [here](#getting-help).
 * Have a suggestion for improving our API documentation? Send us a pull-request or email support.
 
 # Endpoints
 
 The API provides access to the following data collections in your account via RESTful endpoints.
 
-CHANGETHIS: ALL OF THESE LINKS NEED FIXED
-
-* [Users](sections/users.md)
-  * [User Tags](sections/user-tags.md)
-  * [Availabilities](sections/user-availabilities.md)
-* [Placeholder Resources](sections/placeholders.md)
-* [Projects](sections/projects.md)
-  * [Users by Project](sections/project-users.md)
-  * [Project Tags](sections/project-tags.md)
-  * [Phases](sections/phases.md)
-* [Project Budgets](sections/budget-items.md)
-* [Leave Types](sections/leave-types.md)
-* [Time Entries](sections/time-entries.md)
-* [Assignments](sections/assignments.md)
-* [Subtasks](sections/subtasks.md)
-* [Bill Rates](sections/bill-rates.md)
-* [Statuses](sections/user-statuses.md) (_deprecated_)
-* [Time & Expense Approvals](sections/approvals.md)
-* [Holidays](sections/holidays.md)
-* [Custom Fields](sections/custom-fields.md)
-* [Reports](sections/reports.md)
-* [Status Options](sections/status-options.md)
-* [Assignables](sections/assignables.md)
+* [Users](#users)
+  * [User Tags](#user-tags)
+  * [Availabilities](#user-availabilities)
+* [Placeholder Resources](#placeholders)
+* [Projects](#projects)
+  * [Users by Project](#project-users)
+  * [Project Tags](#project-tags)
+  * [Phases](#phases)
+* [Project Budgets](#budget-items)
+* [Leave Types](#leave-types)
+* [Time Entries](#time-entries)
+* [Expense Items](#expense-items)
+* [Assignments](#assignments)
+* [Subtasks](#subtasks)
+* [Bill Rates](#bill-rates)
+* [Statuses](#user-statuses) (_deprecated_)
+* [Time & Expense Approvals](#approvals)
+* [Holidays](#holidays)
+* [Custom Fields](#custom-fields)
+* [Reports](#reports)
+* [Status Options](#status-options)
+* [Assignables](#assignables)
 
 
 # Webhooks (New!)
 
-The 10,000ft API now supports webhooks for certain events. See [the webhooks page](sections/webhooks.md) for details.
+The 10,000ft API now supports webhooks for certain events. See [the webhooks page](#webhooks) for details.
 
 # Zapier Integration
 
 Our Zapier integration helps you integrating with the 10,000ft API in convenient and powerful ways and connect many other apps and services used by yor team.
 
 * [10,000ft on Zapier](https://zapier.com/apps/10000ft/integrations)
-* [Getting started with Zapier](sections/zapier-integration.md)
+* [Getting started with Zapier](#zapier-integration)
 
 # Case studies
 
