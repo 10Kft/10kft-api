@@ -8,7 +8,7 @@ This guide explains how to contribute to the 10,000ft User Guide. The actual 10,
 The project should be tested locally before putting up a pull request to ensure that the changes are working as expected and original functionality is not affected. 
 
 ### Testing Changes
-Follow the steps in the [README.md](README.md#Running-the-Docs-Locally) to run the documentation page locally. Ensure that the original functionality of the page is intact and the new changes are behaving as expected. 
+Follow the steps in [Publishing](#Running-the-Docs-Locally) to run the documentation page locally. Ensure that the original functionality of the page is intact and the new changes are behaving as expected. 
 
 ### Putting up a Pull Request
 After testing the proposed changes, please fork a branch and then submit a pull request. [More info about pull requests here.](https://help.github.com/en/articles/about-pull-requests)
@@ -16,11 +16,11 @@ After testing the proposed changes, please fork a branch and then submit a pull 
 Contributors do not have access to push directly to the `master` branch, so all code changes will be made through approved pull requests.
 
 ## Publishing
-If you would like to publish changes to the documentation files once your pull request has been approved, see [Publishing](PUBLISHING.md).
+If you would like to publish changes to the documentation files once your pull request has been approved, see [Publishing](#PUBLISHING).
 
 ## License
---> CHANGETHIS: UPDATE THIS SECTION AS NEEDED OR DELETE
-Copyright 2015 Smartsheet, Inc.
+
+Copyright 2015-2021 Smartsheet, Inc.
 
 Licensed under the Apache License, Version 2.0 (the
 "License"); you may not use this file except in compliance

@@ -45,4 +45,4 @@ The `rake publish` command bundles all of the resources in the `source/` directo
 5. In the [Releases CHANGETHIS](https://github.com/smartsheet-platform/odbc-docs/releases) tab of the repository, draft and publish a new release using the tag you created in step 2. 
 
 ## Contributing
-If you would like to contribute a change to the documentation files, see [Contributing](CONTRIBUTING.md).
+If you would like to contribute a change to the documentation files, see [Contributing](#CONTRIBUTING).
