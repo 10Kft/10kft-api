@@ -3,8 +3,8 @@
 ##### Endpoint: `/api/v1/projects/<project_id>/users`
 
 ## List Users for a given Project
-CHANGETHIS: THE LINKS IN THE SECTION NEED FIXED
-Users are associated to a project by [Assignments](assignments.md).
+
+Users are associated to a project by [Assignments](#assignments).
 
 ##### Optional Parameters:
 

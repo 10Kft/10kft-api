@@ -2,10 +2,10 @@
 # Assignables
 
 ##### Endpoint: `/api/v1/assignables`
-CHANGETHIS: ALL THE LINKS IN THIS SECTION NEED FIXED
-An _assignable_ in 10K Plans is an object to which an assignment can be made, i.e. a person, placeholder, etc. can be assigned to this object. Currently, there are two types of assignables in 10K Plans, [Projects](projects.md) and [Leave Types](leave-types.md). Phases are also an assignable, but they can be accessed through the [projects endpoint](projects.md).
 
-It is useful to have an understanding of Assignables as an API entity because the [Assignments endpoint](assignments.md) returns an _assignable-id_ to indicate the object to which the assignment is made, but without knowing the _type_ of that object, it is not clear which endpoint to use to get more details about the object if desired. The assignables endpoint allows you to query directly using the `assignable-id` from an assignment.
+An _assignable_ in 10K Plans is an object to which an assignment can be made, i.e. a person, placeholder, etc. can be assigned to this object. Currently, there are two types of assignables in 10K Plans, [Projects](#projects) and [Leave Types](#leave-types). Phases are also an assignable, but they can be accessed through the [projects endpoint](#projects).
+
+It is useful to have an understanding of Assignables as an API entity because the [Assignments endpoint](#assignments) returns an _assignable-id_ to indicate the object to which the assignment is made, but without knowing the _type_ of that object, it is not clear which endpoint to use to get more details about the object if desired. The assignables endpoint allows you to query directly using the `assignable-id` from an assignment.
 
 The endpoint supports two actions, index and show. It is not possible to create a generic assignable or to delete one, the Projects/LeaveTypes endpoints should be used for those actions.
 
@@ -27,7 +27,7 @@ GET  /api/v1/assignables/<assignable-id>
 
 ## Return values based on type
 
-The format returned by this endpoint depends on the type of the object returned. If a project, the return value will look exactly like what is returned by the [Projects endpoint](projects.md), and if a LeaveType, the return value looks exactly like what is returned by the [LeaveTypes endpoint](leave-types.md). In both cases, the return value has a _type_ property, which will be _Project_ or _LeaveType_, respectively (phases also have the type _Project_).
+The format returned by this endpoint depends on the type of the object returned. If a project, the return value will look exactly like what is returned by the [Projects endpoint](#projects), and if a LeaveType, the return value looks exactly like what is returned by the [LeaveTypes endpoint](#leave-types). In both cases, the return value has a _type_ property, which will be _Project_ or _LeaveType_, respectively (phases also have the type _Project_).
 
 ## Sample Response
 

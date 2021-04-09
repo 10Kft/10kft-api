@@ -80,7 +80,7 @@ Zapier Filters are useful when building integrations with 10,000ft. You can use 
 
   <img src="../images/make-a-zap/filter-options.png" alt="email filter options" width="480">
 
-Familiarize yourself with the different types of users and assignables available in 10,000ft when designing your 10,000ft Zaps so you can get the result you are trying to achive with your integration. See [10,000ft API documentation](../README.md) for more details on specific attributes.
+Familiarize yourself with the different types of users and assignables available in 10,000ft when designing your 10,000ft Zaps so you can get the result you are trying to achive with your integration. See [10,000ft API documentation](#overview) for more details on specific attributes.
 
 ## Triggers
 
@@ -120,8 +120,7 @@ Familiarize yourself with the different types of users and assignables available
 
 Zapier is a convenient and powerful way to consume the 10,000ft API. The triggers, actions and searches listed above allow you to access commonly used API functionality without having to develop custom API integrations or write software code. 
 
-CHANGETHIS: THE LINK IN THIS SECTION NEEDS FIXED
-The 10,000ft API provides access to a number of advancaed features that are not currently supported with our Zapier triggers and actions. See [10,000ft API documentation](../README.md) for more details.
+The 10,000ft API provides access to a number of advancaed features that are not currently supported with our Zapier triggers and actions. See [10,000ft API documentation](#overview) for more details.
 
 Have a question? Contact us via our [Support Page](https://help.smartsheet.com/contact?contactType=10k-support). We are here to help!
 
