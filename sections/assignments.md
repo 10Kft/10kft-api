@@ -1,9 +1,27 @@
 # Assignments
 
+##### Endpoint: `/api/v1/assignments`
 ##### Endpoint: `/api/v1/users/<user_id>/assignments`
 ##### Endpoint: `/api/v1/projects/<project_id>/assignments`
 
 Assignments connect a [User](users.md) to a [Project](projects.md) or a [Phase](phases.md) (part of a project) or a [LeaveType](leave-types.md).
+
+## List all assignments
+
+##### Optional parameters:
+
+| **Parameter** | **Description** |
+| ------------- | --------------- |
+| from |  get assignments that end after this date |
+| to |  get assignments that start before this date |
+| per_page, page |  Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first ) |
+| with_phases	| true to include assignment to phases ( child projects ) |
+
+```
+GET /api/v1/assignments
+
+ curl 'https://vnext.10000ft.com/api/v1/assignments?auth=..'
+```
 
 ## List assignments for a User or Project
 
@@ -26,6 +44,14 @@ GET /api/v1/users/<user_id>/assignments
 GET /api/v1/projects/<project_id>/assignments
 
  curl 'https://vnext.10000ft.com/api/v1/projects/<project_id>/assignments?auth=..'
+```
+
+## Show an Assignment
+
+```
+GET /api/v1/assignments/<assignment_id>
+
+ curl 'https://vnext.10000ft.com/api/v1/assignments/<assignment_id>?auth=..'
 ```
 
 ## Show an Assignment for a User or Project
