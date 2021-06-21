@@ -10,11 +10,11 @@ Here are some example `curl` commands;
 
 ```
 # get the collection of users
-curl -X GET https://api.10000ft.com/api/v1/users?auth=TOKEN \
+curl -X GET https://api.rm.smartsheet.com/api/v1/users?auth=TOKEN \
   -H "Content-Type: application/json"
 
 # update user 100 with a new last_name
-curl -X PUT https://api.10000ft.com/api/v1/users/100?auth=TOKEN \
+curl -X PUT https://api.rm.smartsheet.com/api/v1/users/100?auth=TOKEN \
   -H "Content-Type: application/json" \
   -d '{"last_name":"Silva"'}'
 ```

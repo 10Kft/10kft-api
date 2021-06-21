@@ -28,7 +28,7 @@ The API follows a typical RESTful pattern where it allows you to access collecti
 Some objects returned by the API may have sub-collections. For example, a tags collection for a given user object. These sub-collections are paginated in the same manner as top level collections.
 
 ```
-curl -X GET https://api.10000ft.com/api/v1/users \
+curl -X GET https://api.rm.smartsheet.com/api/v1/users \
   -H "Content-Type: application/json"
   -H "auth: TOKEN"
 ```
@@ -59,7 +59,7 @@ Unless otherwise noted, the API always responds with **JSON**.
 The pagination section in collections provide mechanisms to fetch additional data. The `previous` and `next` links provide access to the corresponding pages in the collection. You can override the default `per_page` value by providing an appropriate value in the URL query parameter. For example,
 
 ```
-GET https://app.10000ft.com/api/v1/users?per_page=100&page=3
+GET https://api.rm.smartsheet.com/api/v1/users?per_page=100&page=3
 ```
 
 
@@ -76,12 +76,12 @@ The API currently supports service token based authentication. This can be sent 
 
 ```
 # Token in http header (recommended)
-curl -X GET https://api.10000ft.com/api/v1/users \
+curl -X GET https://api.rm.smartsheet.com/api/v1/users \
   -H "Content-Type: application/json"
   -H "auth: TOKEN"
 
 # Token on URL
-curl -X GET https://api.10000ft.com/api/v1/users?auth=URL-ENCODED-TOKEN \
+curl -X GET https://api.rm.smartsheet.com/api/v1/users?auth=URL-ENCODED-TOKEN \
   -H "Content-Type: application/json"
 ```
 

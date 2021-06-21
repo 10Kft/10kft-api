@@ -13,6 +13,6 @@ There is no additional charge for maintaining a test account on vnext.
 
 ### What changes when moving my integration to production?
 
-* Your production account is your live 10,000ft Plans account available at `https://app.10000ft.com`
-* The API end point base URL is `https://api.10000ft.com/api/v1/`
+* Your production account is your live 10,000ft Plans account available at `https://rm.smartsheet.com`
+* The API end point base URL is `https://api.rm.smartsheet.com/api/v1/`
 * You will use a production API token obtained from the settings section in your production account.
