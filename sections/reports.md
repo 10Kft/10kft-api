@@ -100,7 +100,7 @@ There are currently ten supported views, which correspond to the reports availab
 
 ## `time_frame`
 
-The time frame of a report is specified as an object with "from" and "to" attributes that each specify a date in the format YYYY-MM-DD.
+The time frame of a report is specified as an object with "from" and "to" attributes that each specify a date in the format YYYY-MM-DD. Reports are limited to maximum 1-year date-range, and will throw an error if exceeded.
 
 ```js
 "time_frame": {
