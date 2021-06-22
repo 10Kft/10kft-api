@@ -92,7 +92,7 @@ Account administrators can obtain the API token from _Settings >_ _Developer API
 To reduce the number of roundtrips that might be required to fetch all related data for a given collection or resource (e.g. fetching a user and all their tags), the API supports a concept of optional fields. These `fields` are a comma separated list of field names that are supported as a URL parameter when making a request to fetch a resource or a resource collection.
 
 ```
-curl -X GET https://api.10000ft.com/api/v1/users?fields=tags \
+curl -X GET https://api.rm.smartsheet.com/api/v1/users?fields=tags \
   -H "Content-Type: application/json"
   -H "auth: TOKEN"
 

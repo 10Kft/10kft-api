@@ -20,7 +20,7 @@ Assignments connect a [User](#users) to a [Project](#projects) or a [Phase](#pha
 ```
 GET /api/v1/assignments
 
- curl 'https://vnext.10000ft.com/api/v1/assignments?auth=..'
+ curl 'http://api.rm.smartsheet.com/api/v1/assignments?auth=..'
 ```
 
 ## List assignments for a User or Project
@@ -37,13 +37,13 @@ GET /api/v1/assignments
 ```
 GET /api/v1/users/<user_id>/assignments
 
- curl 'https://vnext.10000ft.com/api/v1/users/<user_id>/assignments?auth=..'
+ curl 'http://api.rm.smartsheet.com/api/v1/users/<user_id>/assignments?auth=..'
 ```
 
 ```
 GET /api/v1/projects/<project_id>/assignments
 
- curl 'https://vnext.10000ft.com/api/v1/projects/<project_id>/assignments?auth=..'
+ curl 'http://api.rm.smartsheet.com/api/v1/projects/<project_id>/assignments?auth=..'
 ```
 
 ## Show an Assignment
@@ -51,7 +51,7 @@ GET /api/v1/projects/<project_id>/assignments
 ```
 GET /api/v1/assignments/<assignment_id>
 
- curl 'https://vnext.10000ft.com/api/v1/assignments/<assignment_id>?auth=..'
+ curl 'http://api.rm.smartsheet.com/api/v1/assignments/<assignment_id>?auth=..'
 ```
 
 ## Show an Assignment for a User or Project
@@ -59,13 +59,13 @@ GET /api/v1/assignments/<assignment_id>
 ```
 GET /api/v1/users/<user_id>/assignments/<assignment_id>
 
- curl 'https://vnext.10000ft.com/api/v1/users/<user_id>/assignments/<assignment_id>?auth=..'
+ curl 'http://api.rm.smartsheet.com/api/v1/users/<user_id>/assignments/<assignment_id>?auth=..'
 ```
 
 ```
 GET /api/v1/projects/project_id/assignments/<assignment_id>
 
- curl 'https://vnext.10000ft.com/api/v1/projects/<project_id>/assignments/<assignment_id>?auth=..'
+ curl 'http://api.rm.smartsheet.com/api/v1/projects/<project_id>/assignments/<assignment_id>?auth=..'
 ```
 
 Similarly, in the create and delete examples below, you can call the assignments API on projects specifying a user_id to create an assignment for that user, or to delete an assignment.
@@ -78,14 +78,14 @@ Typical parameters: `starts_at`, `ends_at`, `allocation_mode (percent, hours_per
 POST /api/v1/users/<user_id>/assignments
 
  curl -d 'leave_id=<leave_id>&starts_at=<YEAR-MO-DAY>&ends_at=<YEAR-MO-DAY>'  \
-                 'https://vnext.10000ft.com/api/v1/users/<user_id>/assignments?auth=...'
+                 'http://api.rm.smartsheet.com/api/v1/users/<user_id>/assignments?auth=...'
 
  curl -d 'leave_id=<leave_id>&starts_at=<YEAR-MO-DAY>&ends_at=<YEAR-MO-DAY>&percent=0.25'  \
 
-                 'https://vnext.10000ft.com/api/v1/users/<user_id>/assignments?auth=...'
+                 'http://api.rm.smartsheet.com/api/v1/users/<user_id>/assignments?auth=...'
 
  curl -d 'leave_id=<leave_id>&starts_at=<YEAR-MO-DAY>&ends_at=<YEAR-MO-DAY>&allocation_mode=hours_per_day&hours_per_day=<hours>'  \
-                 'https://vnext.10000ft.com/api/v1/users/<user_id>/assignments?auth=...'
+                 'http://api.rm.smartsheet.com/api/v1/users/<user_id>/assignments?auth=...'
 ```
 
 ## Remove an Assignment for a User
@@ -93,7 +93,7 @@ POST /api/v1/users/<user_id>/assignments
 ```
 DELETE /api/v1/users/<user_id>/assignments/<assignment_id>
 
- curl -XDELETE 'https://vnext.10000ft.com/api/v1/users/<user_id>/assignments/<assignment_id>?auth=...'
+ curl -XDELETE 'http://api.rm.smartsheet.com/api/v1/users/<user_id>/assignments/<assignment_id>?auth=...'
 ```
 
 ## Sample Response

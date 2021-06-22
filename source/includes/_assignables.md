@@ -13,7 +13,7 @@ The endpoint supports two actions, index and show. It is not possible to create 
 ```
 GET  /api/v1/assignables
 
- curl 'https://vnext.10000ft.com/api/v1/assignables?auth=...'
+ curl 'http://api.rm.smartsheet.com/api/v1/assignables?auth=...'
 ```
 
 ## Show an Assignable
@@ -21,7 +21,7 @@ GET  /api/v1/assignables
 ```
 GET  /api/v1/assignables/<assignable-id>
 
- curl 'https://vnext.10000ft.com/api/v1/assignables/12345?auth=...'
+ curl 'http://api.rm.smartsheet.com/api/v1/assignables/12345?auth=...'
 ```
 
 ## Return values based on type

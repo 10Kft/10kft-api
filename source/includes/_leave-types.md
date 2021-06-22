@@ -9,7 +9,7 @@ LeaveType is a subclass of Assignable. You will see the id refering to a project
 ```
 GET  /api/v1/leave_types
 
- curl 'https://vnext.10000ft.com/api/v1/leave_types?auth=...'
+ curl 'http://api.rm.smartsheet.com/api/v1/leave_types?auth=...'
 ```
 
 ## Show a LeaveType
@@ -17,7 +17,7 @@ GET  /api/v1/leave_types
 ```
 GET  /api/v1/leave_types/<leave_type_id>
 
- curl 'https://vnext.10000ft.com/api/v1/leave_types/12345?auth=...'
+ curl 'http://api.rm.smartsheet.com/api/v1/leave_types/12345?auth=...'
 ```
 
 ## Sample Response

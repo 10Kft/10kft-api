@@ -12,7 +12,7 @@ There are two ways to list user tags:
 Attaching a tag to a user is technically a "find-or-create" operation. If you post a tag with information that does not exist for your organization it will be created and attached to the user specified. If the tag already exists, it will just be attached. If you try to create the same tag multiple times, it will just be attached once.
 
 ```
-curl -d "value=Awesome"  "https://vnext.10000ft.com/api/v1/users/1/tags?auth=..."
+curl -d "value=Awesome"  "http://api.rm.smartsheet.com/api/v1/users/1/tags?auth=..."
 ```
 
 ## Disconnect a tag from a user
@@ -20,7 +20,7 @@ curl -d "value=Awesome"  "https://vnext.10000ft.com/api/v1/users/1/tags?auth=...
 You can remove a tag from a user without deleting it from your account settings by using the /api/v1/users endpoint.
 
 ```
-curl -XDELETE  "https://vnext.10000ft.com/api/v1/users/1/tags/456?auth=..."
+curl -XDELETE  "http://api.rm.smartsheet.com/api/v1/users/1/tags/456?auth=..."
 ```
 
 ## Response for Tags Listing

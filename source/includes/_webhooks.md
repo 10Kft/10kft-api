@@ -33,7 +33,7 @@ Lists all the webhooks for your organization.
 ```
 GET /api/v1/webhooks/
 
-curl 'https://vnext.10000ft.com/api/v1/webhooks?&auth=..'
+curl 'http://api.rm.smartsheet.com/api/v1/webhooks?&auth=..'
 ```
 
 #### Response

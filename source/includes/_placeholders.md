@@ -15,7 +15,7 @@ Placeholder resources can be used for temporary resourcing on projects where the
 
 ```
 GET  /api/v1/placeholder_resources
- curl 'https://vnext.10000ft.com/api/v1/placeholder_resources?fields=assignments,custom_field_values&auth=...'
+ curl 'http://api.rm.smartsheet.com/api/v1/placeholder_resources?fields=assignments,custom_field_values&auth=...'
 ```
 
 Note that custom field values can only be accessed if custom fields are enabled for the account. This is only possible for pro plans and up. See [custom fields](#custom-fields) for details.
@@ -31,7 +31,7 @@ Note that custom field values can only be accessed if custom fields are enabled 
 
 ```
 GET  /api/v1/placeholder_resources/<placeholder_resource_id>
- curl 'https://vnext.10000ft.com/api/v1/placeholder_resources/12345?fields=assignments&auth=...'
+ curl 'http://api.rm.smartsheet.com/api/v1/placeholder_resources/12345?fields=assignments&auth=...'
 ```
 
 ## Create a Placeholder Resource
@@ -43,7 +43,7 @@ GET  /api/v1/placeholder_resources/<placeholder_resource_id>
 ```
 POST  /api/v1/placeholder_resources
  curl -d 'title=Designer' \
-             'https://vnext.10000ft.com/api/v1/placeholder_resources?auth=...'
+             'http://api.rm.smartsheet.com/api/v1/placeholder_resources?auth=...'
 ```
 
 Placeholders are referred to by title. The title is displayed wherever placeholders appear in the application e.g., on projects, the schedule, etc. Therefore, it is required to specify this parameter.
@@ -67,7 +67,7 @@ Placeholder specified by `id`
 ```
 PUT  /api/v1/placeholder_resources/<placeholder_resource_id>
  curl -XPUT -d 'title=Senior Designer' \
-             'https://vnext.10000ft.com/api/v1/placeholder_resources/12345?auth=...'
+             'http://api.rm.smartsheet.com/api/v1/placeholder_resources/12345?auth=...'
 ```
 
 ## Delete a Placeholder
@@ -77,7 +77,7 @@ Placeholder resources may be deleted via the API, as follows.
 ```
 DELETE  /api/v1/placeholder_resources/<placeholder_resource_id>
  curl -XDELETE \
-             'https://vnext.10000ft.com/api/v1/placeholder_resources/12345?auth=...'
+             'http://api.rm.smartsheet.com/api/v1/placeholder_resources/12345?auth=...'
 ```
 
 ## Placeholders and Users/People
@@ -91,7 +91,7 @@ The only difference is that this is accessed through the `placeholder_resources`
 
 ```
 GET  /api/v1/placeholder_resources/<placeholder_resource_id>/assignments
- curl 'https://vnext.10000ft.com/api/v1/placeholder_resources/12345/assignments?&auth=...'
+ curl 'http://api.rm.smartsheet.com/api/v1/placeholder_resources/12345/assignments?&auth=...'
 ```
 
 ##### Placeholder Bill Rates
