@@ -2,13 +2,13 @@
 
 ## Purpose
 
-This guide explains how to contribute to the 10,000ft User Guide. The actual 10,000ft API documentation can be viewed [here CHANGETHIS](link-to-published-content). 
+This guide explains how to contribute to the 10,000ft User Guide. The actual 10,000ft API documentation can be viewed [here CHANGETHIS](link-to-published-content).
 
 ## Submitting Changes
-The project should be tested locally before putting up a pull request to ensure that the changes are working as expected and original functionality is not affected. 
+The project should be tested locally before putting up a pull request to ensure that the changes are working as expected and original functionality is not affected.
 
 ### Testing Changes
-Follow the steps in the [README.md](README.md#Running-the-Docs-Locally) to run the documentation page locally. Ensure that the original functionality of the page is intact and the new changes are behaving as expected. 
+Follow the steps in the [README.md](README.md#Running-the-Docs-Locally) to run the documentation page locally. Ensure that the original functionality of the page is intact and the new changes are behaving as expected.
 
 ### Putting up a Pull Request
 After testing the proposed changes, please fork a branch and then submit a pull request. [More info about pull requests here.](https://help.github.com/en/articles/about-pull-requests)
@@ -20,7 +20,7 @@ If you would like to publish changes to the documentation files once your pull r
 
 ## License
 --> CHANGETHIS: UPDATE THIS SECTION AS NEEDED OR DELETE
-Copyright 2015 Smartsheet, Inc.
+Copyright 2021 Smartsheet, Inc.
 
 Licensed under the Apache License, Version 2.0 (the
 "License"); you may not use this file except in compliance

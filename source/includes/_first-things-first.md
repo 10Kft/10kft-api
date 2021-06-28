@@ -20,7 +20,6 @@ There are several ways in which you can stay informed about important changes to
 
 * Ask your friendly account Administrator to add your email as the developer contact for your account.
 * Subscribe to be notified when updates are made to this github repo by following it or using the watch feature.
-* Sign up to receive updates via the 10,000ft Developer API Announcements mailing list [here](http://eepurl.com/ZvuOb)
 
 ## Collections & Objects
 
@@ -63,6 +62,14 @@ The pagination section in collections provide mechanisms to fetch additional dat
 GET https://app.10000ft.com/api/v1/users?per_page=100&page=3
 ```
 
+
+## Filtering
+
+Some resources in the 10,000ft API respect certain filtering parameters. Those optional parameters are as follows:
+
+- `filter_field` - The property to filter on.
+- `filter_list` - The value of `filter_field` to match.
+
 ## Authentication
 
 The API currently supports service token based authentication. This can be sent as a query parameter named `auth`, or as an HTTP header with the same name.
@@ -79,8 +86,6 @@ curl -X GET https://api.10000ft.com/api/v1/users?auth=URL-ENCODED-TOKEN \
 ```
 
 Account administrators can obtain the API token from _Settings >_ _Developer API_ in the application.
-
-> `NB:` A separate token is issued each time an Administrator visits the Developer API section under settings. This however does not invalidate the current token in use for your application.
 
 ## Optional Fields
 
@@ -102,7 +107,7 @@ Each field requested is included in the response as nested collections. The page
       "id" : 1,
       "first_name" : "Tom",
       "last_name" : "Perera",
-      tags: {
+      "tags": {
         "data" : [
           { "id" : 1, "value" : "developer" },
           { "id" : 2, "value" : "javascript" },

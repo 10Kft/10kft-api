@@ -1,15 +1,15 @@
 # 10,000ft API User Guide
 
-Documentation source files for the [10,000ft API CHANGETHIS](link-to-published-page-location).
+Documentation source files for the [10,000ft API](https://github.com/10Kft/10kft-api).
 
 ## Purpose
 
 This repository contains the source files used to generate the documentation for the 10,000ft API.
-The actual 10,000ft API documentation can be viewed [here CHANGETHIS](link-github-pages-location). 
+The actual 10,000ft API documentation can be viewed [here CHANGETHIS](link-github-pages-location).
 
 ## Submitting Feedback
 
-To report documentation bugs or to request documentation enhancements, simply submit an issue [here CHANGETHIS](https://github.com/10000ft-location/issues). 
+To report documentation bugs or to request documentation enhancements, simply submit an issue [here CHANGETHIS](https://github.com/10000ft-location/issues).
 And, of course, feel free to [submit pull requests](https://help.github.com/articles/using-pull-requests) with bug fixes or changes.
 
 ## Running the Docs Locally
@@ -32,7 +32,7 @@ Follow the steps below if you'd like to run the documentation locally on your ma
  6. View the site in a browser:  <http://localhost:4567>
 
 ### Learning about Markdown Syntax
- 
+
 This documentation is based upon [Slate](https://github.com/tripit/slate/) and uses Slate [markdown syntax](https://github.com/tripit/slate/wiki/Markdown-Syntax).
 
 ## Contributing
@@ -42,8 +42,8 @@ If you would like to contribute a change to the documentation files, see [Contri
 If you would like to publish changes to the documentation files, see [Publishing](PUBLISHING.md).
 
 ## License
-	CHANGETHIS: UPDATE THIS SECTION AS NEEDED OR DELETE
-	Copyright 2015 Smartsheet, Inc.
+  CHANGETHIS: UPDATE THIS SECTION AS NEEDED OR DELETE
+	Copyright 2021 Smartsheet, Inc.
 
 	Licensed under the Apache License, Version 2.0 (the
 	"License"); you may not use this file except in compliance

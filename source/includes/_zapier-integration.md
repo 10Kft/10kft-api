@@ -1,14 +1,14 @@
 # 10,000ft Zapier Integration
 
-Zapier is a web automation service that lets you integrate 10,000ft with thousands of other apps. You can read more details on the 10,000ft + Zapier [integrations page](https://zapier.com/apps/10000ft/integrations). 
+Zapier is a web automation service that lets you integrate 10,000ft with thousands of other apps. You can read more details on the 10,000ft + Zapier [integrations page](https://zapier.com/apps/10000ft/integrations).
 
 ## Requirements
 
-* A 10,000ft account 
+* A 10,000ft account
 * A Zapier account
 * Optionally, an account with each service that will be connected with 10,000ft via Zapier
 
-Zapier provides free and paid plans. See the [Zapier pricing page](https://zapier.com/app/pricing) for more info.
+Zapier provides free and paid plans. See the [Zapier pricing page](https://zapier.com/pricing) for more info.
 
 ## Connecting 10,000ft with Zapier
 
@@ -16,9 +16,9 @@ Zapier provides free and paid plans. See the [Zapier pricing page](https://zapie
   * Start by making a new Zap in your Zapier account
   * Find the 10,000ft app and pick any trigger to initiate the setup
   * When prompted, add the 10,000ft API Token into Zapier, test and save your connection
-    
+
     <img src="../images/make-a-zap/3.png" alt="add API token" width="480">
-  
+
 Once the connection is setup and tested, you can use it to make new Zap. Lets go through the steps and setup an example Zap.
 
 ## Configuring a Zap
@@ -46,30 +46,30 @@ And here are the steps in detail,
 * Start a Zap
 * Search for the 10,000ft app and select it
 * Select a 10,000ft Trigger (e.g. New Assignment)
-  
+
   <img src="../images/make-a-zap/1.png" alt="new assignment trigger" width="480">
 
 * Connect your 10,000ft app if prompted by supplying your 10,000ft API token
 * Add a step to search 10,000ft and lookup details for the user_id in the assignment
-  
+
   <img src="../images/make-a-zap/6.png" alt="find user by id options" width="480">
 
   * Add a step and select 10,000ft as the app
   * Search and select the `Find User by ID` action
   * Configure it to find the user for the `user_id` from the New Assignment trigger we setup above
-  
+
 * Add a step to search 10,000ft and lookup details for the assignable_id in the assignment
   * Add a step and select 10,000ft as the app
   * Search and select the `Find Assignable by ID` action
   * Configure it to find the assignable for the `assignable_id` from the New Assignment trigger we setup above
 * Add a step to send an email
-  
+
   <img src="../images/make-a-zap/email-template-options.png" alt="email template options" width="480">
 
   * Select the Email by Zapier app
   * Configure it to send an email to user in the New Assignment
   * When you are done, the email template will look like this,
-  
+
 * Test and enable your Zap.
 
 Now, when a new assignment is made on the 10,000ft schedule, the person who was assigned will be sent an email with the name of the Project (or Leave) that they were assigned to and the start date of that assignment.
@@ -80,7 +80,7 @@ Zapier Filters are useful when building integrations with 10,000ft. You can use 
 
   <img src="../images/make-a-zap/filter-options.png" alt="email filter options" width="480">
 
-Familiarize yourself with the different types of users and assignables available in 10,000ft when designing your 10,000ft Zaps so you can get the result you are trying to achive with your integration. See [10,000ft API documentation](../README.md) for more details on specific attributes.
+Familiarize yourself with the different types of users and assignables available in 10,000ft when designing your 10,000ft Zaps so you can get the result you are trying to achive with your integration. See [10,000ft API documentation](#10,000ft-api-(pro-and-enterprise-only)) for more details on specific attributes.
 
 ## Triggers
 
@@ -116,14 +116,14 @@ Familiarize yourself with the different types of users and assignables available
 * **Find Assignable by Name** Finds an existing assignable by name.
 * **Find Project by Name** Finds an existing project by name.
 
-## More details about the 10,000ft API 
+## More details about the 10,000ft API
 
-Zapier is a convenient and powerful way to consume the 10,000ft API. The triggers, actions and searches listed above allow you to access commonly used API functionality without having to develop custom API integrations or write software code. 
+Zapier is a convenient and powerful way to consume the 10,000ft API. The triggers, actions and searches listed above allow you to access commonly used API functionality without having to develop custom API integrations or write software code.
 
 CHANGETHIS: THE LINK IN THIS SECTION NEEDS FIXED
-The 10,000ft API provides access to a number of advancaed features that are not currently supported with our Zapier triggers and actions. See [10,000ft API documentation](../README.md) for more details.
+The 10,000ft API provides access to a number of advanced features that are not currently supported with our Zapier triggers and actions. See [10,000ft API documentation](#10,000ft-api-(pro-and-enterprise-only)) for more details.
 
-Have a question? Contact us via our [Support Page](https://help.smartsheet.com/contact?contactType=10k-support). We are here to help!
+Have a question? Contact us via our [Support Page](https://help.smartsheet.com/contact/10000ft). We are here to help!
 
 
 
