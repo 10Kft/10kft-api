@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This document outlines the process for publishing the 10,000ft API User Guide onto Github Pages. The actual 10,000ft API documentation can be viewed [here CHANGETHIS](http://smartsheet-platform.github.io/odbc-docs).
+This document outlines the process for publishing the 10,000ft API User Guide onto Github Pages. The actual 10,000ft API documentation can be viewed [here](https://10kft.github.io/10kft-api/).
 
 ## Why git version tags?
 Git tags are a nice way to keep track of the versions of the documentation. The version of the documentation should match the version of the 10,000ft API that it supports. Example tag name might be `v1.0.1`. This can be added with the following command `git tag v1.0.1`.
@@ -14,18 +14,14 @@ The `rake publish` command bundles all of the resources in the `source/` directo
 
 ## Publishing Process
 1. Make sure that the `master` branch has the version of the code you would like to publish.
-2. Tag the branch with a git tag using the command `git tag <TAG_NAME>`.
-3. Push the tag to git using the command `git push --tags`.
-4. Run the command `rake publish`.
+2. Run the command `rake publish`.
    * You might encounter some deprecated warning messages in the terminal when running `rake publish`, but that is expected and can be ignored.
    * If you run to other errors, try running `bundle exec middleman build` and retrying.
-5. In the [Releases CHANGETHIS](https://github.com/smartsheet-platform/odbc-docs/releases) tab of the repository, draft and publish a new release using the tag you created in step 2.
 
 ## Contributing
 If you would like to contribute a change to the documentation files, see [Contributing](CONTRIBUTING.md).
 
 ## License
-CHANGETHIS: UPDATE THIS SECTION AS NEEDED OR DELETE
 Copyright 2021 Smartsheet, Inc.
 
 Licensed under the Apache License, Version 2.0 (the
