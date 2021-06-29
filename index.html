@@ -56,7 +56,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <h1 id="10,000ft-api-(pro,-enterprise,-and-business-plans)"><span class="customTOCSectionHeading">10,000ft API (Pro, Enterprise, and Business plans)</span></h1>
 
-<aside class="notice">Last updated: 01/21/2020</aside>
+<aside class="notice">Last updated: 05/26/2021</aside>
 
 <p>The 10,000ft API provides programmatic access to projects, users and time entries in your account, commonly referred to as <em>resources</em> in the rest of this API documentation. The API implements a standard HTTP REST pattern and allows callers with appropriate authentication and authorization to programmatically create, read, update and delete these resources.</p>
 
@@ -596,11 +596,45 @@ curl 'https://vnext.10000ft.com/api/v1/users/1/time_entries?fields=approvals&amp
 
 			  <h1 id="assignments">Assignments</h1>
 
+<h5 id="endpoint:-/api/v1/assignments">Endpoint: <code class="prettyprint">/api/v1/assignments</code></h5>
+
 <h5 id="endpoint:-/api/v1/users/&lt;user_id&gt;/assignments">Endpoint: <code class="prettyprint">/api/v1/users/&lt;user_id&gt;/assignments</code></h5>
 
 <h5 id="endpoint:-/api/v1/projects/&lt;project_id&gt;/assignments">Endpoint: <code class="prettyprint">/api/v1/projects/&lt;project_id&gt;/assignments</code></h5>
 
 <p>Assignments connect a <a href="#users">User</a> to a <a href="#projects">Project</a> or a <a href="#phases">Phase</a> (part of a project) or a <a href="#leave-types">LeaveType</a>.</p>
+
+<h2 id="list-all-assignments">List all assignments</h2>
+
+<h5 id="optional-parameters:">Optional parameters:</h5>
+
+<table><thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>from</td>
+<td>get assignments that end after this date</td>
+</tr>
+<tr>
+<td>to</td>
+<td>get assignments that start before this date</td>
+</tr>
+<tr>
+<td>per_page, page</td>
+<td>Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first )</td>
+</tr>
+<tr>
+<td>with_phases</td>
+<td>true to include assignment to phases ( child projects )</td>
+</tr>
+</tbody></table>
+<pre class="highlight plaintext"><code>GET /api/v1/assignments
+
+ curl 'https://vnext.10000ft.com/api/v1/assignments?auth=..'
+</code></pre>
 
 <h2 id="list-assignments-for-a-user-or-project">List assignments for a User or Project</h2>
 
@@ -636,6 +670,12 @@ curl 'https://vnext.10000ft.com/api/v1/users/1/time_entries?fields=approvals&amp
 <pre class="highlight plaintext"><code>GET /api/v1/projects/&lt;project_id&gt;/assignments
 
  curl 'https://vnext.10000ft.com/api/v1/projects/&lt;project_id&gt;/assignments?auth=..'
+</code></pre>
+
+<h2 id="show-an-assignment">Show an Assignment</h2>
+<pre class="highlight plaintext"><code>GET /api/v1/assignments/&lt;assignment_id&gt;
+
+ curl 'https://vnext.10000ft.com/api/v1/assignments/&lt;assignment_id&gt;?auth=..'
 </code></pre>
 
 <h2 id="show-an-assignment-for-a-user-or-project">Show an Assignment for a User or Project</h2>
@@ -2840,7 +2880,7 @@ GET /api/v1/status_options?with_deleted=true
 
 <p>Suggested time entries are read-only and are kept up to date by 10Kft as the corresponding assignments are updated.</p>
 
-<h2 id="confirmed-time-entries.">Confirmed time entries.</h2>
+<h2 id="confirmed-time-entries">Confirmed time entries</h2>
 
 <p>Confirmed time entries are what a user (or the API) has explicitly created to indicate that they have spent some time working on a project.</p>
 
@@ -3913,7 +3953,7 @@ the webhook payload, and specify any additional fields there.</p>
 
 <h4 id="assignments">Assignments</h4>
 
-<p>For assignments, any permitted change to an assignment (dates, allocation mode, percent, etc.) will trigger an updated event.</p>
+<p>For assignments, any permitted change to an assignment (dates, allocation mode, percent, etc.) will trigger an updated event. <strong>Note: Changing the assignee will trigger an <code class="prettyprint">assignment.deleted</code> followed by an <code class="prettyprint">assignment.created</code> event. We handle assignee changes differently than other attributes internally.</strong></p>
 
 <h4 id="time-entries">Time Entries</h4>
 
