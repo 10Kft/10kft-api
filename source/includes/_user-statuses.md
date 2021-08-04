@@ -19,7 +19,7 @@ A new "current status" is set by simply creating a new status for the user.
 
 ```
 GET  /api/v1/users/statuses
-  curl "http://api.rm.smartsheet.com/api/v1/users/7/statuses?auth=..."
+  curl "https://api.rm.smartsheet.com/api/v1/users/7/statuses?auth=..."
 ```
 
 ## Create/update status for a user
@@ -37,7 +37,7 @@ GET  /api/v1/users/statuses
 ```
 POST  /api/v1/users/<user_id>/statuses
   curl  -d 'status=OOO' \
-            'http://api.rm.smartsheet.com/api/v1/users/12345/statuses?auth=...''
+            'https://api.rm.smartsheet.com/api/v1/users/12345/statuses?auth=...''
 ```
 
 ## Sample Response

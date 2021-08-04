@@ -22,5 +22,5 @@ Users are associated to a project by [Assignments](#assignments).
 ```
 GET  /api/v1/projects/<project_id>/users
 
- curl 'http://api.rm.smartsheet.com/api/v1/projects/project_id/users?fields=tags,assignments&auth=...'
+ curl 'https://api.rm.smartsheet.com/api/v1/projects/project_id/users?fields=tags,assignments&auth=...'
 ```
