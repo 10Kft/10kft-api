@@ -7,11 +7,9 @@ We also assume that you are familiar with basic RESTful API concepts.
 ```
   IMPORTANT
 
-  Use the staging / testing environment for validating your integration.
-  Do not perform stress or performance testing in staging or any other
-  account without informing 10,000ft support and obtaining explicit
-  approval. Violation of this may result in your account being
-  suspended.
+  Do not perform stress or performance testing in any 
+  account without informing 10,000ft support and obtaining explicit 
+  approval. Violation of this may result in your account being suspended.
 ```
 
 ## Being notified about important changes
