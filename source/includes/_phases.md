@@ -8,21 +8,21 @@ Phase is a subclass of [Project](#projects) which is a subclass of Assignable. Y
 
 ```
 GET /api/v1/projects/<project_id>/phases
- curl 'https://vnext.10000ft.com/api/v1/projects/[project_id]/phases?auth=...'
+ curl 'https://api.rm.smartsheet.com/api/v1/projects/[project_id]/phases?auth=...'
 ```
 
 ## Create a Phase for a Project
 
 ```
 curl  -d "phase_name=Winding%20up&starts_at=2013-09-15&ends_at=2013-09-16"  \
-                         "https://vnext.10000ft.com/api/v1/projects/[project_id]/phases?auth=..."
+                         "https://api.rm.smartsheet.com/api/v1/projects/[project_id]/phases?auth=..."
 ```
 
 ## Update a Phase for a Project
 
 ```
 curl  -XPUT -d "phase_name=Another%20Name&"  \
-                         "https://vnext.10000ft.com/api/v1/projects/[project_id]/phases/456?auth=..."
+                         "https://api.rm.smartsheet.com/api/v1/projects/[project_id]/phases/456?auth=..."
 ```
 
 ### Bill Rates
@@ -30,13 +30,13 @@ If you wish for the phase to inherit the parent project's bill rates after creat
 
 ```
 curl  -XPUT -d "use_parent_bill_rates=true"  \
-                         "https://vnext.10000ft.com/api/v1/projects/[project_id]/phases/456?auth=..."
+                         "https://api.rm.smartsheet.com/api/v1/projects/[project_id]/phases/456?auth=..."
 ```
 
 
 ## Delete a Phase for a Project
 
 ```
-curl  -i -X DELETE "https://vnext.10000ft.com/api/v1/projects/[project_id]/phases/[phase_id]?auth=..."
+curl  -i -X DELETE "https://api.rm.smartsheet.com/api/v1/projects/[project_id]/phases/[phase_id]?auth=..."
 ```
 NOTE: A phase cannot be deleted unless it contains no assignments.

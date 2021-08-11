@@ -16,14 +16,14 @@ Value for `item_type` could be one of `TimeFees` / `TimeFeesDays` / `Expenses`
 
 ```
 GET /api/v1/projects/<project_id>/budget_items
- curl "https://vnext.10000ft.com/api/v1/projects/12345/budget_items?item_type=TimeFees&auth=..
+ curl "https://api.rm.smartsheet.com/api/v1/projects/12345/budget_items?item_type=TimeFees&auth=..
 ```
 
 ## Show Budget Item by id
 
 ```
-curl "https://vnext.10000ft.com/api/v1/budget_items/6789?auth=...
- curl "https://vnext.10000ft.com/api/v1/projects/12345/budget_items/6789?auth=...
+curl "https://api.rm.smartsheet.com/api/v1/budget_items/6789?auth=...
+ curl "https://api.rm.smartsheet.com/api/v1/projects/12345/budget_items/6789?auth=...
 ```
 
 ## Create a Budget Item
@@ -35,23 +35,23 @@ curl "https://vnext.10000ft.com/api/v1/budget_items/6789?auth=...
 
 ```
 curl -d "amount=5000&item_type=TimeFees"  \
-            "https://vnext.10000ft.com/api/v1/projects/4/budget_items?auth=..."
+            "https://api.rm.smartsheet.com/api/v1/projects/4/budget_items?auth=..."
 ```
 
 ## Update Budget Item by id
 
 ```
 curl -XPUT -d "amount=567"  \
-        "https://vnext.10000ft.com/api/v1/budget_items/6789?auth=..."
+        "https://api.rm.smartsheet.com/api/v1/budget_items/6789?auth=..."
  or
  curl -XPUT -d "amount=567"   \
-        "https://vnext.10000ft.com/api/v1/projects/12345/budget_items/6789?auth=..."
+        "https://api.rm.smartsheet.com/api/v1/projects/12345/budget_items/6789?auth=..."
 ```
 
 ## Delete a Budget Item
 
 ```
-curl -XDELETE "https://vnext.10000ft.com/api/v1/budget_items/6789?auth=..."
+curl -XDELETE "https://api.rm.smartsheet.com/api/v1/budget_items/6789?auth=..."
 ```
 
 ## Sample Response

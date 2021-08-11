@@ -12,7 +12,7 @@ There are two ways to list project tags:
 Attaching a tag to a project is technically a "find-or-create" operation. If you post a tag with information that does not exist for your organization it will be created and attached to the project specified. If the tag already exists, it will just be attached. If you try to create the same tag multiple times, it will just be attached once.
 
 ```
-curl -d "value=Awesome"  "https://vnext.10000ft.com/api/v1/projects/1/tags?auth=..."
+curl -d "value=Awesome"  "https://api.rm.smartsheet.com/api/v1/projects/1/tags?auth=..."
 ```
 
 ## Disconnect a tag from a project
@@ -20,7 +20,7 @@ curl -d "value=Awesome"  "https://vnext.10000ft.com/api/v1/projects/1/tags?auth=
 You can remove a tag from a project without deleting it from your account settings by using the /api/v1/projects endpoint.
 
 ```
-curl -XDELETE  "https://vnext.10000ft.com/api/v1/projects/1/tags/456?auth=..."
+curl -XDELETE  "https://api.rm.smartsheet.com/api/v1/projects/1/tags/456?auth=..."
 ```
 
 ## Response for Tags Listing

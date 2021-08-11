@@ -7,11 +7,9 @@ We also assume that you are familiar with basic RESTful API concepts.
 ```
   IMPORTANT
 
-  Use the staging / testing environment for validating your integration.
-  Do not perform stress or performance testing in staging or any other
-  account without informing 10,000ft support and obtaining explicit
-  approval. Violation of this may result in your account being
-  suspended.
+  Do not perform stress or performance testing in any 
+  account without informing 10,000ft support and obtaining explicit 
+  approval. Violation of this may result in your account being suspended.
 ```
 
 ## Being notified about important changes
@@ -28,7 +26,7 @@ The API follows a typical RESTful pattern where it allows you to access collecti
 Some objects returned by the API may have sub-collections. For example, a tags collection for a given user object. These sub-collections are paginated in the same manner as top level collections.
 
 ```
-curl -X GET https://api.10000ft.com/api/v1/users \
+curl -X GET https://api.rm.smartsheet.com/api/v1/users \
   -H "Content-Type: application/json"
   -H "auth: TOKEN"
 ```
@@ -59,7 +57,7 @@ Unless otherwise noted, the API always responds with **JSON**.
 The pagination section in collections provide mechanisms to fetch additional data. The `previous` and `next` links provide access to the corresponding pages in the collection. You can override the default `per_page` value by providing an appropriate value in the URL query parameter. For example,
 
 ```
-GET https://app.10000ft.com/api/v1/users?per_page=100&page=3
+GET https://api.rm.smartsheet.com/api/v1/users?per_page=100&page=3
 ```
 
 
@@ -76,12 +74,12 @@ The API currently supports service token based authentication. This can be sent 
 
 ```
 # Token in http header (recommended)
-curl -X GET https://api.10000ft.com/api/v1/users \
+curl -X GET https://api.rm.smartsheet.com/api/v1/users \
   -H "Content-Type: application/json"
   -H "auth: TOKEN"
 
 # Token on URL
-curl -X GET https://api.10000ft.com/api/v1/users?auth=URL-ENCODED-TOKEN \
+curl -X GET https://api.rm.smartsheet.com/api/v1/users?auth=URL-ENCODED-TOKEN \
   -H "Content-Type: application/json"
 ```
 
@@ -92,7 +90,7 @@ Account administrators can obtain the API token from _Settings >_ _Developer API
 To reduce the number of roundtrips that might be required to fetch all related data for a given collection or resource (e.g. fetching a user and all their tags), the API supports a concept of optional fields. These `fields` are a comma separated list of field names that are supported as a URL parameter when making a request to fetch a resource or a resource collection.
 
 ```
-curl -X GET https://api.10000ft.com/api/v1/users?fields=tags \
+curl -X GET https://api.rm.smartsheet.com/api/v1/users?fields=tags \
   -H "Content-Type: application/json"
   -H "auth: TOKEN"
 

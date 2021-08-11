@@ -19,7 +19,7 @@ Example
 GET /api/v1/users/<user_id>/time_entries
 
 # note "fields=approvals"
-curl 'https://vnext.10000ft.com/api/v1/users/1/time_entries?fields=approvals&auth=..'
+curl 'https://api.rm.smartsheet.com/api/v1/users/1/time_entries?fields=approvals&auth=..'
 ```
 
 Response
