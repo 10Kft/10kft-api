@@ -76,7 +76,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><a href="#error-handling">Error Handling</a></li>
 <li><a href="#throttling-&amp;-rate-limiting">Throttling/Rate-limiting</a></li>
 </ul></li>
-<li><a href="#how-do-i-access-the-staging-environment?">How to setup a staging environment for testing</a></li>
 </ul>
 
 <h1 id="need-help?">Need help?</h1>
@@ -163,11 +162,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>We also assume that you are familiar with basic RESTful API concepts.</p>
 <pre class="highlight plaintext"><code>  IMPORTANT
 
-  Use the staging / testing environment for validating your integration.
-  Do not perform stress or performance testing in staging or any other
-  account without informing 10,000ft support and obtaining explicit
-  approval. Violation of this may result in your account being
-  suspended.
+  Do not perform stress or performance testing in any 
+  account without informing 10,000ft support and obtaining explicit 
+  approval. Violation of this may result in your account being suspended.
 </code></pre>
 
 <h2 id="being-notified-about-important-changes">Being notified about important changes</h2>
@@ -184,7 +181,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>The API follows a typical RESTful pattern where it allows you to access collections of objects via HTTP. These Collections are paginated, and are always delivered in a structure that has a &lsquo;data&rsquo; array and &#39;paging&rsquo; meta-data, as shown below. This is true top level as well as nested collections.</p>
 
 <p>Some objects returned by the API may have sub-collections. For example, a tags collection for a given user object. These sub-collections are paginated in the same manner as top level collections.</p>
-<pre class="highlight plaintext"><code>curl -X GET https://api.10000ft.com/api/v1/users \
+<pre class="highlight plaintext"><code>curl -X GET https://api.rm.smartsheet.com/api/v1/users \
   -H "Content-Type: application/json"
   -H "auth: TOKEN"
 </code></pre>
@@ -211,7 +208,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <h2 id="pagination">Pagination</h2>
 
 <p>The pagination section in collections provide mechanisms to fetch additional data. The <code class="prettyprint">previous</code> and <code class="prettyprint">next</code> links provide access to the corresponding pages in the collection. You can override the default <code class="prettyprint">per_page</code> value by providing an appropriate value in the URL query parameter. For example,</p>
-<pre class="highlight plaintext"><code>GET https://app.10000ft.com/api/v1/users?per_page=100&amp;page=3
+<pre class="highlight plaintext"><code>GET https://api.rm.smartsheet.com/api/v1/users?per_page=100&amp;page=3
 </code></pre>
 
 <h2 id="filtering">Filtering</h2>
@@ -227,12 +224,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <p>The API currently supports service token based authentication. This can be sent as a query parameter named <code class="prettyprint">auth</code>, or as an HTTP header with the same name.</p>
 <pre class="highlight plaintext"><code># Token in http header (recommended)
-curl -X GET https://api.10000ft.com/api/v1/users \
+curl -X GET https://api.rm.smartsheet.com/api/v1/users \
   -H "Content-Type: application/json"
   -H "auth: TOKEN"
 
 # Token on URL
-curl -X GET https://api.10000ft.com/api/v1/users?auth=URL-ENCODED-TOKEN \
+curl -X GET https://api.rm.smartsheet.com/api/v1/users?auth=URL-ENCODED-TOKEN \
   -H "Content-Type: application/json"
 </code></pre>
 
@@ -241,7 +238,7 @@ curl -X GET https://api.10000ft.com/api/v1/users?auth=URL-ENCODED-TOKEN \
 <h2 id="optional-fields">Optional Fields</h2>
 
 <p>To reduce the number of roundtrips that might be required to fetch all related data for a given collection or resource (e.g. fetching a user and all their tags), the API supports a concept of optional fields. These <code class="prettyprint">fields</code> are a comma separated list of field names that are supported as a URL parameter when making a request to fetch a resource or a resource collection.</p>
-<pre class="highlight plaintext"><code>curl -X GET https://api.10000ft.com/api/v1/users?fields=tags \
+<pre class="highlight plaintext"><code>curl -X GET https://api.rm.smartsheet.com/api/v1/users?fields=tags \
   -H "Content-Type: application/json"
   -H "auth: TOKEN"
 
@@ -349,37 +346,14 @@ while(running == true) {
 
 <p>Here are some example <code class="prettyprint">curl</code> commands;</p>
 <pre class="highlight plaintext"><code># get the collection of users
-curl -X GET https://api.10000ft.com/api/v1/users?auth=TOKEN \
+curl -X GET https://api.rm.smartsheet.com/api/v1/users?auth=TOKEN \
   -H "Content-Type: application/json"
 
 # update user 100 with a new last_name
-curl -X PUT https://api.10000ft.com/api/v1/users/100?auth=TOKEN \
+curl -X PUT https://api.rm.smartsheet.com/api/v1/users/100?auth=TOKEN \
   -H "Content-Type: application/json" \
   -d '{"last_name":"Silva"'}'
 </code></pre>
-
-			  <h1 id="staging-vs.-production-environments">Staging vs. Production Environments</h1>
-
-<p>We provide a development environment called <strong><code class="prettyprint">vnext</code></strong> so you can test out the API and develop your applications before going live with them in production. It is a staging environment completely isolated from your active account. We strongly encourage that you setup a test account on <code class="prettyprint">vnext</code> and build your integrations there before moving to production.</p>
-
-<p>There is no additional charge for maintaining a test account on vnext.</p>
-
-<h3 id="how-do-i-access-the-staging-environment?">How do I access the staging environment?</h3>
-
-<ul>
-<li>Visit <a href="https://www.smartsheet.com/platform/10000ft/api-sandbox"><code class="prettyprint">https://www.smartsheet.com/platform/10000ft/api-sandbox</code></a> to setup a test account.</li>
-<li>The API end point base URL for <code class="prettyprint">vnext</code> is <code class="prettyprint">https://vnext-api.10000ft.com/api/v1/</code></li>
-<li>To access your test account, visit <code class="prettyprint">https://vnext.10000ft.com</code> and sign in with your test account credentials.</li>
-<li>For support on vnext integration, contact us via our <a href="https://help.smartsheet.com/contact/10000ft">Support Page</a></li>
-</ul>
-
-<h3 id="what-changes-when-moving-my-integration-to-production?">What changes when moving my integration to production?</h3>
-
-<ul>
-<li>Your production account is your live 10,000ft Plans account available at <code class="prettyprint">https://app.10000ft.com</code></li>
-<li>The API end point base URL is <code class="prettyprint">https://api.10000ft.com/api/v1/</code></li>
-<li>You will use a production API token obtained from the settings section in your production account.</li>
-</ul>
 
 			  <h1 id="approvals">Approvals</h1>
 
@@ -397,7 +371,7 @@ curl -X PUT https://api.10000ft.com/api/v1/users/100?auth=TOKEN \
 <pre class="highlight plaintext"><code>GET /api/v1/users/&lt;user_id&gt;/time_entries
 
 # note "fields=approvals"
-curl 'https://vnext.10000ft.com/api/v1/users/1/time_entries?fields=approvals&amp;auth=..'
+curl 'https://api.rm.smartsheet.com/api/v1/users/1/time_entries?fields=approvals&amp;auth=..'
 </code></pre>
 
 <p>Response</p>
@@ -544,13 +518,13 @@ curl 'https://vnext.10000ft.com/api/v1/users/1/time_entries?fields=approvals&amp
 <h2 id="list-assignables-(index)">List Assignables (index)</h2>
 <pre class="highlight plaintext"><code>GET  /api/v1/assignables
 
- curl 'https://vnext.10000ft.com/api/v1/assignables?auth=...'
+ curl 'https://api.rm.smartsheet.com/api/v1/assignables?auth=...'
 </code></pre>
 
 <h2 id="show-an-assignable">Show an Assignable</h2>
 <pre class="highlight plaintext"><code>GET  /api/v1/assignables/&lt;assignable-id&gt;
 
- curl 'https://vnext.10000ft.com/api/v1/assignables/12345?auth=...'
+ curl 'https://api.rm.smartsheet.com/api/v1/assignables/12345?auth=...'
 </code></pre>
 
 <h2 id="return-values-based-on-type">Return values based on type</h2>
@@ -633,7 +607,7 @@ curl 'https://vnext.10000ft.com/api/v1/users/1/time_entries?fields=approvals&amp
 </tbody></table>
 <pre class="highlight plaintext"><code>GET /api/v1/assignments
 
- curl 'https://vnext.10000ft.com/api/v1/assignments?auth=..'
+ curl 'https://api.rm.smartsheet.com/api/v1/assignments?auth=..'
 </code></pre>
 
 <h2 id="list-assignments-for-a-user-or-project">List assignments for a User or Project</h2>
@@ -665,27 +639,27 @@ curl 'https://vnext.10000ft.com/api/v1/users/1/time_entries?fields=approvals&amp
 </tbody></table>
 <pre class="highlight plaintext"><code>GET /api/v1/users/&lt;user_id&gt;/assignments
 
- curl 'https://vnext.10000ft.com/api/v1/users/&lt;user_id&gt;/assignments?auth=..'
+ curl 'https://api.rm.smartsheet.com/api/v1/users/&lt;user_id&gt;/assignments?auth=..'
 </code></pre>
 <pre class="highlight plaintext"><code>GET /api/v1/projects/&lt;project_id&gt;/assignments
 
- curl 'https://vnext.10000ft.com/api/v1/projects/&lt;project_id&gt;/assignments?auth=..'
+ curl 'https://api.rm.smartsheet.com/api/v1/projects/&lt;project_id&gt;/assignments?auth=..'
 </code></pre>
 
 <h2 id="show-an-assignment">Show an Assignment</h2>
 <pre class="highlight plaintext"><code>GET /api/v1/assignments/&lt;assignment_id&gt;
 
- curl 'https://vnext.10000ft.com/api/v1/assignments/&lt;assignment_id&gt;?auth=..'
+ curl 'https://api.rm.smartsheet.com/api/v1/assignments/&lt;assignment_id&gt;?auth=..'
 </code></pre>
 
 <h2 id="show-an-assignment-for-a-user-or-project">Show an Assignment for a User or Project</h2>
 <pre class="highlight plaintext"><code>GET /api/v1/users/&lt;user_id&gt;/assignments/&lt;assignment_id&gt;
 
- curl 'https://vnext.10000ft.com/api/v1/users/&lt;user_id&gt;/assignments/&lt;assignment_id&gt;?auth=..'
+ curl 'https://api.rm.smartsheet.com/api/v1/users/&lt;user_id&gt;/assignments/&lt;assignment_id&gt;?auth=..'
 </code></pre>
 <pre class="highlight plaintext"><code>GET /api/v1/projects/project_id/assignments/&lt;assignment_id&gt;
 
- curl 'https://vnext.10000ft.com/api/v1/projects/&lt;project_id&gt;/assignments/&lt;assignment_id&gt;?auth=..'
+ curl 'https://api.rm.smartsheet.com/api/v1/projects/&lt;project_id&gt;/assignments/&lt;assignment_id&gt;?auth=..'
 </code></pre>
 
 <p>Similarly, in the create and delete examples below, you can call the assignments API on projects specifying a user_id to create an assignment for that user, or to delete an assignment.</p>
@@ -696,20 +670,20 @@ curl 'https://vnext.10000ft.com/api/v1/users/1/time_entries?fields=approvals&amp
 <pre class="highlight shell"><code>POST /api/v1/users/&lt;user_id&gt;/assignments
 
  curl -d <span class="s1">'leave_id=&lt;leave_id&gt;&amp;starts_at=&lt;YEAR-MO-DAY&gt;&amp;ends_at=&lt;YEAR-MO-DAY&gt;'</span>  <span class="se">\</span>
-                 <span class="s1">'https://vnext.10000ft.com/api/v1/users/&lt;user_id&gt;/assignments?auth=...'</span>
+                 <span class="s1">'https://api.rm.smartsheet.com/api/v1/users/&lt;user_id&gt;/assignments?auth=...'</span>
 
  curl -d <span class="s1">'leave_id=&lt;leave_id&gt;&amp;starts_at=&lt;YEAR-MO-DAY&gt;&amp;ends_at=&lt;YEAR-MO-DAY&gt;&amp;percent=0.25'</span>  <span class="se">\</span>
 
-                 <span class="s1">'https://vnext.10000ft.com/api/v1/users/&lt;user_id&gt;/assignments?auth=...'</span>
+                 <span class="s1">'https://api.rm.smartsheet.com/api/v1/users/&lt;user_id&gt;/assignments?auth=...'</span>
 
  curl -d <span class="s1">'leave_id=&lt;leave_id&gt;&amp;starts_at=&lt;YEAR-MO-DAY&gt;&amp;ends_at=&lt;YEAR-MO-DAY&gt;&amp;allocation_mode=hours_per_day&amp;hours_per_day=&lt;hours&gt;'</span>  <span class="se">\</span>
-                 <span class="s1">'https://vnext.10000ft.com/api/v1/users/&lt;user_id&gt;/assignments?auth=...'</span>
+                 <span class="s1">'https://api.rm.smartsheet.com/api/v1/users/&lt;user_id&gt;/assignments?auth=...'</span>
 </code></pre>
 
 <h2 id="remove-an-assignment-for-a-user">Remove an Assignment for a User</h2>
 <pre class="highlight plaintext"><code>DELETE /api/v1/users/&lt;user_id&gt;/assignments/&lt;assignment_id&gt;
 
- curl -XDELETE 'https://vnext.10000ft.com/api/v1/users/&lt;user_id&gt;/assignments/&lt;assignment_id&gt;?auth=...'
+ curl -XDELETE 'https://api.rm.smartsheet.com/api/v1/users/&lt;user_id&gt;/assignments/&lt;assignment_id&gt;?auth=...'
 </code></pre>
 
 <h2 id="sample-response">Sample Response</h2>
@@ -1187,12 +1161,12 @@ POST /api/v1/projects/&lt;project_id&gt;/bill_rates
 
 <p><code class="prettyprint">item_type</code>: <value>(one of <code class="prettyprint">TimeFees</code> / <code class="prettyprint">TimeFeesDays</code> / <code class="prettyprint">Expenses</code>)</value></p>
 <pre class="highlight plaintext"><code>GET /api/v1/projects/&lt;project_id&gt;/budget_items
- curl "https://vnext.10000ft.com/api/v1/projects/12345/budget_items?item_type=TimeFees&amp;auth=..
+ curl "https://api.rm.smartsheet.com/api/v1/projects/12345/budget_items?item_type=TimeFees&amp;auth=..
 </code></pre>
 
 <h2 id="show-budget-item-by-id">Show Budget Item by id</h2>
-<pre class="highlight plaintext"><code>curl "https://vnext.10000ft.com/api/v1/budget_items/6789?auth=...
- curl "https://vnext.10000ft.com/api/v1/projects/12345/budget_items/6789?auth=...
+<pre class="highlight plaintext"><code>curl "https://api.rm.smartsheet.com/api/v1/budget_items/6789?auth=...
+ curl "https://api.rm.smartsheet.com/api/v1/projects/12345/budget_items/6789?auth=...
 </code></pre>
 
 <h2 id="create-a-budget-item">Create a Budget Item</h2>
@@ -1202,19 +1176,19 @@ POST /api/v1/projects/&lt;project_id&gt;/bill_rates
 <p><code class="prettyprint">item_type</code>: <value>(one of <code class="prettyprint">TimeFees</code> / <code class="prettyprint">TimeFeesDays</code> / <code class="prettyprint">Expenses</code>)
 <code class="prettyprint">amount</code>: value<value></value></value></p>
 <pre class="highlight plaintext"><code>curl -d "amount=5000&amp;item_type=TimeFees"  \
-            "https://vnext.10000ft.com/api/v1/projects/4/budget_items?auth=..."
+            "https://api.rm.smartsheet.com/api/v1/projects/4/budget_items?auth=..."
 </code></pre>
 
 <h2 id="update-budget-item-by-id">Update Budget Item by id</h2>
 <pre class="highlight plaintext"><code>curl -XPUT -d "amount=567"  \
-        "https://vnext.10000ft.com/api/v1/budget_items/6789?auth=..."
+        "https://api.rm.smartsheet.com/api/v1/budget_items/6789?auth=..."
  or
  curl -XPUT -d "amount=567"   \
-        "https://vnext.10000ft.com/api/v1/projects/12345/budget_items/6789?auth=..."
+        "https://api.rm.smartsheet.com/api/v1/projects/12345/budget_items/6789?auth=..."
 </code></pre>
 
 <h2 id="delete-a-budget-item">Delete a Budget Item</h2>
-<pre class="highlight plaintext"><code>curl -XDELETE "https://vnext.10000ft.com/api/v1/budget_items/6789?auth=..."
+<pre class="highlight plaintext"><code>curl -XDELETE "https://api.rm.smartsheet.com/api/v1/budget_items/6789?auth=..."
 </code></pre>
 
 <h2 id="sample-response">Sample Response</h2>
@@ -1828,13 +1802,13 @@ GET /api/v1/projects/&lt;project_id&gt;/expense_items/&lt;id&gt;
 <h2 id="list-leave-types-(index)">List Leave Types (index)</h2>
 <pre class="highlight plaintext"><code>GET  /api/v1/leave_types
 
- curl 'https://vnext.10000ft.com/api/v1/leave_types?auth=...'
+ curl 'https://api.rm.smartsheet.com/api/v1/leave_types?auth=...'
 </code></pre>
 
 <h2 id="show-a-leavetype">Show a LeaveType</h2>
 <pre class="highlight plaintext"><code>GET  /api/v1/leave_types/&lt;leave_type_id&gt;
 
- curl 'https://vnext.10000ft.com/api/v1/leave_types/12345?auth=...'
+ curl 'https://api.rm.smartsheet.com/api/v1/leave_types/12345?auth=...'
 </code></pre>
 
 <h2 id="sample-response">Sample Response</h2>
@@ -1868,28 +1842,28 @@ GET /api/v1/projects/&lt;project_id&gt;/expense_items/&lt;id&gt;
 
 <h2 id="list-phases-for-a-project">List Phases for a Project</h2>
 <pre class="highlight plaintext"><code>GET /api/v1/projects/&lt;project_id&gt;/phases
- curl 'https://vnext.10000ft.com/api/v1/projects/[project_id]/phases?auth=...'
+ curl 'https://api.rm.smartsheet.com/api/v1/projects/[project_id]/phases?auth=...'
 </code></pre>
 
 <h2 id="create-a-phase-for-a-project">Create a Phase for a Project</h2>
 <pre class="highlight plaintext"><code>curl  -d "phase_name=Winding%20up&amp;starts_at=2013-09-15&amp;ends_at=2013-09-16"  \
-                         "https://vnext.10000ft.com/api/v1/projects/[project_id]/phases?auth=..."
+                         "https://api.rm.smartsheet.com/api/v1/projects/[project_id]/phases?auth=..."
 </code></pre>
 
 <h2 id="update-a-phase-for-a-project">Update a Phase for a Project</h2>
 <pre class="highlight plaintext"><code>curl  -XPUT -d "phase_name=Another%20Name&amp;"  \
-                         "https://vnext.10000ft.com/api/v1/projects/[project_id]/phases/456?auth=..."
+                         "https://api.rm.smartsheet.com/api/v1/projects/[project_id]/phases/456?auth=..."
 </code></pre>
 
 <h3 id="bill-rates">Bill Rates</h3>
 
 <p>If you wish for the phase to inherit the parent project&rsquo;s bill rates after create, the <code class="prettyprint">use_parent_bill_rates</code> flag can be passed with a <code class="prettyprint">PUT</code> request as follows:</p>
 <pre class="highlight plaintext"><code>curl  -XPUT -d "use_parent_bill_rates=true"  \
-                         "https://vnext.10000ft.com/api/v1/projects/[project_id]/phases/456?auth=..."
+                         "https://api.rm.smartsheet.com/api/v1/projects/[project_id]/phases/456?auth=..."
 </code></pre>
 
 <h2 id="delete-a-phase-for-a-project">Delete a Phase for a Project</h2>
-<pre class="highlight plaintext"><code>curl  -i -X DELETE "https://vnext.10000ft.com/api/v1/projects/[project_id]/phases/[phase_id]?auth=..."
+<pre class="highlight plaintext"><code>curl  -i -X DELETE "https://api.rm.smartsheet.com/api/v1/projects/[project_id]/phases/[phase_id]?auth=..."
 </code></pre>
 
 <p>NOTE: A phase cannot be deleted unless it contains no assignments.</p>
@@ -1920,7 +1894,7 @@ GET /api/v1/projects/&lt;project_id&gt;/expense_items/&lt;id&gt;
 </tr>
 </tbody></table>
 <pre class="highlight plaintext"><code>GET  /api/v1/placeholder_resources
- curl 'https://vnext.10000ft.com/api/v1/placeholder_resources?fields=assignments,custom_field_values&amp;auth=...'
+ curl 'https://api.rm.smartsheet.com/api/v1/placeholder_resources?fields=assignments,custom_field_values&amp;auth=...'
 </code></pre>
 
 <p>Note that custom field values can only be accessed if custom fields are enabled for the account. This is only possible for pro plans and up. See <a href="#custom-fields">custom fields</a> for details.</p>
@@ -1945,7 +1919,7 @@ GET /api/v1/projects/&lt;project_id&gt;/expense_items/&lt;id&gt;
 </tr>
 </tbody></table>
 <pre class="highlight plaintext"><code>GET  /api/v1/placeholder_resources/&lt;placeholder_resource_id&gt;
- curl 'https://vnext.10000ft.com/api/v1/placeholder_resources/12345?fields=assignments&amp;auth=...'
+ curl 'https://api.rm.smartsheet.com/api/v1/placeholder_resources/12345?fields=assignments&amp;auth=...'
 </code></pre>
 
 <h2 id="create-a-placeholder-resource">Create a Placeholder Resource</h2>
@@ -1957,7 +1931,7 @@ GET /api/v1/projects/&lt;project_id&gt;/expense_items/&lt;id&gt;
 </ul>
 <pre class="highlight plaintext"><code>POST  /api/v1/placeholder_resources
  curl -d 'title=Designer' \
-             'https://vnext.10000ft.com/api/v1/placeholder_resources?auth=...'
+             'https://api.rm.smartsheet.com/api/v1/placeholder_resources?auth=...'
 </code></pre>
 
 <p>Placeholders are referred to by title. The title is displayed wherever placeholders appear in the application e.g., on projects, the schedule, etc. Therefore, it is required to specify this parameter.</p>
@@ -1993,7 +1967,7 @@ GET /api/v1/projects/&lt;project_id&gt;/expense_items/&lt;id&gt;
 <p>Placeholder specified by <code class="prettyprint">id</code></p>
 <pre class="highlight plaintext"><code>PUT  /api/v1/placeholder_resources/&lt;placeholder_resource_id&gt;
  curl -XPUT -d 'title=Senior Designer' \
-             'https://vnext.10000ft.com/api/v1/placeholder_resources/12345?auth=...'
+             'https://api.rm.smartsheet.com/api/v1/placeholder_resources/12345?auth=...'
 </code></pre>
 
 <h2 id="delete-a-placeholder">Delete a Placeholder</h2>
@@ -2001,7 +1975,7 @@ GET /api/v1/projects/&lt;project_id&gt;/expense_items/&lt;id&gt;
 <p>Placeholder resources may be deleted via the API, as follows.</p>
 <pre class="highlight plaintext"><code>DELETE  /api/v1/placeholder_resources/&lt;placeholder_resource_id&gt;
  curl -XDELETE \
-             'https://vnext.10000ft.com/api/v1/placeholder_resources/12345?auth=...'
+             'https://api.rm.smartsheet.com/api/v1/placeholder_resources/12345?auth=...'
 </code></pre>
 
 <h2 id="placeholders-and-users/people">Placeholders and Users/People</h2>
@@ -2013,7 +1987,7 @@ GET /api/v1/projects/&lt;project_id&gt;/expense_items/&lt;id&gt;
 <p>Assignments can be made, updated, and removed via the <a href="#assignments">Assignments</a> API just as they can for users.
 The only difference is that this is accessed through the <code class="prettyprint">placeholder_resources</code> endpoint. In general, for the <a href="#assignments">Assignments</a> API, a placeholder resource ID can be used as the <code class="prettyprint">user_id</code> parameter.</p>
 <pre class="highlight plaintext"><code>GET  /api/v1/placeholder_resources/&lt;placeholder_resource_id&gt;/assignments
- curl 'https://vnext.10000ft.com/api/v1/placeholder_resources/12345/assignments?&amp;auth=...'
+ curl 'https://api.rm.smartsheet.com/api/v1/placeholder_resources/12345/assignments?&amp;auth=...'
 </code></pre>
 
 <h5 id="placeholder-bill-rates">Placeholder Bill Rates</h5>
@@ -2054,13 +2028,13 @@ The only difference is that this is accessed through the <code class="prettyprin
 <h2 id="create-and-attach-tags-to-projects">Create and attach tags to projects</h2>
 
 <p>Attaching a tag to a project is technically a &ldquo;find-or-create&rdquo; operation. If you post a tag with information that does not exist for your organization it will be created and attached to the project specified. If the tag already exists, it will just be attached. If you try to create the same tag multiple times, it will just be attached once.</p>
-<pre class="highlight plaintext"><code>curl -d "value=Awesome"  "https://vnext.10000ft.com/api/v1/projects/1/tags?auth=..."
+<pre class="highlight plaintext"><code>curl -d "value=Awesome"  "https://api.rm.smartsheet.com/api/v1/projects/1/tags?auth=..."
 </code></pre>
 
 <h2 id="disconnect-a-tag-from-a-project">Disconnect a tag from a project</h2>
 
 <p>You can remove a tag from a project without deleting it from your account settings by using the /api/v1/projects endpoint.</p>
-<pre class="highlight plaintext"><code>curl -XDELETE  "https://vnext.10000ft.com/api/v1/projects/1/tags/456?auth=..."
+<pre class="highlight plaintext"><code>curl -XDELETE  "https://api.rm.smartsheet.com/api/v1/projects/1/tags/456?auth=..."
 </code></pre>
 
 <h2 id="response-for-tags-listing">Response for Tags Listing</h2>
@@ -2130,7 +2104,7 @@ The only difference is that this is accessed through the <code class="prettyprin
 <h2 id="list-users">List Users</h2>
 <pre class="highlight plaintext"><code>GET  /api/v1/projects/&lt;project_id&gt;/users
 
- curl 'https://vnext.10000ft.com/api/v1/projects/project_id/users?fields=tags,assignments&amp;auth=...'
+ curl 'https://api.rm.smartsheet.com/api/v1/projects/project_id/users?fields=tags,assignments&amp;auth=...'
 </code></pre>
 
 			  <h1 id="projects">Projects</h1>
@@ -2308,7 +2282,7 @@ The only difference is that this is accessed through the <code class="prettyprin
 <p>Dates need to be in UTC</p>
 
 <h2 id="sample-response">Sample Response</h2>
-<pre class="highlight plaintext"><code>GET  https://api.10000ft.com/api/v1/projects/&lt;project_id&gt;?fields=tags,summary,children,has_pending_updates&amp;today=27-07-2016&amp;per_page=100000&amp;auth=&lt;token&gt;
+<pre class="highlight plaintext"><code>GET  https://api.rm.smartsheet.com/api/v1/projects/&lt;project_id&gt;?fields=tags,summary,children,has_pending_updates&amp;today=27-07-2016&amp;per_page=100000&amp;auth=&lt;token&gt;
 </code></pre>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">821065</span><span class="p">,</span><span class="w">
@@ -3328,7 +3302,7 @@ POST /api/v1/users/&lt;user_id&gt;/availabilities
 
 <h2 id="show-list-of-statuses-for-a-user">Show List of Statuses For a User</h2>
 <pre class="highlight plaintext"><code>GET  /api/v1/users/statuses
-  curl "https://vnext.10000ft.com/api/v1/users/7/statuses?auth=..."
+  curl "https://api.rm.smartsheet.com/api/v1/users/7/statuses?auth=..."
 </code></pre>
 
 <h2 id="create/update-status-for-a-user">Create/update status for a user</h2>
@@ -3344,7 +3318,7 @@ POST /api/v1/users/&lt;user_id&gt;/availabilities
 <h2 id="usage">Usage</h2>
 <pre class="highlight plaintext"><code>POST  /api/v1/users/&lt;user_id&gt;/statuses
   curl  -d 'status=OOO' \
-            'https://vnext.10000ft.com/api/v1/users/12345/statuses?auth=...''
+            'https://api.rm.smartsheet.com/api/v1/users/12345/statuses?auth=...''
 </code></pre>
 
 <h2 id="sample-response">Sample Response</h2>
@@ -3387,13 +3361,13 @@ POST /api/v1/users/&lt;user_id&gt;/availabilities
 <h2 id="create-and-attach-tags-to-users">Create and attach tags to users</h2>
 
 <p>Attaching a tag to a user is technically a &ldquo;find-or-create&rdquo; operation. If you post a tag with information that does not exist for your organization it will be created and attached to the user specified. If the tag already exists, it will just be attached. If you try to create the same tag multiple times, it will just be attached once.</p>
-<pre class="highlight plaintext"><code>curl -d "value=Awesome"  "https://vnext.10000ft.com/api/v1/users/1/tags?auth=..."
+<pre class="highlight plaintext"><code>curl -d "value=Awesome"  "https://api.rm.smartsheet.com/api/v1/users/1/tags?auth=..."
 </code></pre>
 
 <h2 id="disconnect-a-tag-from-a-user">Disconnect a tag from a user</h2>
 
 <p>You can remove a tag from a user without deleting it from your account settings by using the /api/v1/users endpoint.</p>
-<pre class="highlight plaintext"><code>curl -XDELETE  "https://vnext.10000ft.com/api/v1/users/1/tags/456?auth=..."
+<pre class="highlight plaintext"><code>curl -XDELETE  "https://api.rm.smartsheet.com/api/v1/users/1/tags/456?auth=..."
 </code></pre>
 
 <h2 id="response-for-tags-listing">Response for Tags Listing</h2>
@@ -3831,7 +3805,7 @@ Currently, webhooks are supported for the following events.</p>
 <h4 id="example">Example</h4>
 <pre class="highlight plaintext"><code>GET /api/v1/webhooks/
 
-curl 'https://vnext.10000ft.com/api/v1/webhooks?&amp;auth=..'
+curl 'https://api.rm.smartsheet.com/api/v1/webhooks?&amp;auth=..'
 </code></pre>
 
 <h4 id="response">Response</h4>
