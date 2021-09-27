@@ -120,7 +120,7 @@ Resource Management by Smartsheet provides the following actions for creating or
 
 Zapier is a convenient and powerful way to consume the Resource Management by Smartsheet API. The triggers, actions and searches listed above allow you to access commonly used API functionality without having to develop custom API integrations or write software code.
 
-The Resource Management by Smartsheet API provides access to a number of advanced features that are not currently supported with our Zapier triggers and actions. See [Resource Management by Smartsheet API documentation](#Resource Management by Smartsheet-api-(pro-and-enterprise-only)) for more details.
+The Resource Management by Smartsheet API provides access to a number of advanced features that are not currently supported with our Zapier triggers and actions. See [Resource Management by Smartsheet API documentation](#10,000ft-api-(pro-and-enterprise-only)) for more details.
 
 Have a question? Contact us via our [Support Page](https://help.smartsheet.com/contact/resource-management). We are here to help!
 
