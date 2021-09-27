@@ -5,7 +5,7 @@
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link rel="shortcut icon" href="images/favicon.ico" type="image/vnd.microsoft.icon">
-    <title>10,000ft API</title>
+    <title>Resource Management by Smartsheet API</title>
 
     <link href="stylesheets/screen.css" rel="stylesheet" type="text/css" media="screen" />
     <link href="stylesheets/print.css" rel="stylesheet" type="text/css" media="print" />
@@ -23,7 +23,7 @@
 		<ul>
 			<li>
 			  <a href="https://10kft.github.io/10kft-api/" target="_blank">
-			    10,000ft API
+			    Resource Management by Smartsheet API
 			  </a>
 			</li>
 		</ul>
@@ -54,18 +54,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <!-- End Google Tag Manager -->
 
-<h1 id="10,000ft-api-(pro,-enterprise,-and-business-plans)"><span class="customTOCSectionHeading">10,000ft API (Pro, Enterprise, and Business plans)</span></h1>
+<h1 id="resource-management-by-smartsheet-api-(pro,-enterprise,-and-business-plans)"><span class="customTOCSectionHeading">Resource Management by Smartsheet API (Pro, Enterprise, and Business plans)</span></h1>
 
 <aside class="notice">Last updated: 05/26/2021</aside>
 
-<p>The 10,000ft API provides programmatic access to projects, users and time entries in your account, commonly referred to as <em>resources</em> in the rest of this API documentation. The API implements a standard HTTP REST pattern and allows callers with appropriate authentication and authorization to programmatically create, read, update and delete these resources.</p>
+<p>The Resource Management by Smartsheet API provides programmatic access to projects, users and time entries in your account, commonly referred to as <em>resources</em> in the rest of this API documentation. The API implements a standard HTTP REST pattern and allows callers with appropriate authentication and authorization to programmatically create, read, update and delete these resources.</p>
 
-<p>API access is available on Pro, Enterprise and Business plans of 10000ft. As of June 2019, all new plans purchased are Business, and include API access. For customers prior to this date, API access is based on your current plan.</p>
+<p>API access is available on Pro, Enterprise and Business plans of Resource Management by Smartsheet. As of June 2019, all new plans purchased are Business, and include API access. For customers prior to this date, API access is based on your current plan.</p>
 
 <h1 id="overview">Overview</h1>
 
 <ul>
-<li><a href="#before-starting-to-use-the-10,000ft-api">General information</a> (read first)
+<li><a href="#before-starting-to-use-the-Resource%20Management%20by%20Smartsheet-api">General information</a> (read first)
 
 <ul>
 <li><a href="#collections-&amp;-objects">Collections &amp; Objects</a></li>
@@ -81,7 +81,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <h1 id="need-help?">Need help?</h1>
 
 <ul>
-<li>Contact us via our <a href="https://help.smartsheet.com/contact/10000ft">Support Page</a>
+<li>Contact us via our <a href="https://help.smartsheet.com/contact/resource-management">Support Page</a>
 
 <ul>
 <li>Read more on how to report a problem <a href="#getting-help-&amp;-reporting-problems">here</a>.</li>
@@ -129,20 +129,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <h1 id="webhook-support">Webhook Support</h1>
 
-<p>The 10,000ft API supports webhooks for certain events. See <a href="#webhooks">the webhooks section</a> for details.</p>
+<p>The Resource Management by Smartsheet API supports webhooks for certain events. See <a href="#webhooks">the webhooks section</a> for details.</p>
 
 <h1 id="zapier-integration">Zapier Integration</h1>
 
-<p>Our Zapier integration helps you integrating with the 10,000ft API in convenient and powerful ways and connect many other apps and services used by yor team.</p>
+<p>Our Zapier integration helps you integrating with the Resource Management by Smartsheet API in convenient and powerful ways and connect many other apps and services used by yor team.</p>
 
 <ul>
-<li><a href="https://zapier.com/apps/10000ft/integrations">10,000ft on Zapier</a></li>
+<li><a href="https://zapier.com/apps/10000ft/integrations">Resource Management by Smartsheet on Zapier</a></li>
 <li><a href="#zapier-integration">Getting started with Zapier</a></li>
 </ul>
 
 <h1 id="third-party-libraries">Third party libraries</h1>
 
-<p>A few of our customers have implemented and shared API client libraries to help using the 10Kft API easier. Depending on your scenario, you may benefit from adopting and improving on them. Here are a couple of references,</p>
+<p>A few of our customers have implemented and shared API client libraries to help using the Resource Management by Smartsheet API easier. Depending on your scenario, you may benefit from adopting and improving on them. Here are a couple of references,</p>
 
 <ul>
 <li>Revelry Labs / <code class="prettyprint">ruby</code> / <a href="https://github.com/revelrylabs/tenk">https://github.com/revelrylabs/tenk</a></li>
@@ -151,19 +151,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <h1 id="questions?">Questions?</h1>
 
-<p>Questions or feedback about our API, please submit a support ticket at our <a href="https://help.smartsheet.com/contact/10000ft">Support Page</a></p>
+<p>Questions or feedback about our API, please submit a support ticket at our <a href="https://help.smartsheet.com/contact/resource-management">Support Page</a></p>
 
 <h1 id="configuration"><span class="customTOCSectionHeading">Sections</span></h1>
 
-			  <h1 id="before-starting-to-use-the-10,000ft-api">Before starting to use the 10,000ft API</h1>
+			  <h1 id="before-starting-to-use-the-resource-management-by-smartsheet-api">Before starting to use the Resource Management by Smartsheet API</h1>
 
-<p>This documentation assumes that you have either signed up for a 10,000ft trial or you have an active subscription, and that you are familiar with the basic features of the application. The information that follows give you an overview of accessing the same functionality, from an API, so that you can implement additional functionality and custom integrations that meet your specific business needs.</p>
+<p>This documentation assumes that you have either signed up for a Resource Management by Smartsheet trial or you have an active subscription, and that you are familiar with the basic features of the application. The information that follows give you an overview of accessing the same functionality, from an API, so that you can implement additional functionality and custom integrations that meet your specific business needs.</p>
 
 <p>We also assume that you are familiar with basic RESTful API concepts.</p>
 <pre class="highlight plaintext"><code>  IMPORTANT
 
   Do not perform stress or performance testing in any 
-  account without informing 10,000ft support and obtaining explicit 
+  account without informing Resource Management by Smartsheet support and obtaining explicit 
   approval. Violation of this may result in your account being suspended.
 </code></pre>
 
@@ -213,7 +213,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <h2 id="filtering">Filtering</h2>
 
-<p>Some resources in the 10,000ft API respect certain filtering parameters. Those optional parameters are as follows:</p>
+<p>Some resources in the Resource Management by Smartsheet API respect certain filtering parameters. Those optional parameters are as follows:</p>
 
 <ul>
 <li><code class="prettyprint">filter_field</code> - The property to filter on.</li>
@@ -339,7 +339,7 @@ while(running == true) {
 <p>There are several ways you can ask for help or report a problem with using the API.</p>
 
 <ul>
-<li>For issues that require immediate attention, contact us via our <a href="https://help.smartsheet.com/contact/10000ft">Support Page</a></li>
+<li>For issues that require immediate attention, contact us via our <a href="https://help.smartsheet.com/contact/resource-management">Support Page</a></li>
 </ul>
 
 <p>When contacting support for assistance with using the API, please provide example API calls where possible. This greatly speeds up the time to resolve support requests. You can use cURL, available on unix platforms as well as windows, to create an example of your scenario, and including the <code class="prettyprint">curl</code> command(s) along with your request for support.</p>
@@ -359,7 +359,7 @@ curl -X PUT https://api.rm.smartsheet.com/api/v1/users/100?auth=TOKEN \
 
 <h5 id="endpoint:-/api/v1/approvals">Endpoint: <code class="prettyprint">/api/v1/approvals</code></h5>
 
-<p>In 10,000ft, certain record types are considered &ldquo;approvable.&rdquo; Currently, these record types are time entries and expense items. Approvals are created when time entries or expense items are &ldquo;submitted for approval.&rdquo;</p>
+<p>In Resource Management by Smartsheet, certain record types are considered &ldquo;approvable.&rdquo; Currently, these record types are time entries and expense items. Approvals are created when time entries or expense items are &ldquo;submitted for approval.&rdquo;</p>
 
 <h2 id="list-approvals">List Approvals</h2>
 <pre class="highlight plaintext"><code>GET /api/v1/approvals
@@ -509,7 +509,7 @@ curl 'https://api.rm.smartsheet.com/api/v1/users/1/time_entries?fields=approvals
 
 <h5 id="endpoint:-/api/v1/assignables">Endpoint: <code class="prettyprint">/api/v1/assignables</code></h5>
 
-<p>An <em>assignable</em> in 10K Plans is an object to which an assignment can be made, i.e. a person, placeholder, etc. can be assigned to this object. Currently, there are two types of assignables in 10K Plans, <a href="#projects">Projects</a> and <a href="#leave-types">Leave Types</a>. Phases are also an assignable, but they can be accessed through the <a href="#projects">projects endpoint</a>.</p>
+<p>An <em>assignable</em> in Resource Management by Smartsheet Plans is an object to which an assignment can be made, i.e. a person, placeholder, etc. can be assigned to this object. Currently, there are two types of assignables in Resource Management by Smartsheet Plans, <a href="#projects">Projects</a> and <a href="#leave-types">Leave Types</a>. Phases are also an assignable, but they can be accessed through the <a href="#projects">projects endpoint</a>.</p>
 
 <p>It is useful to have an understanding of Assignables as an API entity because the <a href="#assignments">Assignments endpoint</a> returns an <em>assignable-id</em> to indicate the object to which the assignment is made, but without knowing the <em>type</em> of that object, it is not clear which endpoint to use to get more details about the object if desired. The assignables endpoint allows you to query directly using the <code class="prettyprint">assignable-id</code> from an assignment.</p>
 
@@ -847,7 +847,7 @@ curl 'https://api.rm.smartsheet.com/api/v1/users/1/time_entries?fields=approvals
 
 			  <h1 id="bill-rates">Bill Rates</h1>
 
-<p>Bill rates in 10,000ft are maintained at both the account level (defaults) and project level. When a new project is created, the account level bill rates are used as a template for setting up initial bill rates for the project. Adding a user to the project (for example, by making an assignment) causes additional user-specific rates to be created in the project. These user specific bill rates are determined by looking up the existing role and discipline specific rates and matching them up with the user&rsquo;s role and discipline to find the best match.</p>
+<p>Bill rates in Resource Management by Smartsheet are maintained at both the account level (defaults) and project level. When a new project is created, the account level bill rates are used as a template for setting up initial bill rates for the project. Adding a user to the project (for example, by making an assignment) causes additional user-specific rates to be created in the project. These user specific bill rates are determined by looking up the existing role and discipline specific rates and matching them up with the user&rsquo;s role and discipline to find the best match.</p>
 
 <p>A phase is a child project and may have its own bill rate or refer to the parent project. You can add and edit phase-specific bill rates through the user interface of the application. When setting up a phase to have its own bill rate, the parent project bill rates are used as a template, much like the way account default bill rates are used as a template when setting up project bill rates. If a phase is set up to have its own bill rate, adding users to the phase results in user-specific rates being created for the phase, just like it does for projects.</p>
 
@@ -1713,7 +1713,7 @@ GET /api/v1/projects/&lt;project_id&gt;/expense_items/&lt;id&gt;
 
 			  <h1 id="holidays">Holidays</h1>
 
-<p>Holidays are dates that your organization treats as non-working days, and entered into 10,000ft by an account administrator. The API provides an endpoint for reading this information.</p>
+<p>Holidays are dates that your organization treats as non-working days, and entered into Resource Management by Smartsheet by an account administrator. The API provides an endpoint for reading this information.</p>
 
 <h2 id="endpoints:">Endpoints:</h2>
 <pre class="highlight plaintext"><code>GET /api/v1/holidays
@@ -2290,7 +2290,7 @@ The only difference is that this is accessed through the <code class="prettyprin
   </span><span class="s2">"archived_at"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
   </span><span class="s2">"description"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
   </span><span class="s2">"guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xxxx-xxxx-xxxx-xxxx-xxxx-xxxx"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"10K Example for Wayne"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Resource Management by Smartsheet Example for Wayne"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
   </span><span class="s2">"phase_name"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
   </span><span class="s2">"project_code"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
@@ -2850,9 +2850,9 @@ GET /api/v1/status_options?with_deleted=true
 
 <h2 id="suggested-(unconfirmed)-time-entries">Suggested (Unconfirmed) time entries</h2>
 
-<p>Suggested time entries (also know as unconfirmed time entries) are created by 10,000ft as a result of resources being assigned to a project. These are identifiable by the <code class="prettyprint">is_suggestion: true</code> attribute on the time entry objects. Suggested time entries are not returned by the API by default and must be requested using the <code class="prettyprint">with_suggestions=true</code> parameter on the GET API call to fetch time entries.</p>
+<p>Suggested time entries (also know as unconfirmed time entries) are created by Resource Management by Smartsheet as a result of resources being assigned to a project. These are identifiable by the <code class="prettyprint">is_suggestion: true</code> attribute on the time entry objects. Suggested time entries are not returned by the API by default and must be requested using the <code class="prettyprint">with_suggestions=true</code> parameter on the GET API call to fetch time entries.</p>
 
-<p>Suggested time entries are read-only and are kept up to date by 10Kft as the corresponding assignments are updated.</p>
+<p>Suggested time entries are read-only and are kept up to date by Resource Management by Smartsheet as the corresponding assignments are updated.</p>
 
 <h2 id="confirmed-time-entries">Confirmed time entries</h2>
 
@@ -3055,7 +3055,7 @@ DELETE /api/v1/users/&lt;user_id&gt;/time_entries/id
 
 <h2 id="bill-rates">Bill Rates</h2>
 
-<p>Time entries have an associated bill rate attached to them. When a new time entry is created, 10Kft will determine the appropriate bill rate for it (based on your account and project settings) and assign a values. When reading time entries, you can see this assigned bill rate.</p>
+<p>Time entries have an associated bill rate attached to them. When a new time entry is created, Resource Management by Smartsheet will determine the appropriate bill rate for it (based on your account and project settings) and assign a values. When reading time entries, you can see this assigned bill rate.</p>
 
 <h3 id="creating-time-entries">Creating Time Entries</h3>
 
@@ -3070,7 +3070,7 @@ DELETE /api/v1/users/&lt;user_id&gt;/time_entries/id
   "date": "2012-01-21",
   "hours": 0.5,
   "task": 'Travel',
-  "notes": 'Drive to Seattle, WA to meet with 10Kft'
+  "notes": 'Drive to Seattle, WA to meet with Resource Management by Smartsheet'
 }
 </code></pre>
 
@@ -3126,11 +3126,11 @@ DELETE /api/v1/users/&lt;user_id&gt;/time_entries/id
 
 			  <h1 id="availabilities">Availabilities</h1>
 
-<p>In 10,000ft we have the concept of a work week. It defines the days of the week that are to be considered work days and the number of work hours for those days. Given this work week, you can determine the number of work hours per day, in any given date range. The work week is configurable by an account administrator, via the account settings pages.</p>
+<p>In Resource Management by Smartsheet we have the concept of a work week. It defines the days of the week that are to be considered work days and the number of work hours for those days. Given this work week, you can determine the number of work hours per day, in any given date range. The work week is configurable by an account administrator, via the account settings pages.</p>
 
 <p>User availabilities are a mechanism by which you can further customize the work days for individuals in your team. When an individual has a work schedule that deviates from the normal work week observed by your team, say, because they are working part time during some time period, an administrator can specify that by adding one or more availability time blocks to that user&rsquo;s profile.</p>
 
-<p>When a user has one or more availability time blocks specified, 10,000ft will always take those into consideration in addition to the normal work week information of the company.</p>
+<p>When a user has one or more availability time blocks specified, Resource Management by Smartsheet will always take those into consideration in addition to the normal work week information of the company.</p>
 
 <p><code class="prettyprint">NB:</code> In the current version of the API, updating part time availabilities will NOT automatically update existing assignments and their suggested time entries to match.</p>
 
@@ -3709,7 +3709,7 @@ POST /api/v1/users
 
 <h3 id="license-type">License Type</h3>
 
-<p>Information about the user&rsquo;s license type is contained in the <code class="prettyprint">license_type</code> property. Accepted values are currently <code class="prettyprint">licensed</code> and <code class="prettyprint">managed_resource</code>. Both types count toward the applicable limits on your plan. See Settings &gt; People in 10,000ft for more information.</p>
+<p>Information about the user&rsquo;s license type is contained in the <code class="prettyprint">license_type</code> property. Accepted values are currently <code class="prettyprint">licensed</code> and <code class="prettyprint">managed_resource</code>. Both types count toward the applicable limits on your plan. See Settings &gt; People in Resource Management by Smartsheet for more information.</p>
 
 <h2 id="sample-response">Sample Response</h2>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
@@ -3898,7 +3898,7 @@ The url must be https with a valid host.</p>
 
 <h2 id="webhook-payloads">Webhook Payloads</h2>
 
-<p>When a webhook is registered for a particular event type with the 10000ft API,
+<p>When a webhook is registered for a particular event type with the Resource Management by Smartsheet API,
 every time an event of that type occurs, a POST is made to the webhook URL containing
 data about the affected object. For example, if a webhook is registered for the project.created
 event, every time a new project is created, a POST with the details of the created project is made to the
@@ -3978,34 +3978,34 @@ project.created and project.updated webhooks.</p>
 
 <h2 id="what-should-you-return-from-your-webhook-processing-code?">What should you return from your webhook processing code?</h2>
 
-<p>10000ft keeps track of return values from webhook processing code, and if a webhook is behaving poorly e.g. consistently
+<p>Resource Management by Smartsheet keeps track of return values from webhook processing code, and if a webhook is behaving poorly e.g. consistently
 unreachable or in error, it may be automatically unsubscribed. Further, returning a 410 code on a webhook will also automatically unsubscribe it.</p>
 
 <h2 id="can-webhooks-be-viewed-or-edited-from-the-application-front-end?">Can Webhooks be viewed or edited from the application front-end?</h2>
 
 <p>At the moment there is no front end support for webhooks, they exist only as an API feature.</p>
 
-			  <h1 id="10,000ft-zapier-integration">10,000ft Zapier Integration</h1>
+			  <h1 id="resource-management-by-smartsheet-zapier-integration">Resource Management by Smartsheet Zapier Integration</h1>
 
-<p>Zapier is a web automation service that lets you integrate 10,000ft with thousands of other apps. You can read more details on the 10,000ft + Zapier <a href="https://zapier.com/apps/10000ft/integrations">integrations page</a>.</p>
+<p>Zapier is a web automation service that lets you integrate Resource Management by Smartsheet with thousands of other apps. You can read more details on the Resource Management by Smartsheet + Zapier <a href="https://zapier.com/apps/10000ft/integrations">integrations page</a>.</p>
 
 <h2 id="requirements">Requirements</h2>
 
 <ul>
-<li>A 10,000ft account</li>
+<li>A Resource Management by Smartsheet account</li>
 <li>A Zapier account</li>
-<li>Optionally, an account with each service that will be connected with 10,000ft via Zapier</li>
+<li>Optionally, an account with each service that will be connected with Resource Management by Smartsheet via Zapier</li>
 </ul>
 
 <p>Zapier provides free and paid plans. See the <a href="https://zapier.com/pricing">Zapier pricing page</a> for more info.</p>
 
-<h2 id="connecting-10,000ft-with-zapier">Connecting 10,000ft with Zapier</h2>
+<h2 id="connecting-resource-management-by-smartsheet-with-zapier">Connecting Resource Management by Smartsheet with Zapier</h2>
 
 <ul>
-<li>This step is only required when connecting 10,000ft with your Zapier account for the first time</li>
+<li>This step is only required when connecting Resource Management by Smartsheet with your Zapier account for the first time</li>
 <li>Start by making a new Zap in your Zapier account</li>
-<li>Find the 10,000ft app and pick any trigger to initiate the setup</li>
-<li><p>When prompted, add the 10,000ft API Token into Zapier, test and save your connection</p>
+<li>Find the Resource Management by Smartsheet app and pick any trigger to initiate the setup</li>
+<li><p>When prompted, add the Resource Management by Smartsheet API Token into Zapier, test and save your connection</p>
 
 <p><img src="images/make-a-zap/3.png" alt="add API token" width="480"></p></li>
 </ul>
@@ -4014,15 +4014,15 @@ unreachable or in error, it may be automatically unsubscribed. Further, returnin
 
 <h2 id="configuring-a-zap">Configuring a Zap</h2>
 
-<p>Configuring a 10,000ft Zap typically involves,</p>
+<p>Configuring a Resource Management by Smartsheet Zap typically involves,</p>
 
 <ul>
-<li>Connecting your 10,000ft account with Zapier</li>
-<li>Selecting a 10,000ft trigger</li>
+<li>Connecting your Resource Management by Smartsheet account with Zapier</li>
+<li>Selecting a Resource Management by Smartsheet trigger</li>
 <li>Optionally, configure one or more Search steps to look up additional details
 
 <ul>
-<li>10,000ft Triggers typically return user or assignable IDs</li>
+<li>Resource Management by Smartsheet Triggers typically return user or assignable IDs</li>
 <li>We provide find actions so you can get additional details (e.g. a user&rsquo;s email address) given their ID</li>
 <li>This allows you to combine attributes you get from the trigger with additional attributes you get via searching to create Zaps that are rich in details and provide higher value.</li>
 </ul></li>
@@ -4030,7 +4030,7 @@ unreachable or in error, it may be automatically unsubscribed. Further, returnin
 <li>Configure, test and enable your Zap</li>
 </ul>
 
-<h2 id="example:-send-an-email-when-a-new-assignment-is-made-in-10,000ft">Example: Send an email when a new assignment is made in 10,000ft</h2>
+<h2 id="example:-send-an-email-when-a-new-assignment-is-made-in-resource-management-by-smartsheet">Example: Send an email when a new assignment is made in Resource Management by Smartsheet</h2>
 
 <p>Lets try a specific example. In the steps below we will make a Zap that will send an email to when one of your team members are assigned to a project. When you are done, this is what the outline of your Zap will look like,</p>
 
@@ -4041,28 +4041,28 @@ unreachable or in error, it may be automatically unsubscribed. Further, returnin
 <ul>
 <li>Sign in to your Zapier account</li>
 <li>Start a Zap</li>
-<li>Search for the 10,000ft app and select it</li>
-<li>Select a 10,000ft Trigger (e.g. New Assignment)</li>
+<li>Search for the Resource Management by Smartsheet app and select it</li>
+<li>Select a Resource Management by Smartsheet Trigger (e.g. New Assignment)</li>
 </ul>
 
 <p><img src="images/make-a-zap/1.png" alt="new assignment trigger" width="480"></p>
 
 <ul>
-<li>Connect your 10,000ft app if prompted by supplying your 10,000ft API token</li>
-<li>Add a step to search 10,000ft and lookup details for the user_id in the assignment</li>
+<li>Connect your Resource Management by Smartsheet app if prompted by supplying your Resource Management by Smartsheet API token</li>
+<li>Add a step to search Resource Management by Smartsheet and lookup details for the user_id in the assignment</li>
 </ul>
 
 <p><img src="images/make-a-zap/6.png" alt="find user by id options" width="480"></p>
 
 <ul>
-<li>Add a step and select 10,000ft as the app</li>
+<li>Add a step and select Resource Management by Smartsheet as the app</li>
 <li>Search and select the <code class="prettyprint">Find User by ID</code> action</li>
 <li><p>Configure it to find the user for the <code class="prettyprint">user_id</code> from the New Assignment trigger we setup above</p>
 
 <ul>
-<li>Add a step to search 10,000ft and lookup details for the assignable_id in the assignment</li>
+<li>Add a step to search Resource Management by Smartsheet and lookup details for the assignable_id in the assignment</li>
 </ul></li>
-<li><p>Add a step and select 10,000ft as the app</p></li>
+<li><p>Add a step and select Resource Management by Smartsheet as the app</p></li>
 <li><p>Search and select the <code class="prettyprint">Find Assignable by ID</code> action</p></li>
 <li><p>Configure it to find the assignable for the <code class="prettyprint">assignable_id</code> from the New Assignment trigger we setup above</p>
 
@@ -4083,19 +4083,19 @@ unreachable or in error, it may be automatically unsubscribed. Further, returnin
 </ul></li>
 </ul>
 
-<p>Now, when a new assignment is made on the 10,000ft schedule, the person who was assigned will be sent an email with the name of the Project (or Leave) that they were assigned to and the start date of that assignment.</p>
+<p>Now, when a new assignment is made on the Resource Management by Smartsheet schedule, the person who was assigned will be sent an email with the name of the Project (or Leave) that they were assigned to and the start date of that assignment.</p>
 
 <h2 id="filters-&amp;-additional-considerations">Filters &amp; additional considerations</h2>
 
-<p>Zapier Filters are useful when building integrations with 10,000ft. You can use any attribute from a trigger of search action when implementing a filter. The <code class="prettyprint">Type</code> attribute available in 10,000ft users and assignabled are particularly useful. For example, in the example above your Zap would typically exclude Placeholder users. This would be implemented by adding a FIlter to you Zap as shown below.</p>
+<p>Zapier Filters are useful when building integrations with Resource Management by Smartsheet. You can use any attribute from a trigger of search action when implementing a filter. The <code class="prettyprint">Type</code> attribute available in Resource Management by Smartsheet users and assignabled are particularly useful. For example, in the example above your Zap would typically exclude Placeholder users. This would be implemented by adding a FIlter to you Zap as shown below.</p>
 
 <p><img src="images/make-a-zap/filter-options.png" alt="email filter options" width="480"></p>
 
-<p>Familiarize yourself with the different types of users and assignables available in 10,000ft when designing your 10,000ft Zaps so you can get the result you are trying to achive with your integration. See <a href="#10,000ft-api-(pro-and-enterprise-only)">10,000ft API documentation</a> for more details on specific attributes.</p>
+<p>Familiarize yourself with the different types of users and assignables available in Resource Management by Smartsheet when designing your Resource Management by Smartsheet Zaps so you can get the result you are trying to achive with your integration. See <a href="#Resource%20Management%20by%20Smartsheet-api-(pro-and-enterprise-only)">Resource Management by Smartsheet API documentation</a> for more details on specific attributes.</p>
 
 <h2 id="triggers">Triggers</h2>
 
-<p>10,000ft provides the following Triggers</p>
+<p>Resource Management by Smartsheet provides the following Triggers</p>
 
 <ul>
 <li><strong>New Assignment</strong> Triggers when a new assignment is created.</li>
@@ -4110,7 +4110,7 @@ unreachable or in error, it may be automatically unsubscribed. Further, returnin
 
 <h2 id="actions">Actions</h2>
 
-<p>10,000ft provides the following actions for creating or updating information in your 10,000ft account via Zapier</p>
+<p>Resource Management by Smartsheet provides the following actions for creating or updating information in your Resource Management by Smartsheet account via Zapier</p>
 
 <ul>
 <li><strong>Create Project</strong> Create a new project.</li>
@@ -4133,13 +4133,13 @@ unreachable or in error, it may be automatically unsubscribed. Further, returnin
 <li><strong>Find Project by Name</strong> Finds an existing project by name.</li>
 </ul>
 
-<h2 id="more-details-about-the-10,000ft-api">More details about the 10,000ft API</h2>
+<h2 id="more-details-about-the-resource-management-by-smartsheet-api">More details about the Resource Management by Smartsheet API</h2>
 
-<p>Zapier is a convenient and powerful way to consume the 10,000ft API. The triggers, actions and searches listed above allow you to access commonly used API functionality without having to develop custom API integrations or write software code.</p>
+<p>Zapier is a convenient and powerful way to consume the Resource Management by Smartsheet API. The triggers, actions and searches listed above allow you to access commonly used API functionality without having to develop custom API integrations or write software code.</p>
 
-<p>The 10,000ft API provides access to a number of advanced features that are not currently supported with our Zapier triggers and actions. See <a href="#10,000ft-api-(pro-and-enterprise-only)">10,000ft API documentation</a> for more details.</p>
+<p>The Resource Management by Smartsheet API provides access to a number of advanced features that are not currently supported with our Zapier triggers and actions. See <a href="#10,000ft-api-(pro-and-enterprise-only)">Resource Management by Smartsheet API documentation</a> for more details.</p>
 
-<p>Have a question? Contact us via our <a href="https://help.smartsheet.com/contact/10000ft">Support Page</a>. We are here to help!</p>
+<p>Have a question? Contact us via our <a href="https://help.smartsheet.com/contact/resource-management">Support Page</a>. We are here to help!</p>
 
 		  </div>
 		  <div class="dark-box">
