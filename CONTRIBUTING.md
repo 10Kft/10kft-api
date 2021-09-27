@@ -1,8 +1,8 @@
-# Contributing to 10,000ft API User Guide
+# Contributing to Resource Management by Smartsheet API User Guide
 
 ## Purpose
 
-This guide explains how to contribute to the 10,000ft User Guide. The actual 10,000ft API documentation can be viewed [here](https://10kft.github.io/10kft-api/).
+This guide explains how to contribute to the Resource Management User Guide. The actual Resource Management API documentation can be viewed [here](https://10kft.github.io/10kft-api/).
 
 ## Submitting Changes
 The project should be tested locally before putting up a pull request to ensure that the changes are working as expected and original functionality is not affected.

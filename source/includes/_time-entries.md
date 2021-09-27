@@ -4,9 +4,9 @@ Time Entries are a collection of hours tracked per project and user. There are t
 
 ## Suggested (Unconfirmed) time entries
 
-Suggested time entries (also know as unconfirmed time entries) are created by 10,000ft as a result of resources being assigned to a project. These are identifiable by the `is_suggestion: true` attribute on the time entry objects. Suggested time entries are not returned by the API by default and must be requested using the `with_suggestions=true` parameter on the GET API call to fetch time entries.
+Suggested time entries (also know as unconfirmed time entries) are created by Resource Management by Smartsheet as a result of resources being assigned to a project. These are identifiable by the `is_suggestion: true` attribute on the time entry objects. Suggested time entries are not returned by the API by default and must be requested using the `with_suggestions=true` parameter on the GET API call to fetch time entries.
 
-Suggested time entries are read-only and are kept up to date by 10Kft as the corresponding assignments are updated.
+Suggested time entries are read-only and are kept up to date by Resource Management as the corresponding assignments are updated.
 
 ## Confirmed time entries
 
@@ -76,7 +76,7 @@ DELETE /api/v1/users/<user_id>/time_entries/id
 
 ## Bill Rates
 
-Time entries have an associated bill rate attached to them. When a new time entry is created, 10Kft will determine the appropriate bill rate for it (based on your account and project settings) and assign a values. When reading time entries, you can see this assigned bill rate.
+Time entries have an associated bill rate attached to them. When a new time entry is created, Resource Management will determine the appropriate bill rate for it (based on your account and project settings) and assign a values. When reading time entries, you can see this assigned bill rate.
 
 ### Creating Time Entries
 
@@ -93,7 +93,7 @@ POST /api/v1/users/<user_id>/time_entries
   "date": "2012-01-21",
   "hours": 0.5,
   "task": 'Travel',
-  "notes": 'Drive to Seattle, WA to meet with 10Kft'
+  "notes": 'Drive to Seattle, WA to meet with Resource Management by Smartsheet'
 }
 ```
 

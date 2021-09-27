@@ -1,6 +1,6 @@
 # Holidays
 
-Holidays are dates that your organization treats as non-working days, and entered into 10,000ft by an account administrator. The API provides an endpoint for reading this information.
+Holidays are dates that your organization treats as non-working days, and entered into Resource Management by Smartsheet by an account administrator. The API provides an endpoint for reading this information.
 
 ## Endpoints:
 

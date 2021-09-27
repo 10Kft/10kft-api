@@ -1,11 +1,11 @@
-# Publishing 10,000ft API User Guide
+# Publishing Resource Management by Smartsheet API User Guide
 
 ## Purpose
 
-This document outlines the process for publishing the 10,000ft API User Guide onto Github Pages. The actual 10,000ft API documentation can be viewed [here](https://10kft.github.io/10kft-api/).
+This document outlines the process for publishing the Resource Management API User Guide onto Github Pages. The actual Resource Management API documentation can be viewed [here](https://10kft.github.io/10kft-api/).
 
 ## Why git version tags?
-Git tags are a nice way to keep track of the versions of the documentation. The version of the documentation should match the version of the 10,000ft API that it supports. Example tag name might be `v1.0.1`. This can be added with the following command `git tag v1.0.1`.
+Git tags are a nice way to keep track of the versions of the documentation. The version of the documentation should match the version of the Resour API that it supports. Example tag name might be `v1.0.1`. This can be added with the following command `git tag v1.0.1`.
 
 ## Understanding the publish command
 The `rake publish` command bundles all of the resources in the `source/` directory to create static assets in a local directory called `bundle/`. These static assets are then pushed into the `gh-pages` branch. Github pages hosts the contents of the `gh-pages` for public viewing. Only Admins and Owners of the repository have push access into the `gh-pages` repo, so `rake publish` command will fail for anyone else.

@@ -1,6 +1,6 @@
-# Before starting to use the 10,000ft API
+# Before starting to use the Resource Management by Smartsheet API
 
-This documentation assumes that you have either signed up for a 10,000ft trial or you have an active subscription, and that you are familiar with the basic features of the application. The information that follows give you an overview of accessing the same functionality, from an API, so that you can implement additional functionality and custom integrations that meet your specific business needs.
+This documentation assumes that you have either signed up for a Resource Management by Smartsheet trial or you have an active subscription, and that you are familiar with the basic features of the application. The information that follows give you an overview of accessing the same functionality, from an API, so that you can implement additional functionality and custom integrations that meet your specific business needs.
 
 We also assume that you are familiar with basic RESTful API concepts.
 
@@ -9,7 +9,7 @@ We also assume that you are familiar with basic RESTful API concepts.
 
   Use the staging / testing environment for validating your integration.
   Do not perform stress or performance testing in staging or any other
-  account without informing 10,000ft support and obtaining explicit
+  account without informing Resource Management by Smartsheet support and obtaining explicit
   approval. Violation of this may result in your account being
   suspended.
 ```
@@ -65,7 +65,7 @@ GET https://app.10000ft.com/api/v1/users?per_page=100&page=3
 
 ## Filtering
 
-Some resources in the 10,000ft API respect certain filtering parameters. Those optional parameters are as follows:
+Some resources in the Resource Management by Smartsheet API respect certain filtering parameters. Those optional parameters are as follows:
 
 - `filter_field` - The property to filter on.
 - `filter_list` - The value of `filter_field` to match.

@@ -137,7 +137,7 @@ GET  https://api.10000ft.com/api/v1/projects/<project_id>?fields=tags,summary,ch
   "archived_at":null,
   "description":"",
   "guid": "xxxx-xxxx-xxxx-xxxx-xxxx-xxxx",
-  "name":"10K Example for Wayne",
+  "name":"Resource Management Example for Wayne",
   "parent_id":null,
   "phase_name":null,
   "project_code":"",

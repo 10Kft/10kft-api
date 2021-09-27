@@ -9,10 +9,10 @@ There is no additional charge for maintaining a test account on vnext.
 * Visit [`https://www.smartsheet.com/platform/10000ft/api-sandbox`](https://www.smartsheet.com/platform/10000ft/api-sandbox) to setup a test account.
 * The API end point base URL for `vnext` is `https://vnext-api.10000ft.com/api/v1/`
 * To access your test account, visit `https://vnext.10000ft.com` and sign in with your test account credentials.
-* For support on vnext integration, contact us via our [Support Page](https://help.smartsheet.com/contact/10000ft)
+* For support on vnext integration, contact us via our [Support Page](https://help.smartsheet.com/contact/resource-management)
 
 ### What changes when moving my integration to production?
 
-* Your production account is your live 10,000ft Plans account available at `https://app.10000ft.com`
+* Your production account is your live Resource Management by Smartsheet Plans account available at `https://app.10000ft.com`
 * The API end point base URL is `https://api.10000ft.com/api/v1/`
 * You will use a production API token obtained from the settings section in your production account.
