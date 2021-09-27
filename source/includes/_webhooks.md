@@ -102,7 +102,7 @@ To prevent repetitive posting of the same webhook payload, no more than 10 webho
 
 ## Webhook Payloads
 
-When a webhook is registered for a particular event type with the 10000ft API,
+When a webhook is registered for a particular event type with the Resource Management by Smartsheet API,
 every time an event of that type occurs, a POST is made to the webhook URL containing
 data about the affected object. For example, if a webhook is registered for the project.created
 event, every time a new project is created, a POST with the details of the created project is made to the
@@ -175,7 +175,7 @@ The following changes do *not* trigger updated events.
 
 ## What should you return from your webhook processing code?
 
-10000ft keeps track of return values from webhook processing code, and if a webhook is behaving poorly e.g. consistently
+Resource Management by Smartsheet keeps track of return values from webhook processing code, and if a webhook is behaving poorly e.g. consistently
 unreachable or in error, it may be automatically unsubscribed. Further, returning a 410 code on a webhook will also automatically unsubscribe it.
 
 ## Can Webhooks be viewed or edited from the application front-end?

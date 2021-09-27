@@ -1,15 +1,15 @@
-# 10,000ft API User Guide
+# Resource Management by Smartsheet API User Guide
 
-Documentation source files for the [10,000ft API](https://github.com/10Kft/10kft-api).
+Documentation source files for the [Resource Management by Smartsheet API](https://github.com/10Kft/10kft-api).
 
 ## Purpose
 
-This repository contains the source files used to generate the documentation for the 10,000ft API.
-The actual 10,000ft API documentation can be viewed [here](https://10kft.github.io/10kft-api/).
+This repository contains the source files used to generate the documentation for the Resource Management by Smartsheet API.
+The actual Resource Management by Smartsheet API documentation can be viewed [here](https://10kft.github.io/10kft-api/).
 
 ## Submitting Feedback
 
-To report documentation bugs or to request documentation enhancements, contact us via our [Support Page](https://help.smartsheet.com/contact/10000ft).
+To report documentation bugs or to request documentation enhancements, contact us via our [Support Page](https://help.smartsheet.com/contact/resource-management).
 And, of course, feel free to [submit pull requests](https://help.github.com/articles/using-pull-requests) with bug fixes or changes.
 
 ## Running the Docs Locally
