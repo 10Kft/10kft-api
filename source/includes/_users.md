@@ -84,7 +84,7 @@ API users may set the `user_type_id` of a user to any value except `1` (Administ
 
 ### License Type
 
-Information about the user's license type is contained in the `license_type` property. Accepted values are currently `licensed` and `managed_resource`. Both types count toward the applicable limits on your plan. See Settings > People in 10,000ft for more information.
+Information about the user's license type is contained in the `license_type` property. Accepted values are currently `licensed` and `managed_resource`. Both types count toward the applicable limits on your plan. See Settings > People in Resource Management by Smartsheet for more information.
 
 ## Sample Response
 

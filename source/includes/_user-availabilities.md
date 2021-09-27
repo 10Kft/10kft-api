@@ -1,10 +1,10 @@
 # Availabilities
 
-In 10,000ft we have the concept of a work week. It defines the days of the week that are to be considered work days and the number of work hours for those days. Given this work week, you can determine the number of work hours per day, in any given date range. The work week is configurable by an account administrator, via the account settings pages.
+In Resource Management by Smartsheet we have the concept of a work week. It defines the days of the week that are to be considered work days and the number of work hours for those days. Given this work week, you can determine the number of work hours per day, in any given date range. The work week is configurable by an account administrator, via the account settings pages.
 
 User availabilities are a mechanism by which you can further customize the work days for individuals in your team. When an individual has a work schedule that deviates from the normal work week observed by your team, say, because they are working part time during some time period, an administrator can specify that by adding one or more availability time blocks to that user's profile.
 
-When a user has one or more availability time blocks specified, 10,000ft will always take those into consideration in addition to the normal work week information of the company.
+When a user has one or more availability time blocks specified, Resource Management by Smartsheet will always take those into consideration in addition to the normal work week information of the company.
 
 `NB:` In the current version of the API, updating part time availabilities will NOT automatically update existing assignments and their suggested time entries to match.
 

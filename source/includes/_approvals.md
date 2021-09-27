@@ -2,7 +2,7 @@
 
 ##### Endpoint: `/api/v1/approvals`
 
-In 10,000ft, certain record types are considered "approvable." Currently, these record types are time entries and expense items. Approvals are created when time entries or expense items are "submitted for approval."
+In Resource Management by Smartsheet, certain record types are considered "approvable." Currently, these record types are time entries and expense items. Approvals are created when time entries or expense items are "submitted for approval."
 
 
 ## List Approvals
