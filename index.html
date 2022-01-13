@@ -3406,7 +3406,7 @@ POST /api/v1/users/&lt;user_id&gt;/availabilities
 </tr>
 <tr>
 <td>fields</td>
-<td>A comma separated list of additional fields to include in the response, optional values [ &ldquo;tags&rdquo;, &ldquo;assignments&rdquo;, &ldquo;availabilities&rdquo;, &ldquo;custom_field_values&rdquo; ]</td>
+<td>A comma separated list of additional fields to include in the response, optional values [ &ldquo;tags&rdquo;, &ldquo;assignments&rdquo;, &ldquo;availabilities&rdquo;, &ldquo;custom_field_values&rdquo;, &ldquo;approvers&rdquo; ]</td>
 </tr>
 <tr>
 <td>sort_field</td>
@@ -3644,6 +3644,20 @@ POST /api/v1/users
 <td>yes</td>
 </tr>
 <tr>
+<td><code class="prettyprint">approver_user_ids</code></td>
+<td>array of numbers</td>
+<td>A list of other users who approve this user&rsquo;s timesheets</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code class="prettyprint">approvee_user_ids</code></td>
+<td>array of numbers</td>
+<td>A list of other users whose timesheets this user approves</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
 <td><code class="prettyprint">created_at</code></td>
 <td>date-time</td>
 <td>time of creation</td>
@@ -3743,6 +3757,8 @@ POST /api/v1/users
   </span><span class="s2">"has_login"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
   </span><span class="s2">"login_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"saml"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"thumbnail"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"approver_user_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">123</span><span class="p">,</span><span class="w"> </span><span class="mi">456</span><span class="p">,</span><span class="w"> </span><span class="mi">789</span><span class="p">],</span><span class="w">
+  </span><span class="s2">"approvee_user_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">222</span><span class="p">,</span><span class="w"> </span><span class="mi">333</span><span class="p">,</span><span class="w"> </span><span class="mi">444</span><span class="p">],</span><span class="w">
   </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-11-13T20:38:10Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-11-13T20:38:10Z"</span><span class="w">
 </span><span class="p">}</span><span class="w">
