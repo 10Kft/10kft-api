@@ -7,7 +7,7 @@ The users collection allows you to access information about all users in the API
 | **Parameter** | **Description** |
 | ------------- | --------------- |
 | per_page, page | Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first )|
-| fields | A comma separated list of additional fields to include in the response, optional values [ "tags", "assignments", "availabilities", "custom_field_values" ] |
+| fields | A comma separated list of additional fields to include in the response, optional values [ "tags", "assignments", "availabilities", "custom_field_values", "approvers" ] |
 | sort_field | Field to sort the return document. Possible values: `created`, `updated`, `first_name`, `last_name`, `hire_date`, `termination_date` |
 | sort_order | Order to sort the results on. Possible values: `ascending` or `descending` |
 | with_archived	| If set to `true`, includes archived users |
@@ -57,6 +57,8 @@ POST /api/v1/users
 | `login_type` | string | reserved |  | yes |
 | `license_type` | string | The user's license type (see below). Defaults to `licensed` |  yes |  |
 | `thumbnail` | string | A url to a user profile image | yes | yes |
+| `approver_user_ids` | array of numbers | A list of other users who approve this user's timesheets | yes |  |
+| `approvee_user_ids` | array of numbers | A list of other users whose timesheets this user approves | yes |  |
 | `created_at` | date-time | time of creation | | yes |
 | `updated_at` | date-time | time of last update | | yes |
 
@@ -120,6 +122,8 @@ Information about the user's license type is contained in the `license_type` pro
   "has_login": true,
   "login_type": "saml",
   "thumbnail": "",
+  "approver_user_ids": [123, 456, 789],
+  "approvee_user_ids": [222, 333, 444],
   "created_at": "2015-11-13T20:38:10Z",
   "updated_at": "2015-11-13T20:38:10Z"
 }
