@@ -59,6 +59,7 @@ POST /api/v1/users
 | `thumbnail` | string | A url to a user profile image | yes | yes |
 | `approver_user_ids` | array of numbers | A list of other users who approve this user's timesheets | yes |  |
 | `approvee_user_ids` | array of numbers | A list of other users whose timesheets this user approves | yes |  |
+| `last_login_time` | date-time | Last time the user logged in | | yes |
 | `created_at` | date-time | time of creation | | yes |
 | `updated_at` | date-time | time of last update | | yes |
 
@@ -124,6 +125,7 @@ Information about the user's license type is contained in the `license_type` pro
   "thumbnail": "",
   "approver_user_ids": [123, 456, 789],
   "approvee_user_ids": [222, 333, 444],
+  "last_login_time": "2022-02-17T19:12:36Z",
   "created_at": "2015-11-13T20:38:10Z",
   "updated_at": "2015-11-13T20:38:10Z"
 }
