@@ -127,7 +127,7 @@ Dates need to be in UTC
 ## Sample Response
 
 ```
-GET  https://api.rm.smartsheet.com/api/v1/projects/<project_id>?fields=tags,summary,children,has_pending_updates&today=27-07-2016&per_page=100000&auth=<token>
+GET  https://api.rm.smartsheet.com/api/v1/projects/<project_id>?fields=tags,summary,children,has_pending_updates&today=27-07-2016&per_page=100&auth=<token>
 ```
 
 ```
@@ -173,11 +173,11 @@ GET  https://api.rm.smartsheet.com/api/v1/projects/<project_id>?fields=tags,summ
   },
   "children":{
     "paging":{
-      "self":"/api/v1/projects/821065/tags?per_page=100000&page=1",
+      "self":"/api/v1/projects/821065/tags?per_page=100&page=1",
       "next":null,
       "previous":null,
       "page":1,
-      "per_page":100000
+      "per_page":100
     },
     "data":[
 
