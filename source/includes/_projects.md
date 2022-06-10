@@ -32,7 +32,7 @@ Projects where `archived` is set to `true` cannot be updated. You must first una
 | phase_name | phase name to find, exact match |
 | with_archived | true to include deleted/archived projects |
 | with_phases | true to include phases ( child projects ) |
-| per_page, page | Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first )|
+| per_page, page | Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first ).  per_page should not exceed 1000. |
 | archived | true to archive/false to unarchive |
 
 ## List projects

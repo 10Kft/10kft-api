@@ -14,7 +14,7 @@ Assignments connect a [User](#users) to a [Project](#projects) or a [Phase](#pha
 | ------------- | --------------- |
 | from |  get assignments that end after this date |
 | to |  get assignments that start before this date |
-| per_page, page |  Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first ) |
+| per_page, page |  Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first ). per_page should not exceed 1000. |
 | with_phases	| true to include assignment to phases ( child projects ) |
 
 ```
@@ -31,7 +31,7 @@ GET /api/v1/assignments
 | ------------- | --------------- |
 | from |  get assignments that end after this date |
 | to |  get assignments that start before this date |
-| per_page, page |  Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first ) |
+| per_page, page |  Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first ). per_page should not exceed 1000. |
 | with_phases	| true to include assignment to phases ( child projects ) |
 
 ```

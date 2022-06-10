@@ -7,8 +7,8 @@ We also assume that you are familiar with basic RESTful API concepts.
 ```
   IMPORTANT
 
-  Do not perform stress or performance testing in any 
-  account without informing Resource Management by Smartsheet support and obtaining explicit 
+  Do not perform stress or performance testing in any
+  account without informing Resource Management by Smartsheet support and obtaining explicit
   approval. Violation of this may result in your account being suspended.
 ```
 
@@ -60,6 +60,7 @@ The pagination section in collections provide mechanisms to fetch additional dat
 GET https://api.rm.smartsheet.com/api/v1/users?per_page=100&page=3
 ```
 
+per_page should not exceed 1000 rows.
 
 ## Filtering
 

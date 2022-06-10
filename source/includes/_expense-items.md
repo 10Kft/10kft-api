@@ -12,7 +12,7 @@ Expense items are reported by a user on a project or leave type.
 | ------------- | --------------- |
 | from | get expenses reported on or after this date |
 | to | get expenses reported on or before this date |
-| per_page, page | Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first ) |
+| per_page, page | Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first ). per_page should not exceed 1000. |
 
 
 ## Expenses by User

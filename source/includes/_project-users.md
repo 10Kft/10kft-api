@@ -9,7 +9,7 @@ Users are associated to a project by [Assignments](#assignments).
 
 | **Parameter** | **Description** |
 | ------------- | --------------- |
-| per_page, page | Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first ) |
+| per_page, page | Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first ). per_page should not exceed 1000. |
 | fields | A comma separated list of additional fields to include in the response, optional values [ "tags", "assignments", "availabilities", "custom_field_values" ] |
 | sort_field | Field to sort the return document. Possible values: `created`, `updated`, `first_name`, `last_name`, `hire_date`, `termination_date` |
 | sort_order | Order to sort the results on. Possible values: `ascending` or `descending` |
