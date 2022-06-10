@@ -47,7 +47,7 @@ curl 'https://api.rm.smartsheet.com/api/v1/webhooks?&auth=..'
     {
       "id":1,
       "organization_id":1,
-      "url":"https://10000ft.com/process_webhooks",
+      "url":"https://hooks.example.com/process_webhooks",
       "status":"active",
       "event_type":"project.created"
     }
