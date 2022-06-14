@@ -162,8 +162,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>We also assume that you are familiar with basic RESTful API concepts.</p>
 <pre class="highlight plaintext"><code>  IMPORTANT
 
-  Do not perform stress or performance testing in any 
-  account without informing Resource Management by Smartsheet support and obtaining explicit 
+  Do not perform stress or performance testing in any
+  account without informing Resource Management by Smartsheet support and obtaining explicit
   approval. Violation of this may result in your account being suspended.
 </code></pre>
 
@@ -210,6 +210,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>The pagination section in collections provide mechanisms to fetch additional data. The <code class="prettyprint">previous</code> and <code class="prettyprint">next</code> links provide access to the corresponding pages in the collection. You can override the default <code class="prettyprint">per_page</code> value by providing an appropriate value in the URL query parameter. For example,</p>
 <pre class="highlight plaintext"><code>GET https://api.rm.smartsheet.com/api/v1/users?per_page=100&amp;page=3
 </code></pre>
+
+<p>per_page should not exceed 1000 rows.</p>
 
 <h2 id="filtering">Filtering</h2>
 
@@ -598,7 +600,7 @@ curl 'https://api.rm.smartsheet.com/api/v1/users/1/time_entries?fields=approvals
 </tr>
 <tr>
 <td>per_page, page</td>
-<td>Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first )</td>
+<td>Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first ). per_page should not exceed 1000.</td>
 </tr>
 <tr>
 <td>with_phases</td>
@@ -630,7 +632,7 @@ curl 'https://api.rm.smartsheet.com/api/v1/users/1/time_entries?fields=approvals
 </tr>
 <tr>
 <td>per_page, page</td>
-<td>Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first )</td>
+<td>Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first ). per_page should not exceed 1000.</td>
 </tr>
 <tr>
 <td>with_phases</td>
@@ -1654,7 +1656,7 @@ GET /api/v1/users/&lt;user_id&gt;?fields=custom_field_values
 </tr>
 <tr>
 <td>per_page, page</td>
-<td>Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first )</td>
+<td>Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first ). per_page should not exceed 1000.</td>
 </tr>
 </tbody></table>
 
@@ -1702,10 +1704,10 @@ GET /api/v1/projects/&lt;project_id&gt;/expense_items/&lt;id&gt;
   </span><span class="p">]</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="s2">"paging"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"per_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"per_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
     </span><span class="s2">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
     </span><span class="s2">"previous"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/v1/users/2/expense_items?per_page=1000&amp;user_id=2&amp;page=1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/v1/users/2/expense_items?per_page=100&amp;user_id=2&amp;page=1"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"next"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -1729,7 +1731,7 @@ GET /api/v1/projects/&lt;project_id&gt;/expense_items/&lt;id&gt;
 </thead><tbody>
 <tr>
 <td>per_page, page</td>
-<td>Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first )</td>
+<td>Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first ). per_page should not exceed 1000.</td>
 </tr>
 </tbody></table>
 
@@ -1890,7 +1892,7 @@ GET /api/v1/projects/&lt;project_id&gt;/expense_items/&lt;id&gt;
 </tr>
 <tr>
 <td>per_page, page</td>
-<td>Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first )</td>
+<td>Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first ). per_page should not exceed 1000.</td>
 </tr>
 </tbody></table>
 <pre class="highlight plaintext"><code>GET  /api/v1/placeholder_resources
@@ -1915,7 +1917,7 @@ GET /api/v1/projects/&lt;project_id&gt;/expense_items/&lt;id&gt;
 </tr>
 <tr>
 <td>per_page, page</td>
-<td>Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first )</td>
+<td>Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first ). per_page should not exceed 1000.</td>
 </tr>
 </tbody></table>
 <pre class="highlight plaintext"><code>GET  /api/v1/placeholder_resources/&lt;placeholder_resource_id&gt;
@@ -2073,7 +2075,7 @@ The only difference is that this is accessed through the <code class="prettyprin
 </thead><tbody>
 <tr>
 <td>per_page, page</td>
-<td>Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first )</td>
+<td>Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first ). per_page should not exceed 1000.</td>
 </tr>
 <tr>
 <td>fields</td>
@@ -2185,7 +2187,7 @@ The only difference is that this is accessed through the <code class="prettyprin
 </tr>
 <tr>
 <td>per_page, page</td>
-<td>Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first )</td>
+<td>Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first ).  per_page should not exceed 1000.</td>
 </tr>
 <tr>
 <td>archived</td>
@@ -2282,7 +2284,7 @@ The only difference is that this is accessed through the <code class="prettyprin
 <p>Dates need to be in UTC</p>
 
 <h2 id="sample-response">Sample Response</h2>
-<pre class="highlight plaintext"><code>GET  https://api.rm.smartsheet.com/api/v1/projects/&lt;project_id&gt;?fields=tags,summary,children,has_pending_updates&amp;today=27-07-2016&amp;per_page=100000&amp;auth=&lt;token&gt;
+<pre class="highlight plaintext"><code>GET  https://api.rm.smartsheet.com/api/v1/projects/&lt;project_id&gt;?fields=tags,summary,children,has_pending_updates&amp;today=27-07-2016&amp;per_page=100&amp;auth=&lt;token&gt;
 </code></pre>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">821065</span><span class="p">,</span><span class="w">
@@ -2326,11 +2328,11 @@ The only difference is that this is accessed through the <code class="prettyprin
   </span><span class="p">},</span><span class="w">
   </span><span class="s2">"children"</span><span class="p">:{</span><span class="w">
     </span><span class="s2">"paging"</span><span class="p">:{</span><span class="w">
-      </span><span class="s2">"self"</span><span class="p">:</span><span class="s2">"/api/v1/projects/821065/tags?per_page=100000&amp;page=1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"self"</span><span class="p">:</span><span class="s2">"/api/v1/projects/821065/tags?per_page=100&amp;page=1"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"next"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="s2">"previous"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="s2">"page"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"per_page"</span><span class="p">:</span><span class="mi">100000</span><span class="w">
+      </span><span class="s2">"per_page"</span><span class="p">:</span><span class="mi">100</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:[</span><span class="w">
 
@@ -3402,7 +3404,7 @@ POST /api/v1/users/&lt;user_id&gt;/availabilities
 </thead><tbody>
 <tr>
 <td>per_page, page</td>
-<td>Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first )</td>
+<td>Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first ). per_page should not exceed 1000.</td>
 </tr>
 <tr>
 <td>fields</td>
@@ -3658,6 +3660,13 @@ POST /api/v1/users
 <td></td>
 </tr>
 <tr>
+<td><code class="prettyprint">last_login_time</code></td>
+<td>date-time</td>
+<td>Last time the user logged in</td>
+<td></td>
+<td>yes</td>
+</tr>
+<tr>
 <td><code class="prettyprint">created_at</code></td>
 <td>date-time</td>
 <td>time of creation</td>
@@ -3759,6 +3768,7 @@ POST /api/v1/users
   </span><span class="s2">"thumbnail"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
   </span><span class="s2">"approver_user_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">123</span><span class="p">,</span><span class="w"> </span><span class="mi">456</span><span class="p">,</span><span class="w"> </span><span class="mi">789</span><span class="p">],</span><span class="w">
   </span><span class="s2">"approvee_user_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">222</span><span class="p">,</span><span class="w"> </span><span class="mi">333</span><span class="p">,</span><span class="w"> </span><span class="mi">444</span><span class="p">],</span><span class="w">
+  </span><span class="s2">"last_login_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-02-17T19:12:36Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-11-13T20:38:10Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-11-13T20:38:10Z"</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -3833,7 +3843,7 @@ curl 'https://api.rm.smartsheet.com/api/v1/webhooks?&amp;auth=..'
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
       </span><span class="s2">"organization_id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"url"</span><span class="p">:</span><span class="s2">"https://10000ft.com/process_webhooks"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"url"</span><span class="p">:</span><span class="s2">"https://hooks.example.com/process_webhooks"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"active"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"event_type"</span><span class="p">:</span><span class="s2">"project.created"</span><span class="w">
     </span><span class="p">}</span><span class="w">
@@ -4153,7 +4163,7 @@ unreachable or in error, it may be automatically unsubscribed. Further, returnin
 
 <p>Zapier is a convenient and powerful way to consume the Resource Management by Smartsheet API. The triggers, actions and searches listed above allow you to access commonly used API functionality without having to develop custom API integrations or write software code.</p>
 
-<p>The Resource Management by Smartsheet API provides access to a number of advanced features that are not currently supported with our Zapier triggers and actions. See <a href="#10,000ft-api-(pro-and-enterprise-only)">Resource Management by Smartsheet API documentation</a> for more details.</p>
+<p>The Resource Management by Smartsheet API provides access to a number of advanced features that are not currently supported with our Zapier triggers and actions.</p>
 
 <p>Have a question? Contact us via our <a href="https://help.smartsheet.com/contact/resource-management">Support Page</a>. We are here to help!</p>
 
