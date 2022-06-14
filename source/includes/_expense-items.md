@@ -12,7 +12,7 @@ Expense items are reported by a user on a project or leave type.
 | ------------- | --------------- |
 | from | get expenses reported on or after this date |
 | to | get expenses reported on or before this date |
-| per_page, page | Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first ) |
+| per_page, page | Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first ). per_page should not exceed 1000. |
 
 
 ## Expenses by User
@@ -71,10 +71,10 @@ DELETE /api/v1/users/<user_id>/expense_items/<expense_items_id>
   ]
   {
     "paging": {
-    "per_page": 1000,
+    "per_page": 100,
     "page": 1,
     "previous": null,
-    "self": "/api/v1/users/2/expense_items?per_page=1000&user_id=2&page=1",
+    "self": "/api/v1/users/2/expense_items?per_page=100&user_id=2&page=1",
     "next": null
   }
 }

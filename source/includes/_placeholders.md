@@ -11,7 +11,7 @@ Placeholder resources can be used for temporary resourcing on projects where the
 | **Parameter** | **Description** |
 | ------------- | --------------- |
 | fields | A comma separated list of additional fields to include in the response [ "assignments", "custom_field_values"] |
-| per_page, page | Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first ) |
+| per_page, page | Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first ). per_page should not exceed 1000. |
 
 ```
 GET  /api/v1/placeholder_resources
@@ -27,7 +27,7 @@ Note that custom field values can only be accessed if custom fields are enabled 
 | **Parameter** | **Description** |
 | ------------- | --------------- |
 | fields | A comma separated list of additional fields to include in the response [ "assignments", "custom_field_values"] |
-| per_page, page | Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first ) |
+| per_page, page | Parameters for pagination. Default values are per_page = 20 , page = 1 ( the first ). per_page should not exceed 1000. |
 
 ```
 GET  /api/v1/placeholder_resources/<placeholder_resource_id>
