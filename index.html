@@ -419,7 +419,7 @@ curl 'https://api.rm.smartsheet.com/api/v1/users/1/time_entries?fields=approvals
 <pre class="highlight plaintext"><code>POST /api/v1/approvals
 </code></pre>
 
-<p>Approvals are not created or updated directly. Rather, approvable records are submitted or approved through a POST request to <code class="prettyprint">/api/v1/approvals</code>. <strong>Note that only administrators and project managers can approve time and expenses, which means that API users can only submit time and expenses, but not approve.</strong></p>
+<p>Approvals are not created or updated directly. Rather, approvable records are submitted or approved through a POST request to <code class="prettyprint">/api/v1/approvals</code>. <strong>Note that only administrators and portfolio editors can approve time and expenses, which means that API users can only submit time and expenses, but not approve.</strong></p>
 
 <h5 id="required-parameters:">Required parameters:</h5>
 
@@ -3702,19 +3702,19 @@ POST /api/v1/users
 </tr>
 <tr>
 <td>1</td>
-<td>Administrator</td>
+<td>Resourcing Administrator</td>
 </tr>
 <tr>
 <td>2</td>
-<td>Project Manager</td>
+<td>Portfolio Editor</td>
 </tr>
 <tr>
 <td>3</td>
-<td>Team Member</td>
+<td>Portfolio Reporter</td>
 </tr>
 <tr>
 <td>4</td>
-<td>Restricted Team Member</td>
+<td>Portfolio Viewer</td>
 </tr>
 <tr>
 <td>5</td>
@@ -3722,7 +3722,11 @@ POST /api/v1/users
 </tr>
 <tr>
 <td>7</td>
-<td>Scheduler</td>
+<td>People Scheduler</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Project Editor</td>
 </tr>
 </tbody></table>
 
