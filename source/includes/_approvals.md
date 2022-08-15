@@ -69,7 +69,7 @@ If you do get approvals from `/api/v1/approvals`, you can similarly specify "app
 POST /api/v1/approvals
 ```
 
-Approvals are not created or updated directly. Rather, approvable records are submitted or approved through a POST request to `/api/v1/approvals`. **Note that only administrators and project managers can approve time and expenses, which means that API users can only submit time and expenses, but not approve.**
+Approvals are not created or updated directly. Rather, approvable records are submitted or approved through a POST request to `/api/v1/approvals`. **Note that only administrators and portfolio editors can approve time and expenses, which means that API users can only submit time and expenses, but not approve.**
 
 
 ##### Required parameters:

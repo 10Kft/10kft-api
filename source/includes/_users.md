@@ -74,12 +74,13 @@ Information about a user's role is contained in the user_type_id property.
 | **user_type_id** | **Permission level** |
 | ------------- | --------------- |
 | 0 | None |
-| 1 | Administrator |
-| 2 | Project Manager |
-| 3 | Team Member |
-| 4 | Restricted Team Member |
+| 1 | Resourcing Administrator |
+| 2 | Portfolio Editor |
+| 3 | Portfolio Reporter |
+| 4 | Portfolio Viewer |
 | 5 | Contractor |
-| 7 | Scheduler |
+| 7 | People Scheduler |
+| 8 | Project Editor |
 
 Values not described in this list are reserved for internal/future use.
 
