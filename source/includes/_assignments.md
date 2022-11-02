@@ -88,6 +88,15 @@ POST /api/v1/users/<user_id>/assignments
                  'https://api.rm.smartsheet.com/api/v1/users/<user_id>/assignments?auth=...'
 ```
 
+## Update an Assignment
+
+Typical parameters: `starts_at`, `ends_at`, `allocation_mode (percent, hours_per_day, fixed)`, `percent`, `hours_per_day`, `fixed_hours`, `status_option_id`, `description`, `note`
+
+```sh
+curl -XPUT -d 'description=<description>&percent=<DECIMAL>&starts_at=<YEAR-MO-DAY>' \
+                'https//api.rm.smartsheet.com/api/v1/assignments/<assignment_id>/assignments?auth=...'
+```
+
 ## Remove an Assignment for a User
 
 ```
