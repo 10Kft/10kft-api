@@ -94,7 +94,7 @@ Typical parameters: `starts_at`, `ends_at`, `allocation_mode (percent, hours_per
 
 ```sh
 curl -XPUT -d 'description=<description>&percent=<DECIMAL>&starts_at=<YEAR-MO-DAY>' \
-                'https//api.rm.smartsheet.com/api/v1/assignments/<assignment_id>/assignments?auth=...'
+                'https//api.rm.smartsheet.com/api/v1/assignments/<assignment_id>?auth=...'
 ```
 
 ## Remove an Assignment for a User
