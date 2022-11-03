@@ -56,7 +56,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <h1 id="resource-management-by-smartsheet-api-(pro,-enterprise,-and-business-plans)"><span class="customTOCSectionHeading">Resource Management by Smartsheet API (Pro, Enterprise, and Business plans)</span></h1>
 
-<aside class="notice">Last updated: 05/26/2021</aside>
+<aside class="notice">Last updated: 11/02/2022</aside>
 
 <p>The Resource Management by Smartsheet API provides programmatic access to projects, users and time entries in your account, commonly referred to as <em>resources</em> in the rest of this API documentation. The API implements a standard HTTP REST pattern and allows callers with appropriate authentication and authorization to programmatically create, read, update and delete these resources.</p>
 
@@ -680,6 +680,13 @@ curl 'https://api.rm.smartsheet.com/api/v1/users/1/time_entries?fields=approvals
 
  curl -d <span class="s1">'leave_id=&lt;leave_id&gt;&amp;starts_at=&lt;YEAR-MO-DAY&gt;&amp;ends_at=&lt;YEAR-MO-DAY&gt;&amp;allocation_mode=hours_per_day&amp;hours_per_day=&lt;hours&gt;'</span>  <span class="se">\</span>
                  <span class="s1">'https://api.rm.smartsheet.com/api/v1/users/&lt;user_id&gt;/assignments?auth=...'</span>
+</code></pre>
+
+<h2 id="update-an-assignment">Update an Assignment</h2>
+
+<p>Typical parameters: <code class="prettyprint">starts_at</code>, <code class="prettyprint">ends_at</code>, <code class="prettyprint">allocation_mode (percent, hours_per_day, fixed)</code>, <code class="prettyprint">percent</code>, <code class="prettyprint">hours_per_day</code>, <code class="prettyprint">fixed_hours</code>, <code class="prettyprint">status_option_id</code>, <code class="prettyprint">description</code>, <code class="prettyprint">note</code></p>
+<pre class="highlight shell"><code>curl -XPUT -d <span class="s1">'description=&lt;description&gt;&amp;percent=&lt;DECIMAL&gt;&amp;starts_at=&lt;YEAR-MO-DAY&gt;'</span> <span class="se">\</span>
+                <span class="s1">'https//api.rm.smartsheet.com/api/v1/assignments/&lt;assignment_id&gt;?auth=...'</span>
 </code></pre>
 
 <h2 id="remove-an-assignment-for-a-user">Remove an Assignment for a User</h2>
