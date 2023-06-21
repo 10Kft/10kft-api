@@ -1,7 +1,7 @@
 # Project Membership
 
 ##### Endpoint: `/api/v1/users/:id/project_memberships`
-##### Endpoint: `/api/v1/users/:id/project_members`
+##### Endpoint: `/api/v1/projects/:id/project_members`
 
 The first endpoint will return a set of `project_id`s given a `user_id`. The second endpoint will return a set of `user_id`s given a single `project_id`.
 
@@ -48,7 +48,7 @@ NOTE: This updates the membership list. If you leave off a project, the user’s
 ```
 DELETE /api/v1/users/:id/project_memberships
 ```
-This API call removes the single user from the project's membership list. JSON body should include a `relationships` field, which is an array of `[project_id, membership_level]` tuples, OR a `project_ids` field, which is an array of `[project_id, project_id, ...]`.
+This API call removes the single user from the project's membership list. JSON body should include a `project_ids` field, which is an array of `[project_id, project_id, ...]`.
 
 ## Project Members
 This section contains endpoints pertaining to the members of a particular project.
@@ -94,4 +94,4 @@ NOTE: This updates the membership list. If you leave off a project, the user’s
 ```
 DELETE /api/v1/projects/:id/project_members
 ```
-This API call removes users from the project's membership list. JSON body should include a `relationships` field, which is an array of `[user_id, membership_level]` tuples, OR a `user_ids` field, which is an array of `[user_id, user_id, ...]`.
+This API call removes users from the project's membership list. JSON body should include a `user_ids` field, which is an array of `[user_id, user_id, ...]`.
