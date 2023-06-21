@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/vnd.microsoft.icon">
+    <title>API Documentation</title>
+
+    <link href="../stylesheets/screen.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="../stylesheets/print.css" rel="stylesheet" type="text/css" media="print" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+      <script src="../javascripts/all_nosearch.js" type="text/javascript"></script>
+
+  </head>
+
+  <body class="includes includes_project-membership">
+	<div class="navbar-container">
+	  <nav class="navbar">
+		<a class="logo-container" href="#">
+			<div class="logo"></div>
+		</a>
+		<ul>
+			<li>
+			  <a href="https://10kft.github.io/10kft-api/" target="_blank">
+			    Resource Management by Smartsheet API
+			  </a>
+			</li>
+		</ul>
+	  </nav>
+	</div>
+    <a href="#" id="nav-button" class>
+      <img src="images/navbar.png">
+    </a>
+    <div class="page-wrapper">
+		<div class="tocify-wrapper">
+		    <ul class="search-results"></ul>
+		  <div id="toc">
+		  </div>
+		</div>
+		<div class="content_body">
+		  <div class="dark-box"></div>
+		  <div class="content">
+			<h1 id="project-membership">Project Membership</h1>
+
+<h5 id="endpoint:-/api/v1/users/:id/project_memberships">Endpoint: <code class="prettyprint">/api/v1/users/:id/project_memberships</code></h5>
+
+<h5 id="endpoint:-/api/v1/projects/:id/project_members">Endpoint: <code class="prettyprint">/api/v1/projects/:id/project_members</code></h5>
+
+<p>The first endpoint will return a set of <code class="prettyprint">project_id</code>s given a <code class="prettyprint">user_id</code>. The second endpoint will return a set of <code class="prettyprint">user_id</code>s given a single <code class="prettyprint">project_id</code>.</p>
+
+<h2 id="project-memberships">Project Memberships</h2>
+
+<h2 id="list">List</h2>
+<pre class="highlight plaintext"><code>GET /api/v1/users/:id/project_memberships?membership=level
+</code></pre>
+<pre class="highlight plaintext"><code>GET|POST /api/v1/relationships/project_memberships?user_ids=id,id,id&amp;membership=level
+</code></pre>
+
+<p>Both will get a list of <code class="prettyprint">Project</code>s which the user or users are a member of, at the provided level.
+In the case where no membership level is given, the GET defaults to <code class="prettyprint">member</code> ie. any level. Valid membership levels include: member, viewer, reporter, scheduler, and editor.</p>
+
+<p>Result: Paginated API result, <code class="prettyprint">data</code> field will consist of tuples that look similar to the following:
+&ldquo;`
+{&quot;id&rdquo;: 1234, uid: &ldquo;Project-1234&rdquo;, name: &ldquo;Project Name&rdquo;}</p>
+<pre class="highlight plaintext"><code>
+## Set
+
+</code></pre>
+
+<p>POST /api/v1/users/:id/project_memberships
+&ldquo;`</p>
+
+<p>This API call replaces the user&rsquo;s project memberships. JSON body should include a <code class="prettyprint">relationships</code> field with <code class="prettyprint">[project_id, membership_level]</code> tuples.</p>
+
+<p>NOTE: This replaces the membership list. If you leave off a project, the user will be REMOVED from that project. If the user was already a member of a project, their membership will be changed to the level specified. If the user was not previously a member of a project, they will be added with the level specified.</p>
+<pre class="highlight plaintext"><code>PUT /api/v1/users/:id/project_memberships
+</code></pre>
+
+<p>This API call updates the user&rsquo;s project memberships. JSON body should include a <code class="prettyprint">relationships</code> field with <code class="prettyprint">[project_id, membership_level]</code> tuples.</p>
+
+<p>NOTE: This updates the membership list. If you leave off a project, the user’s relationship to that project will be unchanged. If the user was already a member of a project, their membership will be changed to the level specified. If the user was not previously a member of a project, they will be added with the level specified.</p>
+
+<h2 id="remove">Remove</h2>
+<pre class="highlight plaintext"><code>DELETE /api/v1/users/:id/project_memberships
+</code></pre>
+
+<p>This API call removes the single user from the project&rsquo;s membership list. JSON body should include a <code class="prettyprint">project_ids</code> field, which is an array of <code class="prettyprint">[project_id, project_id, ...]</code>.</p>
+
+<h2 id="project-members">Project Members</h2>
+
+<p>This section contains endpoints pertaining to the members of a particular project.</p>
+
+<h2 id="list">List</h2>
+<pre class="highlight plaintext"><code>GET /api/v1/projects/:id/project_members?membership=level
+</code></pre>
+<pre class="highlight plaintext"><code>GET|POST /api/v1/relationships/project_members?project_ids=id,id,id&amp;membership=level
+</code></pre>
+
+<p>Both will get a list of <code class="prettyprint">User</code>s who are members of the project or projects, at the provided level.
+In the case where no membership level is given, the GET defaults to <code class="prettyprint">member</code> ie. any level. Valid membership levels include: member, viewer, reporter, scheduler, and editor.</p>
+
+<p>Result: Paginated API result, <code class="prettyprint">data</code> field will consist of tuples that look similar to the following:
+&rdquo;`
+{&ldquo;id&rdquo;: 1234, uid: &ldquo;User-1234&rdquo;, name: &ldquo;User&rsquo;s Name&rdquo;}</p>
+<pre class="highlight plaintext"><code>
+## Set
+
+</code></pre>
+
+<p>POST /api/v1/projects/:id/project_members
+&ldquo;`</p>
+
+<p>This API call replaces the project&rsquo;s membership list. JSON body should include a <code class="prettyprint">relationships</code> field with <code class="prettyprint">[user_id, membership_level]</code> tuples.</p>
+
+<p>NOTE: This replaces the membership list. If you leave off a project, the user will be REMOVED from that project. If the user was already a member of a project, their membership will be changed to the level specified. If the user was not previously a member of a project, they will be added with the level specified.</p>
+<pre class="highlight plaintext"><code>PUT /api/v1/projects/:id/project_members
+</code></pre>
+
+<p>This API call updates the project&rsquo;s membership list. JSON body should include a <code class="prettyprint">relationships</code> field with <code class="prettyprint">[user_id, membership_level]</code> tuples.</p>
+
+<p>NOTE: This updates the membership list. If you leave off a project, the user’s relationship to that project will be unchanged. If the user was already a member of a project, their membership will be changed to the level specified. If the user was not previously a member of a project, they will be added with the level specified.</p>
+
+<h2 id="remove">Remove</h2>
+<pre class="highlight plaintext"><code>DELETE /api/v1/projects/:id/project_members
+</code></pre>
+
+<p>This API call removes users from the project&rsquo;s membership list. JSON body should include a <code class="prettyprint">user_ids</code> field, which is an array of <code class="prettyprint">[user_id, user_id, ...]</code>.</p>
+
+		  </div>
+		  <div class="dark-box">
+		  </div>
+		</div>
+    </div>
+	<script type="text/javascript">
+		$('h1').addClass("section-header");
+		$('h2').addClass("section-header");
+		$('h3').addClass("section-header");
+		$('h4').addClass("section-header");
+	</script>
+	<script type="text/javascript">
+			$(document).ready(function(){
+			$('.content').css('margin-bottom', parseInt($(window).height()) - (parseInt($('.content').height()) - parseInt($('.content h2').last().offset().top)));
+			});
+	</script>
+  </body>
+</html>
