@@ -2064,6 +2064,92 @@ The only difference is that this is accessed through the <code class="prettyprin
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
+			  <h1 id="project-membership">Project Membership</h1>
+
+<h5 id="endpoint:-/api/v1/users/:id/project_memberships">Endpoint: <code class="prettyprint">/api/v1/users/:id/project_memberships</code></h5>
+
+<h5 id="endpoint:-/api/v1/projects/:id/project_members">Endpoint: <code class="prettyprint">/api/v1/projects/:id/project_members</code></h5>
+
+<p>The first endpoint will return a set of <code class="prettyprint">project_id</code>s given a <code class="prettyprint">user_id</code>. The second endpoint will return a set of <code class="prettyprint">user_id</code>s given a single <code class="prettyprint">project_id</code>.</p>
+
+<h2 id="project-memberships">Project Memberships</h2>
+
+<h2 id="list">List</h2>
+<pre class="highlight plaintext"><code>GET /api/v1/users/:id/project_memberships?membership=level
+</code></pre>
+<pre class="highlight plaintext"><code>GET|POST /api/v1/relationships/project_memberships?user_ids=id,id,id&amp;membership=level
+</code></pre>
+
+<p>Both will get a list of <code class="prettyprint">Project</code>s which the user or users are a member of, at the provided level.
+In the case where no membership level is given, the GET defaults to <code class="prettyprint">member</code> ie. any level. Valid membership levels include: member, viewer, reporter, scheduler, and editor.</p>
+
+<p>Result: Paginated API result, <code class="prettyprint">data</code> field will consist of tuples that look similar to the following:
+&ldquo;`
+{&quot;id&rdquo;: 1234, uid: &ldquo;Project-1234&rdquo;, name: &ldquo;Project Name&rdquo;}</p>
+<pre class="highlight plaintext"><code>
+## Set
+
+</code></pre>
+
+<p>POST /api/v1/users/:id/project_memberships
+&ldquo;`</p>
+
+<p>This API call replaces the user&rsquo;s project memberships. JSON body should include a <code class="prettyprint">relationships</code> field with <code class="prettyprint">[project_id, membership_level]</code> tuples.</p>
+
+<p>NOTE: This replaces the membership list. If you leave off a project, the user will be REMOVED from that project. If the user was already a member of a project, their membership will be changed to the level specified. If the user was not previously a member of a project, they will be added with the level specified.</p>
+<pre class="highlight plaintext"><code>PUT /api/v1/users/:id/project_memberships
+</code></pre>
+
+<p>This API call updates the user&rsquo;s project memberships. JSON body should include a <code class="prettyprint">relationships</code> field with <code class="prettyprint">[project_id, membership_level]</code> tuples.</p>
+
+<p>NOTE: This updates the membership list. If you leave off a project, the user’s relationship to that project will be unchanged. If the user was already a member of a project, their membership will be changed to the level specified. If the user was not previously a member of a project, they will be added with the level specified.</p>
+
+<h2 id="remove">Remove</h2>
+<pre class="highlight plaintext"><code>DELETE /api/v1/users/:id/project_memberships
+</code></pre>
+
+<p>This API call removes the single user from the project&rsquo;s membership list. JSON body should include a <code class="prettyprint">project_ids</code> field, which is an array of <code class="prettyprint">[project_id, project_id, ...]</code>.</p>
+
+<h2 id="project-members">Project Members</h2>
+
+<p>This section contains endpoints pertaining to the members of a particular project.</p>
+
+<h2 id="list">List</h2>
+<pre class="highlight plaintext"><code>GET /api/v1/projects/:id/project_members?membership=level
+</code></pre>
+<pre class="highlight plaintext"><code>GET|POST /api/v1/relationships/project_members?project_ids=id,id,id&amp;membership=level
+</code></pre>
+
+<p>Both will get a list of <code class="prettyprint">User</code>s who are members of the project or projects, at the provided level.
+In the case where no membership level is given, the GET defaults to <code class="prettyprint">member</code> ie. any level. Valid membership levels include: member, viewer, reporter, scheduler, and editor.</p>
+
+<p>Result: Paginated API result, <code class="prettyprint">data</code> field will consist of tuples that look similar to the following:
+&rdquo;`
+{&ldquo;id&rdquo;: 1234, uid: &ldquo;User-1234&rdquo;, name: &ldquo;User&rsquo;s Name&rdquo;}</p>
+<pre class="highlight plaintext"><code>
+## Set
+
+</code></pre>
+
+<p>POST /api/v1/projects/:id/project_members
+&ldquo;`</p>
+
+<p>This API call replaces the project&rsquo;s membership list. JSON body should include a <code class="prettyprint">relationships</code> field with <code class="prettyprint">[user_id, membership_level]</code> tuples.</p>
+
+<p>NOTE: This replaces the membership list. If you leave off a project, the user will be REMOVED from that project. If the user was already a member of a project, their membership will be changed to the level specified. If the user was not previously a member of a project, they will be added with the level specified.</p>
+<pre class="highlight plaintext"><code>PUT /api/v1/projects/:id/project_members
+</code></pre>
+
+<p>This API call updates the project&rsquo;s membership list. JSON body should include a <code class="prettyprint">relationships</code> field with <code class="prettyprint">[user_id, membership_level]</code> tuples.</p>
+
+<p>NOTE: This updates the membership list. If you leave off a project, the user’s relationship to that project will be unchanged. If the user was already a member of a project, their membership will be changed to the level specified. If the user was not previously a member of a project, they will be added with the level specified.</p>
+
+<h2 id="remove">Remove</h2>
+<pre class="highlight plaintext"><code>DELETE /api/v1/projects/:id/project_members
+</code></pre>
+
+<p>This API call removes users from the project&rsquo;s membership list. JSON body should include a <code class="prettyprint">user_ids</code> field, which is an array of <code class="prettyprint">[user_id, user_id, ...]</code>.</p>
+
 			  <h1 id="users-per-project">Users per Project</h1>
 
 <h5 id="endpoint:-/api/v1/projects/&lt;project_id&gt;/users">Endpoint: <code class="prettyprint">/api/v1/projects/&lt;project_id&gt;/users</code></h5>
