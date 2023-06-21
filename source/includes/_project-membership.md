@@ -21,10 +21,7 @@ Both will get a list of `Project`s which the user or users are a member of, at t
 In the case where no membership level is given, the GET defaults to `member` ie. any level. Valid membership levels include: member, viewer, reporter, scheduler, and editor.
 
 Result: Paginated API result, `data` field will consist of tuples that look similar to the following:
-```
-{"id": 1234, uid: "Project-1234", name: "Project Name"}
-
-```
+`{"id": 1234, uid: "Project-1234", name: "Project Name"}`
 
 ## Set
 
@@ -67,10 +64,7 @@ Both will get a list of `User`s who are members of the project or projects, at t
 In the case where no membership level is given, the GET defaults to `member` ie. any level. Valid membership levels include: member, viewer, reporter, scheduler, and editor.
 
 Result: Paginated API result, `data` field will consist of tuples that look similar to the following:
-```
-{"id": 1234, uid: "User-1234", name: "User's Name"}
-
-```
+`{"id": 1234, uid: "User-1234", name: "User's Name"}`
 
 ## Set
 
