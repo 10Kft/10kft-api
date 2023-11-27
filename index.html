@@ -125,6 +125,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><a href="#holidays">Holidays</a></li>
 <li><a href="#reports-api">Reports</a></li>
 <li><a href="#status-options">Status Options</a></li>
+<li><a href="#api-token-management">API Token Management</a></li>
 </ul>
 
 <h1 id="webhook-support">Webhook Support</h1>
@@ -356,6 +357,96 @@ curl -X PUT https://api.rm.smartsheet.com/api/v1/users/100?auth=TOKEN \
   -H "Content-Type: application/json" \
   -d '{"last_name":"Silva"'}'
 </code></pre>
+
+			  <h1 id="api-token-management">API Token Management</h1>
+
+<p>Resource Management by Smartsheet API Tokens are used to authenticate requests to Resource Management by Smartsheet APIs. Organizations can manage up to 20 API tokens. Contact us via our <a href="https://help.smartsheet.com/contact/resource-management">Support Page</a> if API Token Management is not enabled for your organization. The first generated token for an organization will have a set &ldquo;primary&rdquo; title.</p>
+
+<h2 id="get-tokens">Get tokens</h2>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">GET /api/api_tokens</code></p>
+
+<h3 id="sample-response">Sample Response</h3>
+<pre class="highlight plaintext"><code>[
+    {
+        "id": 1,
+        "title": "primary",
+        "token": &lt;token_string&gt;
+    },
+    {
+        "id": 2,
+        "title": "secondary",
+        "token": &lt;token_string&gt;
+    },
+    {
+        "id": 3,
+        "title": null,
+        "token": &lt;token_string&gt;
+    }
+]
+</code></pre>
+
+<h2 id="create-token">Create token</h2>
+
+<p>Create additional tokens for your organization.</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">POST /api/api_tokens</code></p>
+
+<h3 id="optional-query-parameter">Optional Query Parameter</h3>
+
+<table><thead>
+<tr>
+<th><strong>Name</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>title</td>
+<td>an identifier for a token, cannot be &ldquo;primary&rdquo;</td>
+</tr>
+</tbody></table>
+
+<h2 id="delete-token">Delete token</h2>
+
+<p>Deletes the given token.</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">DELETE /api/api_tokens/&lt;id&gt;</code></p>
+
+<h2 id="renew-token">Renew token</h2>
+
+<p>Deletes the given token and creates a new token.</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">POST /api/api_tokens/renew/&lt;id&gt;</code></p>
+
+<h2 id="update-token-title">Update token title</h2>
+
+<p>Update the title of the given token.</p>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p><code class="prettyprint">PUT /api/api_tokens/&lt;id&gt;</code></p>
+
+<h3 id="query-parameter">Query Parameter</h3>
+
+<table><thead>
+<tr>
+<th><strong>Name</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>title</td>
+<td>an identifier for a token, cannot be &ldquo;primary&rdquo;</td>
+</tr>
+</tbody></table>
 
 			  <h1 id="approvals">Approvals</h1>
 
