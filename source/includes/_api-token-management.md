@@ -4,6 +4,8 @@ Resource Management by Smartsheet API Tokens are used to authenticate requests t
 
 ## Get tokens
 
+Returns list of tokens for your organization.
+
 ### Endpoint
 
 `GET /api/api_tokens`
