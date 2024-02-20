@@ -23,8 +23,6 @@ GET /api/v1/projects/<project_id>/bill_rates/<id>
 
 PUT /api/v1/projects/<project_id>/bill_rates/<id>
 
-DELETE /api/v1/projects/<project_id>/bill_rates/<id>
-
 POST /api/v1/projects/<project_id>/bill_rates
 ```
 
