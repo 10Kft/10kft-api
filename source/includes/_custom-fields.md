@@ -84,6 +84,11 @@ PUT /api/v1/custom_fields/<custom_field_id>
 GET /api/v1/custom_fields
 GET /api/v1/custom_fields/<custom_field_id>
 ```
+##### Required parameters:
+
+| **Parameter** | **Type** | **Description** |
+| ------------- | -------- | --------------- |
+| `namespace` | string | either `assignables` or `users` |
 
 ### Deleting Custom Fields
 ```
@@ -124,17 +129,6 @@ POST /api/v1/users/<user_id>/custom_field_values
 
 **Note**: Only custom fields with a `data_type` of `multiple_choice_selection_list` can accept an array with multiple values as its `value` in a `POST` request. Note that this array is treated as the complete set of values for the given custom field and project/user. Subsequent `POST` requests for the same custom field and project/user will result in the deletion of previous values if those values are not also included in the `value` array. In other words, subsequent `POST` requests do not _append_ new values, but rather _replace_ the _set_ of values as a whole.
 
-### Updating Custom Field Values
-```
-PUT /api/v1/projects/<project_id>/custom_field_values/<id>
-PUT /api/v1/users/<user_id>/custom_field_values/<id>
-```
-##### Editable parameters:
-
-| **Parameter** | **Type** | **Description** |
-| ------------- | -------- | --------------- |
-| `value` | string | the actual value |
-
 ### Getting Custom Field Values
 ```
 GET /api/v1/projects/<project_id>/custom_field_values
@@ -145,6 +139,19 @@ In addition to getting custom field values directly, you can also include custom
 GET /api/v1/projects/<project_id>?fields=custom_field_values
 GET /api/v1/users/<user_id>?fields=custom_field_values
 ```
+### Updating Custom Field Values
+```
+PUT /api/v1/projects/<project_id>/custom_field_values/<id>
+PUT /api/v1/users/<user_id>/custom_field_values/<id>
+```
+
+**Note**: <id> here is the ID of the custom field ON THE PROJECT or USER, NOT THE GLOBAL ID of the custom field on your account. To get the project or user custom field id use Getting Custom Fields API above. 
+
+##### Editable parameters:
+
+| **Parameter** | **Type** | **Description** |
+| ------------- | -------- | --------------- |
+| `value` | string | the actual value |
 
 ### Deleting Custom Field Values
 
