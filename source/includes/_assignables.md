@@ -2,7 +2,12 @@
 # Assignables
 
 ##### Endpoint: `/api/v1/assignables`
-An _assignable_ in Resource Management by Smartsheet Plans is an object to which an assignment can be made, i.e. a person, placeholder, etc. can be assigned to this object. Currently, there are two types of assignables in Resource Management by Smartsheet Plans, [Projects](#projects) and [Leave Types](#leave-types). Phases are also an assignable, but they can be accessed through the [projects endpoint](#projects).
+An _assignable_ in Resource Management by Smartsheet Plans is an object to which an assignment can be made, i.e. a person, placeholder, etc. can be assigned to this object. The following assignable types are accessible from this endpoint:
+
+- [Projects](#projects) (top-level projects only)
+- [Leave Types](#leave-types)
+
+**Note:** Although Phases are assignable, they are not accessible from this endpoint. Instead, Phases are accessible via the [`projects` endpoint](#projects).
 
 It is useful to have an understanding of Assignables as an API entity because the [Assignments endpoint](#assignments) returns an _assignable-id_ to indicate the object to which the assignment is made, but without knowing the _type_ of that object, it is not clear which endpoint to use to get more details about the object if desired. The assignables endpoint allows you to query directly using the `assignable-id` from an assignment.
 
