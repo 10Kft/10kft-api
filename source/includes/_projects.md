@@ -68,6 +68,12 @@ Notes: `project_state` is the only supported filter field at present.
 GET  /api/v1/projects/<project_id>
 ```
 
+## Show a Phase
+
+```
+GET  /api/v1/projects/<phase_id>
+```
+
 ## Show a project with its phases
 
 ```

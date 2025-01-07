@@ -11,6 +11,12 @@ GET /api/v1/projects/<project_id>/phases
  curl 'https://api.rm.smartsheet.com/api/v1/projects/[project_id]/phases?auth=...'
 ```
 
+## Show a Phase
+
+```
+GET  /api/v1/projects/<phase_id>
+```
+
 ## Create a Phase for a Project
 
 ```
