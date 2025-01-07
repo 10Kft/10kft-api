@@ -75,6 +75,8 @@ With the exception of `today` and `calc_incurred_using`, each of the following p
 }
 ```
 
+**Important:** To include or exclude null values in your filter, specify the string `"[none]"` as an element in your filter's `values` array. 
+
 ## `view`
 
 There are currently ten supported views, which correspond to the reports available in the reports UI. The view determines which columns are returned.
@@ -178,6 +180,10 @@ Attributes that can be used as grouping values can also be used as filters. Addi
 
 The `filters` parameter is expected to be an object where the keys are the attribute names, and the values are objects that specify what to filter on. The filter objects are expected to specify an `operation` and an array of `values`. `operation` can be either `inclusion` or `exclusion`. The `values` array may contain either integers or strings, depending on the attribute.
 
+**Important:** The string `"[none]"` represents a null value. 
+
+Example 1:
+
 ```json
 "filters": {
   "project_id": {
@@ -190,6 +196,21 @@ The `filters` parameter is expected to be an object where the keys are the attri
   }
 }
 ```
+
+The first filter above includes only rows with `project_id` value `432`, `561`, or `642`. The second filter excludes rows with the `people_tags` value `"intern"`.
+
+Example 2:
+
+```json
+"filters": {
+  "code_name": {
+    "operation": "inclusion",
+    "values": ["[none]", "alpha"]
+  }
+}
+```
+
+The filter above includes rows with `code_name` values that are `null` or `"alpha"`.
 
 Filtering on `custom_fields` is slightly different in that, instead of a single object with an `operation` and `values`, the expectation is an array of objects, each with an `operation`, `values`, and `id`, which is the custom field id.
 
