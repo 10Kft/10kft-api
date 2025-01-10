@@ -604,7 +604,14 @@ curl 'https://api.rm.smartsheet.com/api/v1/users/1/time_entries?fields=approvals
 
 <h5 id="endpoint:-/api/v1/assignables">Endpoint: <code class="prettyprint">/api/v1/assignables</code></h5>
 
-<p>An <em>assignable</em> in Resource Management by Smartsheet Plans is an object to which an assignment can be made, i.e. a person, placeholder, etc. can be assigned to this object. Currently, there are two types of assignables in Resource Management by Smartsheet Plans, <a href="#projects">Projects</a> and <a href="#leave-types">Leave Types</a>. Phases are also an assignable, but they can be accessed through the <a href="#projects">projects endpoint</a>.</p>
+<p>An <em>assignable</em> in Resource Management by Smartsheet Plans is an object to which an assignment can be made, i.e. a person, placeholder, etc. can be assigned to this object. The following assignable types are accessible from this endpoint:</p>
+
+<ul>
+<li><a href="#projects">Projects</a> (excluding Phases)</li>
+<li><a href="#leave-types">Leave Types</a></li>
+</ul>
+
+<p><strong>Note:</strong> Although Phases are projects and are assignable, they are inaccessible from this endpoint. Instead, Phases are accessible from the <a href="#projects"><code class="prettyprint">projects</code> endpoint</a>.</p>
 
 <p>It is useful to have an understanding of Assignables as an API entity because the <a href="#assignments">Assignments endpoint</a> returns an <em>assignable-id</em> to indicate the object to which the assignment is made, but without knowing the <em>type</em> of that object, it is not clear which endpoint to use to get more details about the object if desired. The assignables endpoint allows you to query directly using the <code class="prettyprint">assignable-id</code> from an assignment.</p>
 
@@ -1945,6 +1952,10 @@ GET /api/v1/projects/&lt;project_id&gt;/expense_items/&lt;id&gt;
  curl 'https://api.rm.smartsheet.com/api/v1/projects/[project_id]/phases?auth=...'
 </code></pre>
 
+<h2 id="show-a-phase">Show a Phase</h2>
+<pre class="highlight plaintext"><code>GET  /api/v1/projects/&lt;phase_id&gt;
+</code></pre>
+
 <h2 id="create-a-phase-for-a-project">Create a Phase for a Project</h2>
 <pre class="highlight plaintext"><code>curl  -d "phase_name=Winding%20up&amp;starts_at=2013-09-15&amp;ends_at=2013-09-16"  \
                          "https://api.rm.smartsheet.com/api/v1/projects/[project_id]/phases?auth=..."
@@ -2395,6 +2406,10 @@ In the case where no membership level is given, the GET defaults to <code class=
 <pre class="highlight plaintext"><code>GET  /api/v1/projects/&lt;project_id&gt;
 </code></pre>
 
+<h2 id="show-a-phase">Show a Phase</h2>
+<pre class="highlight plaintext"><code>GET  /api/v1/projects/&lt;phase_id&gt;
+</code></pre>
+
 <h2 id="show-a-project-with-its-phases">Show a project with its phases</h2>
 <pre class="highlight plaintext"><code>GET  /api/v1/projects/&lt;project_id&gt;?fields=children
 </code></pre>
@@ -2641,6 +2656,8 @@ In the case where no membership level is given, the GET defaults to <code class=
 <span class="p">}</span>
 </code></pre>
 
+<p><strong>Important:</strong> To include or exclude null values in your filter, specify the string <code class="prettyprint">&quot;[none]&quot;</code> as an element in your filter&rsquo;s <code class="prettyprint">values</code> array. </p>
+
 <h2 id="view"><code class="prettyprint">view</code></h2>
 
 <p>There are currently ten supported views, which correspond to the reports available in the reports UI. The view determines which columns are returned.</p>
@@ -2757,6 +2774,10 @@ In the case where no membership level is given, the GET defaults to <code class=
 </ul>
 
 <p>The <code class="prettyprint">filters</code> parameter is expected to be an object where the keys are the attribute names, and the values are objects that specify what to filter on. The filter objects are expected to specify an <code class="prettyprint">operation</code> and an array of <code class="prettyprint">values</code>. <code class="prettyprint">operation</code> can be either <code class="prettyprint">inclusion</code> or <code class="prettyprint">exclusion</code>. The <code class="prettyprint">values</code> array may contain either integers or strings, depending on the attribute.</p>
+
+<p><strong>Important:</strong> The string <code class="prettyprint">&quot;[none]&quot;</code> represents a null value. </p>
+
+<p>Example 1:</p>
 <pre class="highlight json"><code><span class="s2">"filters"</span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
   </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"operation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"inclusion"</span><span class="p">,</span><span class="w">
@@ -2768,6 +2789,19 @@ In the case where no membership level is given, the GET defaults to <code class=
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
+
+<p>The first filter above includes only rows with <code class="prettyprint">project_id</code> value <code class="prettyprint">432</code>, <code class="prettyprint">561</code>, or <code class="prettyprint">642</code>. The second filter excludes rows with the <code class="prettyprint">people_tags</code> value <code class="prettyprint">&quot;intern&quot;</code>.</p>
+
+<p>Example 2:</p>
+<pre class="highlight json"><code><span class="s2">"filters"</span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"code_name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"operation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"inclusion"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"[none]"</span><span class="p">,</span><span class="w"> </span><span class="s2">"alpha"</span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>The filter above includes rows with <code class="prettyprint">code_name</code> values that are <code class="prettyprint">null</code> or <code class="prettyprint">&quot;alpha&quot;</code>.</p>
 
 <p>Filtering on <code class="prettyprint">custom_fields</code> is slightly different in that, instead of a single object with an <code class="prettyprint">operation</code> and <code class="prettyprint">values</code>, the expectation is an array of objects, each with an <code class="prettyprint">operation</code>, <code class="prettyprint">values</code>, and <code class="prettyprint">id</code>, which is the custom field id.</p>
 <pre class="highlight json"><code><span class="s2">"filters"</span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
