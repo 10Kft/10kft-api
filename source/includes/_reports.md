@@ -14,7 +14,7 @@ With the exception of `today` and `calc_incurred_using`, each of the following p
 | param | data type | description | default |
 | ----- | --------- | ----------- | ------- |
 | [`view`](#view) | string | the name of the view (e.g. `time_fees_hours`, `utilization`, etc.) | `"time_fees_hours"` |
-| [`time_frame`](#time_frame) | object or string | a custom time frame object or the name of the time frame | `"this_week"` |
+| [`time_frame`](#time_frame) | object or string | a custom time frame object as JSON body, example in link OR the name of the time frame as Key-Value Parameter | `"this_week"` |
 | [`group_by`](#group_by) | array of strings | the attributes to group rows by | `["project_id"]` (or `["user_id"]` for utilization) |
 | [`filters`](#filters) | object of objects | the attributes and values to include or exclude | `null` |
 | [`today`](#today) | string | the date on which "future scheduled" begins, in `YYYY-MM-DD` format | current UTC date |
@@ -102,16 +102,24 @@ There are currently ten supported views, which correspond to the reports availab
 
 ## `time_frame`
 
-The time frame of a report is specified as an object with "from" and "to" attributes that each specify a date in the format YYYY-MM-DD.
+There are two options for time_frame 
+
+1) as custom JSON post body object "from" and "to" attributes that each specify a date in the format YYYY-MM-DD
+
+When submitting a custom time frame, REMOVE the time_frame parameter from your URL and add the following JSON to your post body JSON (this WILL NOT work as a parameter): 
 
 ```js
-"time_frame": {
-  "from": "2018-01-01",
-  "to": "2018-12-31"
+{
+  "time_frame": {
+    "from": "2020-01-01",
+    "to": "2024-12-31"
+  }
 }
 ```
 
-There are also several shortcut strings for common time frames.
+2) a URL parameter with a shortcut string. 
+
+When submitting a shortcut string for time_frame, use the URL parameter Key=time_frame and value = one of the options below:
 
 - `this_week`
 - `this_month`
