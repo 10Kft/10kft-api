@@ -1,3 +1,8 @@
+> **DEPRECATED:** This repostiory and project have been replaced by Smartsheet's [api-docs](https://git.lab.smartsheet.com/team-dev-rel/api-docs) project on GitLab. The Resource Management API docs are now published to the Smartsheet [Developers](https://developers.smartsheet.com/api/resource_management) site.
+>
+> - New project location: [https://git.lab.smartsheet.com/team-dev-rel/api-docs](https://git.lab.smartsheet.com/team-dev-rel/api-docs)
+> - New API docs site: [https://developers.smartsheet.com/api/resource_management](https://developers.smartsheet.com/api/resource_management)
+
 # Resource Management by Smartsheet API User Guide
 
 Documentation source files for the [Resource Management by Smartsheet API](https://github.com/10Kft/10kft-api).
